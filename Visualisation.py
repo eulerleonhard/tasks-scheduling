@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
 
-import matplotlib.pyplot as plt
-
 # Task visualization
 def visualize_tasks(tasks, schedule):
     # Create a figure with 4 subplots (one for each task type)
@@ -85,7 +83,8 @@ def visualize_metrics(results):
     resource_utilization = [r[5] for r in results]
     # print(f"DEBUG: {resource_utilization}")
     execution_time = [r[6] for r in results]
-
+    task_avg_wait_time = [r[7] for r in results]
+    
     plt.figure(figsize=(16, 8))
 
     plt.subplot(2, 3, 1)
@@ -112,9 +111,11 @@ def visualize_metrics(results):
     plt.xlabel('Number of Tasks')
     plt.ylabel('Priority Satisfaction')
 
-    # plt.subplot(2, 3, 5)
-
-    # #########
+    plt.subplot(2, 3, 5)
+    plt.plot(x, task_avg_wait_time)
+    plt.title('Average waiting time of task before execution')
+    plt.xlabel('Number of Tasks')
+    plt.ylabel('Waiting Time')
 
     plt.subplot(2, 3, 6)
     plt.plot(x, execution_time)

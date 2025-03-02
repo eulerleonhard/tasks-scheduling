@@ -36,8 +36,8 @@ def generate_random_tasks(num_tasks, resource_limits, max_dependencies=0):
     tasks = []
 
     for i in range(num_tasks):
-        # task_status = random.choice(TASK_STATUS)
-        task_status = "Not Running"
+        task_status = random.choice(TASK_STATUS)
+        # task_status = "Not Running"
         task_type = random.choice(TASK_TYPES)
         length = random.randint(1, 5)
         priority = random.randint(1, 10)

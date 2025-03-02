@@ -113,6 +113,21 @@ def calculate_resource_utilization(schedule, tasks, resource_limits):
     # print(f"DEBUG1: {utilization}")
     return utilization
 
+def calculate_average_wait_time(tasks, schedule):
+    wait_times = {task.task_id: 0 for task in tasks}  # Initialize wait times for each task
+
+    for task_id, start_time, end_time in schedule:
+        task = next((t for t in tasks if t.task_id == task_id), None)
+        if task:
+            # Calculate wait time for each task
+            wait_time = max(0, start_time - task.min_start_time)
+            wait_times[task_id] += wait_time
+
+    # Calculate average wait time
+    total_wait_time = sum(wait_times.values())
+    average_wait_time = total_wait_time / len(tasks) if tasks else 0
+    return average_wait_time
+
 def measure_metrics(schedule, tasks, resource_limits):
     """
     Measures the various metrics for the given schedule, tasks, and resource limits.
@@ -130,6 +145,7 @@ def measure_metrics(schedule, tasks, resource_limits):
     task_utilization_rate = calculate_task_utilization_rate(schedule, tasks)
     priority_satisfaction = calculate_priority_satisfaction(schedule, tasks)
     resource_utilization = calculate_resource_utilization(schedule, tasks, resource_limits)
+    task_avg_wait_time = calculate_average_wait_time(tasks, schedule)
     # print(f"DEBUG2: {resource_utilization}")
-    return throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization
+    return throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, task_avg_wait_time
 

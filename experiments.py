@@ -50,7 +50,8 @@ settings2 = {# experiments with number of tasks and max dependencies
     "medium2": (100, 3),
     "complex1": (200, 3),
     "complex2": (500, 5),
-    "complex3": (1000, 5)
+    "complex3": (1000, 5),
+    "complex4": (2000, 10)
 }
 
 # Run the experiment for Greedy approach
@@ -67,12 +68,12 @@ for experiment_name, (num_tasks, max_dependencies) in settings2.items():
     visualize_tasks(tasks, schedule)
     
     # Measure metrics
-    throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization = measure_metrics(schedule, tasks, RESOURCE_LIMITS)
+    throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, task_avg_wait_time = measure_metrics(schedule, tasks, RESOURCE_LIMITS)
     # print(f"DEBUG3: {resource_utilization}")
     execution_time = end_time - start_time
     
     # Append results with experiment name for identification
-    results.append((num_tasks, throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, execution_time))
+    results.append((num_tasks, throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, execution_time, task_avg_wait_time))
 
 # Visualize the results
 visualize_metrics(results)
