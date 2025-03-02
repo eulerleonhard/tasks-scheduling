@@ -14,7 +14,7 @@ This repository contains experiments on various algorithms for solving the task 
 ## Metrics
 In this project, we consider the following metrics to evaluate the performance of the scheduling algorithms:
 
-1. **Throughput**
+1. **Throughput**:
   - Definition: The total work units completed per hour.
   - Importance: This metric directly measures how effectively the algorithm utilizes available resources to complete tasks.
 
@@ -26,7 +26,7 @@ In this project, we consider the following metrics to evaluate the performance o
    - Definition: The percentage of available resources used during the scheduling process.
    - Importance: High resource utilization is desirable as it indicates effective use of available resources.
 
-4. **Task Utilization Rate**
+4. **Task Utilization Rate**:
   - Definition: The ratio of the actual time tasks are running to the total available time.
   - Importance: This metric helps assess how well the algorithm is keeping tasks busy, especially under resource constraints.
 
@@ -34,11 +34,11 @@ In this project, we consider the following metrics to evaluate the performance o
    - Definition: The average time that tasks spend waiting in the queue before execution.
    - Importance: Lower average wait times indicate better responsiveness of the scheduling algorithm.
   
-6. **Priority Satisfaction**
+6. **Priority Satisfaction**:
   - Definition: The percentage of high-priority tasks that are completed before lower-priority tasks.
   - Importance: Measures how well the algorithm adheres to the priority rules, which is crucial for stakeholder satisfaction.
 
-7. **Execution Time**
+7. **Execution Time**:
   - Definition: The time taken by the algorithm to produce a schedule.
   - Importance: A faster execution time is preferable, especially in dynamic environments where tasks may frequently change.
 
