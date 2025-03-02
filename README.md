@@ -22,13 +22,13 @@ In this project, we consider the following metrics to evaluate the performance o
    - Definition: The total time required to complete all tasks.
    - Importance: A lower makespan indicates a more efficient scheduling algorithm.
 
-5. **Resource Utilization**:
+3. **Resource Utilization**:
    - Definition: The percentage of available resources used during the scheduling process.
    - Importance: High resource utilization is desirable as it indicates effective use of available resources.
 
-6. **Task Utilization Rate**:
-  - Definition: The ratio of the actual time tasks are running to the total available time.
-  - Importance: This metric helps assess how well the algorithm is keeping tasks busy, especially under resource constraints.
+4. **Task Utilization Rate**:
+   - Definition: The ratio of the actual time tasks are running to the total available time.
+   - Importance: This metric helps assess how well the algorithm is keeping tasks busy, especially under resource constraints.
 
 5. **Average Wait Time**:
    - Definition: The average time that tasks spend waiting in the queue before execution.
