@@ -19,14 +19,14 @@ In this project, we consider the following metrics to evaluate the performance o
   - Importance: This metric directly measures how effectively the algorithm utilizes available resources to complete tasks.
 
 2. **Makespan**:
-   - Definition: The total time required to complete all tasks.
-   - Importance: A lower makespan indicates a more efficient scheduling algorithm.
+  - Definition: The total time required to complete all tasks.
+  - Importance: A lower makespan indicates a more efficient scheduling algorithm.
 
-3. **Resource Utilization**:
+5. **Resource Utilization**:
    - Definition: The percentage of available resources used during the scheduling process.
    - Importance: High resource utilization is desirable as it indicates effective use of available resources.
 
-4. **Task Utilization Rate**:
+6. **Task Utilization Rate**:
   - Definition: The ratio of the actual time tasks are running to the total available time.
   - Importance: This metric helps assess how well the algorithm is keeping tasks busy, especially under resource constraints.
 
