@@ -15,12 +15,12 @@ This repository contains experiments on various algorithms for solving the task 
 In this project, we consider the following metrics to evaluate the performance of the scheduling algorithms:
 
 1. **Throughput**:
-  - Definition: The total work units completed per hour.
-  - Importance: This metric directly measures how effectively the algorithm utilizes available resources to complete tasks.
+   - Definition: The total work units completed per hour.
+   - Importance: This metric directly measures how effectively the algorithm utilizes available resources to complete tasks.
 
 2. **Makespan**:
-  - Definition: The total time required to complete all tasks.
-  - Importance: A lower makespan indicates a more efficient scheduling algorithm.
+   - Definition: The total time required to complete all tasks.
+   - Importance: A lower makespan indicates a more efficient scheduling algorithm.
 
 5. **Resource Utilization**:
    - Definition: The percentage of available resources used during the scheduling process.
@@ -35,12 +35,12 @@ In this project, we consider the following metrics to evaluate the performance o
    - Importance: Lower average wait times indicate better responsiveness of the scheduling algorithm.
   
 6. **Priority Satisfaction**:
-  - Definition: The percentage of high-priority tasks that are completed before lower-priority tasks.
-  - Importance: Measures how well the algorithm adheres to the priority rules, which is crucial for stakeholder satisfaction.
+   - Definition: The percentage of high-priority tasks that are completed before lower-priority tasks.
+   - Importance: Measures how well the algorithm adheres to the priority rules, which is crucial for stakeholder satisfaction.
 
 7. **Execution Time**:
-  - Definition: The time taken by the algorithm to produce a schedule.
-  - Importance: A faster execution time is preferable, especially in dynamic environments where tasks may frequently change.
+   - Definition: The time taken by the algorithm to produce a schedule.
+   - Importance: A faster execution time is preferable, especially in dynamic environments where tasks may frequently change.
 
 ## Getting Started
 1. **Clone the Repository**:
