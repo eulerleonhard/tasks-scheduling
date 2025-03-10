@@ -15,7 +15,7 @@ This repository contains experiments on various algorithms for solving the task 
 In this project, we consider the following metrics to evaluate the performance of the scheduling algorithms:
 
 1. **(Weighted) Throughput**:
-   - Definition: The sum of the work units completed for each task, weighted by the inverse of the task's priority and resource requirements.
+   - Definition: The sum of the work units completed for each task, weighted by the inverse of the task's priority and resource requirements, normalized by the total time.
    - Importance: This metric takes into account the relative importance and resource needs of each task, rather than just considering the raw number of work units completed. Tasks with higher priority (lower priority number) and higher resource requirements will contribute more to the overall weighted throughput, reflecting the algorithm's ability to prioritize and utilize resources effectively.
 
 2. **Makespan**:
