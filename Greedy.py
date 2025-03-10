@@ -1,17 +1,6 @@
 from threading import Lock, Thread
 import heapq
 
-class Task:
-    def __init__(self, task_id, task_type, status, min_start_time, length, priority, resource_req, dependencies):
-        self.task_id = task_id
-        self.task_type = task_type
-        self.status = status
-        self.min_start_time = min_start_time
-        self.length = length
-        self.priority = priority
-        self.resource_req = resource_req
-        self.dependencies = dependencies
-
 def schedule_tasks_greedy(tasks, resource_limits, task_types=['A', 'B', 'C', 'D']):
     # Sort tasks by priority (descending) and min_start_time (ascending)
     tasks.sort(key=lambda t: (-t.priority, t.min_start_time))

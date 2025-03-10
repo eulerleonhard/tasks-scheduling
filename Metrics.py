@@ -1,4 +1,41 @@
+import pandas as pd
+
 # Metrics calculation functions
+def calculate_weighted_throughput(schedule, tasks):
+    """
+    Calculates the weighted throughput of the schedule.
+    Weighted throughput is defined as the sum of the work units completed for each task, \
+        weighted by the inverse of the task's priority and resource requirements, normalized by the total weight.
+
+    Args:
+        schedule (list): A list of tuples (task_id, start_time, end_time) representing the schedule.
+        tasks (list): A list of Task objects.
+
+    Returns:
+        float: The weighted throughput of the schedule.
+    """
+    if not schedule:
+        return 0.0
+
+    total_weighted_work_units = 0
+    # total_weight = sum(1 / task.priority * task.resource_req for task in tasks)
+    total_time = max(end_time for _, end_time, _ in schedule)
+    weights = []
+
+    for task_id, _, _ in schedule:
+        task = next(t for t in tasks if t.task_id == task_id)
+        work_units = task.length
+        weight = (1 / task.priority) * task.resource_req
+        # print(f"DEBUG: priority: {task.priority}")
+        # print(f"DEBUG: resource_req: {task.resource_req}")
+        # print(f"DEBUG: weight: {weight}")
+        weights.append(weight)
+        df = pd.DataFrame(weights)
+        df.to_csv("weights.csv", index=False)
+        total_weighted_work_units += work_units * weight
+
+    return total_weighted_work_units / total_time
+
 def calculate_throughput(schedule):
     """
     Calculates the throughput of the schedule.
@@ -31,8 +68,11 @@ def calculate_makespan(schedule):
         schedule (list): A list of tuples (task_id, start_time, end_time) representing the schedule.
 
     Returns:
-        float: The makespan of the schedule.
+        float: The makespan of the schedule. Returns 0 if the schedule is empty.
     """
+    if not schedule:
+        return 0  # Return 0 for empty schedule
+
     return max(end_time for _, _, end_time in schedule)
 
 def calculate_task_utilization_rate(schedule, tasks):
@@ -47,6 +87,9 @@ def calculate_task_utilization_rate(schedule, tasks):
     Returns:
         float: The task utilization rate of the schedule.
     """
+    if not schedule:
+        return 0  # Return 0 for empty schedule
+    
     total_time = max(end_time for _, _, end_time in schedule)
     total_task_time = sum(task.length for task in tasks)
     return total_task_time / (len(tasks) * total_time)
@@ -140,12 +183,15 @@ def measure_metrics(schedule, tasks, resource_limits):
     Returns:
         tuple: A tuple containing the measured metrics (throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization).
     """
-    throughput = calculate_throughput(schedule)
+    throughput = calculate_weighted_throughput(schedule, tasks)
     makespan = calculate_makespan(schedule)
     task_utilization_rate = calculate_task_utilization_rate(schedule, tasks)
     priority_satisfaction = calculate_priority_satisfaction(schedule, tasks)
     resource_utilization = calculate_resource_utilization(schedule, tasks, resource_limits)
     task_avg_wait_time = calculate_average_wait_time(tasks, schedule)
+    # print(f"DEBUG Metrics: task_avg_wait_time: {task_avg_wait_time}")
+    # print(f"DEBUG Metrics: throughput: {throughput}")
     # print(f"DEBUG2: {resource_utilization}")
     return throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, task_avg_wait_time
+    
 

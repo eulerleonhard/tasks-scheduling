@@ -1,12 +1,25 @@
 import matplotlib.pyplot as plt
 
+import matplotlib.pyplot as plt
+import numpy as np
+
 # Task visualization
 def visualize_tasks(tasks, schedule):
+    if not schedule:
+        return 0  # Return 0 for empty schedule
+    
     # Create a figure with 4 subplots (one for each task type)
     fig, axs = plt.subplots(4, 1, figsize=(12, 12), sharex=True)
 
     # Get unique task types
     task_types = ['A', 'B', 'C', 'D']
+
+    # Determine unique priorities and create a color map
+    unique_priorities = sorted(set(task.priority for task in tasks))
+    num_priorities = len(unique_priorities)
+    
+    # Create a blue-to-white color map
+    cmap = plt.get_cmap('Blues', num_priorities)  # Blue colormap
 
     # Plot the tasks for each task type
     for i, task_type in enumerate(task_types):
@@ -14,7 +27,10 @@ def visualize_tasks(tasks, schedule):
         for task_id, start_time, end_time in schedule:
             task = next(t for t in tasks if t.task_id == task_id)
             if task.task_type == task_type:
-                ax.barh(task_id, end_time - start_time, left=start_time, height=0.4, color='black')
+                # Get the index for the color based on task priority
+                priority_index = unique_priorities.index(task.priority)
+                color = cmap(priority_index)  # Get color from the colormap
+                ax.barh(task_id, end_time - start_time, left=start_time, height=0.4, color=color)
                 ax.text(start_time + 0.5 * (end_time - start_time), task_id, str(task.task_id), 
                         va='center', ha='center', color='white')
 
@@ -31,8 +47,7 @@ def visualize_tasks(tasks, schedule):
     plt.tight_layout()
 
     # Show the plot
-    plt.show()
-
+    # plt.show()
 
 def visualize_resource_utilization(resource_utilization):
     # Create a figure with subplots
@@ -66,66 +81,40 @@ def visualize_resource_utilization(resource_utilization):
     plt.xlabel('Time')
     plt.xticks(x_ticks, x_tick_labels)  # Set x-ticks to the defined intervals
     plt.tight_layout()  # Adjust layout to prevent overlapping
-    plt.show()
+    # plt.show()
 
-def visualize_metrics(results):
+
+import matplotlib.pyplot as plt
+
+def visualize_metrics(results, algorithms):
     """
     Visualizes the metrics measured in the experiment.
 
     Args:
-        results (list): A list of tuples containing the experiment results (number of tasks, throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, execution_time).
+        results (dict): A dictionary where keys are algorithm names and values are lists of tuples containing the experiment results.
+        algorithms (list): A list of algorithm names for plotting.
     """
-    x = [r[0] for r in results]
-    throughput = [r[1] for r in results]
-    makespan = [r[2] for r in results]
-    task_utilization_rate = [r[3] for r in results]
-    priority_satisfaction = [r[4] for r in results]
-    resource_utilization = [r[5] for r in results]
-    # print(f"DEBUG: {resource_utilization}")
-    execution_time = [r[6] for r in results]
-    task_avg_wait_time = [r[7] for r in results]
-    
     plt.figure(figsize=(16, 8))
 
-    plt.subplot(2, 3, 1)
-    plt.plot(x, throughput)
-    plt.title('Throughput')
-    plt.xlabel('Number of Tasks')
-    plt.ylabel('Throughput')
+    metrics = ['Throughput', 'Makespan', 'Task Utilization Rate', 'Priority Satisfaction', 'Average Waiting Time', 'Execution Time']
+    
+    for i, metric in enumerate(metrics):
+        plt.subplot(2, 3, i + 1)
 
-    plt.subplot(2, 3, 2)
-    plt.plot(x, makespan)
-    plt.title('Makespan')
-    plt.xlabel('Number of Tasks')
-    plt.ylabel('Makespan')
+        for algorithm in algorithms:
+            x = [r[0] for r in results[algorithm]]  # Number of tasks
+            y = [r[i + 1] for r in results[algorithm]]  # Offset by 1 since the first element is num_tasks
+            
+            # Check if y has valid values before plotting
+            if all(isinstance(value, (int, float)) for value in y):
+                plt.plot(x, y, label=algorithm)
+            else:
+                print(f"Invalid data for {algorithm}: {metric}{y}")
 
-    plt.subplot(2, 3, 3)
-    plt.plot(x, task_utilization_rate)
-    plt.title('Task Utilization Rate')
-    plt.xlabel('Number of Tasks')
-    plt.ylabel('Task Utilization Rate')
-
-    plt.subplot(2, 3, 4)
-    plt.plot(x, priority_satisfaction)
-    plt.title('Priority Satisfaction')
-    plt.xlabel('Number of Tasks')
-    plt.ylabel('Priority Satisfaction')
-
-    plt.subplot(2, 3, 5)
-    plt.plot(x, task_avg_wait_time)
-    plt.title('Average waiting time of task before execution')
-    plt.xlabel('Number of Tasks')
-    plt.ylabel('Waiting Time')
-
-    plt.subplot(2, 3, 6)
-    plt.plot(x, execution_time)
-    plt.title('Execution Time')
-    plt.xlabel('Number of Tasks')
-    plt.ylabel('Execution Time (seconds)')
+        plt.title(metric)
+        plt.xlabel('Number of Tasks')
+        plt.ylabel(metric)
+        plt.legend()
 
     plt.tight_layout()
     plt.show()
-
-    visualize_resource_utilization(resource_utilization)
-
-    # visualize_resource_utilization_heatmap(resource_utilization)
