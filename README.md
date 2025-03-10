@@ -14,9 +14,9 @@ This repository contains experiments on various algorithms for solving the task 
 ## Metrics
 In this project, we consider the following metrics to evaluate the performance of the scheduling algorithms:
 
-1. **Throughput**:
-   - Definition: The total work units completed per hour.
-   - Importance: This metric directly measures how effectively the algorithm utilizes available resources to complete tasks.
+1. **(Weighted) Throughput**:
+   - Definition: The sum of the work units completed for each task, weighted by the inverse of the task's priority and resource requirements.
+   - Importance: This metric takes into account the relative importance and resource needs of each task, rather than just considering the raw number of work units completed. Tasks with higher priority (lower priority number) and higher resource requirements will contribute more to the overall weighted throughput, reflecting the algorithm's ability to prioritize and utilize resources effectively.
 
 2. **Makespan**:
    - Definition: The total time required to complete all tasks.
@@ -50,7 +50,7 @@ In this project, we consider the following metrics to evaluate the performance o
    ```
 
 2. **Install Requirements**:
-   Make sure to install any necessary dependencies. You may use `pip` to install required packages.
+   Make sure to install any necessary dependencies. You may use `pip` to install the required packages.
 
 3. **Run Experiments**:
    Execute the `experiments.py` script to run the scheduling algorithms and generate results.
