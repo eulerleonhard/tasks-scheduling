@@ -37,16 +37,16 @@ RESOURCE_LIMITS = {'A': 23, 'B': 17, 'C': 19, 'D': 11}
 
 settings1 = {# experiments with number of tasks and max dependencies
     "simple1": (10, 0),
-    "simple2": (50, 0),
+    "simple2": (20, 0),
     "medium1": (50, 0),
     "medium2": (100, 0),
     "complex1": (200, 0),
     "complex2": (500, 0),
-    "complex3": (1000, 0)
+    "complex3": (1000, 0),
+    "complex4": (2000, 0),
 } 
 settings2 = {# experiments with number of tasks and max dependencies
     "simple1": (10, 2),
-    "simple2": (50, 2),
     "medium1": (50, 2),
     "medium2": (100, 3),
     "complex1": (200, 3),
@@ -66,7 +66,7 @@ ALGORITHMS = {
 # Initialize a dictionary to hold results for each algorithm
 results = {algo_name: [] for algo_name in ALGORITHMS}
 
-def run_experiment(tasks, resource_limits, algorithms):
+def run_experiment(tasks, resource_limits, algorithms, num_tasks):
     for algo_name in algorithms:
         algo_func = ALGORITHMS[algo_name]
         start_time = time.time()
@@ -75,20 +75,20 @@ def run_experiment(tasks, resource_limits, algorithms):
 
         # visualise task
         if algo_name == "Genetic-Algorithm":
-            visualize_tasks(tasks, schedule)
+            visualize_tasks(tasks, schedule, num_tasks)
 
         # Measure metrics
-        throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, task_avg_wait_time = measure_metrics(schedule, tasks, resource_limits)
+        weighted_throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, task_avg_wait_time = measure_metrics(schedule, tasks, resource_limits)
         execution_time = end_time - start_time
 
         # Append results
-        results[algo_name].append((len(tasks), throughput, makespan, task_utilization_rate, priority_satisfaction, task_avg_wait_time, execution_time))
+        results[algo_name].append((len(tasks), weighted_throughput, makespan, task_utilization_rate, priority_satisfaction, task_avg_wait_time, execution_time))
 
     return results
 
 # Run the experiment
 for experiment_name, (num_tasks, max_dependencies) in settings2.items():
     tasks = generate_random_tasks(num_tasks, RESOURCE_LIMITS, max_dependencies)
-    results = run_experiment(tasks, RESOURCE_LIMITS, list(ALGORITHMS.keys()))
+    results = run_experiment(tasks, RESOURCE_LIMITS, list(ALGORITHMS.keys()), num_tasks)
     
 visualize_metrics(results, list(ALGORITHMS.keys()))

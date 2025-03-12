@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Task visualization
-def visualize_tasks(tasks, schedule):
+def visualize_tasks(tasks, schedule, num_tasks):
     if not schedule:
         return 0  # Return 0 for empty schedule
     
@@ -35,7 +35,7 @@ def visualize_tasks(tasks, schedule):
                         va='center', ha='center', color='white')
 
         # Set labels and title for each subplot
-        ax.set_title(f'Task Type {task_type} Execution Timeline')
+        ax.set_title(f'Task Type {task_type} Execution Timeline (Number of Tasks: {num_tasks})')
         ax.set_ylabel('Task ID')
         ax.set_xlim(0, max(end_time for _, start_time, end_time in schedule) + 1)  # Extend x-axis for visibility
         ax.grid(True)
@@ -96,7 +96,7 @@ def visualize_metrics(results, algorithms):
     """
     plt.figure(figsize=(16, 8))
 
-    metrics = ['Throughput', 'Makespan', 'Task Utilization Rate', 'Priority Satisfaction', 'Average Waiting Time', 'Execution Time']
+    metrics = ['Weighted Throughput', 'Makespan', 'Task Utilization Rate', 'Priority Satisfaction', 'Average Waiting Time', 'Execution Time']
     
     for i, metric in enumerate(metrics):
         plt.subplot(2, 3, i + 1)

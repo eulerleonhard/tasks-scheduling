@@ -46,7 +46,7 @@ def calculate_weighted_throughput(schedule, tasks):
     return total_weighted_work_units / total_time if total_time > 0 else 0
 
 
-def calculate_throughput(schedule):
+def calculate_throughput(schedule, tasks):
     """
     Calculates the throughput of the schedule.
     Throughput is defined as the number of tasks completed per time unit.
@@ -57,17 +57,16 @@ def calculate_throughput(schedule):
     Returns:
         float: The throughput of the schedule.
     """
-    completed_tasks = len(schedule)  # Count of completed tasks
+    # Calculate weights and total work units
+    total_work_units = 0
+    total_time = max(end_time for _, end_time, _ in schedule)
 
-    if completed_tasks == 0:
-        return 0.0  # Avoid division by zero
+    for task_id, _, _ in schedule:        
+        # Get the task object to access its length
+        task = next(t for t in tasks if t.task_id == task_id)
+        total_work_units += task.length
 
-    start_times = [start_time for _, start_time, _ in schedule]
-    end_times = [end_time for _, _, end_time in schedule]
-
-    total_time = max(end_times) - min(start_times)
-
-    return completed_tasks / total_time if total_time > 0 else 0.0
+    return total_work_units / total_time if total_time > 0 else 0
 
 def calculate_makespan(schedule):
     """
@@ -191,9 +190,9 @@ def measure_metrics(schedule, tasks, resource_limits):
         resource_limits (dict): A dictionary of resource limits for each task type.
 
     Returns:
-        tuple: A tuple containing the measured metrics (throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization).
+        tuple: A tuple containing the measured metrics (weighted_throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization).
     """
-    throughput = calculate_weighted_throughput(schedule, tasks)
+    weighted_throughput = calculate_weighted_throughput(schedule, tasks)
     makespan = calculate_makespan(schedule)
     task_utilization_rate = calculate_task_utilization_rate(schedule, tasks)
     priority_satisfaction = calculate_priority_satisfaction(schedule, tasks)
@@ -202,6 +201,6 @@ def measure_metrics(schedule, tasks, resource_limits):
     # print(f"DEBUG Metrics: task_avg_wait_time: {task_avg_wait_time}")
     # print(f"DEBUG Metrics: throughput: {throughput}")
     # print(f"DEBUG2: {resource_utilization}")
-    return throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, task_avg_wait_time
+    return weighted_throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization, task_avg_wait_time
     
 
