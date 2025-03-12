@@ -1,11 +1,13 @@
 import pandas as pd
 
-# Metrics calculation functions
+def normalize(values):
+    min_value = min(values)
+    max_value = max(values)
+    return [(v - min_value) / (max_value - min_value) for v in values]
+
 def calculate_weighted_throughput(schedule, tasks):
     """
-    Calculates the weighted throughput of the schedule.
-    Weighted throughput is defined as the sum of the work units completed for each task, \
-        weighted by the inverse of the task's priority and resource requirements, normalized by the total weight.
+    Calculates the Weighted Task Completion Rate (WTCR).
 
     Args:
         schedule (list): A list of tuples (task_id, start_time, end_time) representing the schedule.
@@ -14,27 +16,35 @@ def calculate_weighted_throughput(schedule, tasks):
     Returns:
         float: The weighted throughput of the schedule.
     """
-    if not schedule:
-        return 0.0
+    # Normalize task attributes
+    priorities = {task.task_id: task.priority for task in tasks}
+    lengths = {task.task_id: task.length for task in tasks}
+    resource_reqs = {task.task_id: task.resource_req for task in tasks}
 
+    normalized_priorities = normalize(list(priorities.values()))
+    normalized_lengths = normalize(list(lengths.values()))
+    normalized_resource_reqs = normalize(list(resource_reqs.values()))
+
+    # Create a mapping from task_id to normalized values
+    normalized_priority_map = {task_id: normalized_priorities[i] for i, task_id in enumerate(priorities.keys())}
+    normalized_length_map = {task_id: normalized_lengths[i] for i, task_id in enumerate(lengths.keys())}
+    normalized_resource_req_map = {task_id: normalized_resource_reqs[i] for i, task_id in enumerate(resource_reqs.keys())}
+
+    # Calculate weights and total work units
     total_weighted_work_units = 0
-    # total_weight = sum(1 / task.priority * task.resource_req for task in tasks)
     total_time = max(end_time for _, end_time, _ in schedule)
-    weights = []
 
     for task_id, _, _ in schedule:
+        weight = (1 - normalized_priority_map[task_id]) * 0.4 + \
+                 normalized_length_map[task_id] * 0.4 + \
+                 normalized_resource_req_map[task_id] * 0.2
+        
+        # Get the task object to access its length
         task = next(t for t in tasks if t.task_id == task_id)
-        work_units = task.length
-        weight = (1 / task.priority) * task.resource_req
-        # print(f"DEBUG: priority: {task.priority}")
-        # print(f"DEBUG: resource_req: {task.resource_req}")
-        # print(f"DEBUG: weight: {weight}")
-        weights.append(weight)
-        df = pd.DataFrame(weights)
-        df.to_csv("weights.csv", index=False)
-        total_weighted_work_units += work_units * weight
+        total_weighted_work_units += weight * task.length
 
-    return total_weighted_work_units / total_time
+    return total_weighted_work_units / total_time if total_time > 0 else 0
+
 
 def calculate_throughput(schedule):
     """

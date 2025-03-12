@@ -1,4 +1,4 @@
-from pulp import LpProblem, LpVariable, LpBinary, LpMaximize, lpSum, LpStatus, LpStatusOptimal
+from pulp import LpProblem, LpVariable, LpBinary, LpMaximize, lpSum, LpStatus, PULP_CBC_CMD
 
 def schedule_tasks_ilp(tasks, resource_limits):
     # Create a linear programming problem
@@ -6,8 +6,8 @@ def schedule_tasks_ilp(tasks, resource_limits):
 
     # Create a binary variable for each task and time slot
     task_vars = {}
-    max_time_horizon = max(task.length + task.min_start_time for task in tasks)  # Determine the appropriate time horizon
-    
+    max_time_horizon = max(task.length + task.min_start_time for task in tasks)
+
     for task in tasks:
         for start_time in range(max_time_horizon - task.length + 1):
             if start_time >= task.min_start_time:
@@ -35,8 +35,8 @@ def schedule_tasks_ilp(tasks, resource_limits):
                                  for dep_start in range(max(0, start_time - next(t for t in tasks if t.task_id == dep).length + 1), start_time + 1)
                                  if (dep, dep_start) in task_vars) <= 1
 
-    # Solve the problem
-    prob.solve()
+    # Solve the problem with an efficient solver
+    prob.solve(PULP_CBC_CMD(msg=0, timeLimit=300))  # Set a time limit if needed
 
     # Check the status of the solution
     if LpStatus[prob.status] == 'Optimal':

@@ -1,1001 +1,2001 @@
 Task ID,Task Type,Status,Length,Priority,Resource Requirement,Min Start Time,Dependencies
-T0,C,Running,5,7,12,9,
-T1,A,Not Running,1,2,18,3,T0
-T2,D,Running,2,9,4,0,"T1, T0"
-T3,B,Not Running,5,10,11,6,"T1, T0, T2"
-T4,D,Not Running,4,4,10,6,"T1, T3"
-T5,C,Running,2,2,5,2,"T0, T4, T3, T1"
-T6,B,Not Running,5,4,11,6,"T0, T4"
-T7,C,Not Running,3,8,2,2,"T5, T1, T4, T3"
-T8,A,Running,1,3,9,9,"T0, T2"
-T9,D,Running,5,2,10,4,T8
-T10,D,Running,1,9,9,3,"T7, T3, T4, T1, T5"
-T11,D,Running,4,6,5,6,
-T12,D,Not Running,3,6,2,5,
-T13,B,Not Running,4,8,3,2,
-T14,B,Running,5,6,2,1,"T3, T1, T2"
-T15,B,Not Running,3,3,12,5,
-T16,B,Running,1,2,3,1,"T3, T10, T5, T11"
-T17,B,Not Running,1,5,11,3,"T15, T1, T10, T11"
-T18,A,Running,3,1,15,5,"T17, T1, T11"
-T19,C,Running,1,2,16,5,"T17, T14, T5, T3, T12"
-T20,D,Not Running,1,4,2,0,"T7, T2, T8, T14"
-T21,B,Running,4,9,13,7,"T11, T9, T16, T20"
-T22,C,Running,1,6,9,4,
-T23,B,Running,3,8,8,3,T4
-T24,D,Running,1,1,6,9,"T13, T2, T5"
-T25,B,Not Running,3,8,9,10,T1
-T26,A,Running,5,9,5,4,"T0, T4, T5, T11"
-T27,C,Running,4,4,18,3,"T18, T1"
-T28,D,Not Running,3,6,8,10,"T19, T16, T13, T25"
-T29,D,Running,1,7,2,9,
-T30,C,Not Running,4,4,8,0,
-T31,C,Running,3,8,10,0,"T30, T18, T8"
-T32,B,Not Running,2,9,2,7,
-T33,B,Not Running,3,2,16,2,
-T34,A,Running,2,7,2,10,"T15, T16, T7, T27"
-T35,D,Running,1,7,2,5,"T16, T12, T27, T25, T28"
-T36,D,Not Running,2,7,1,5,
-T37,D,Not Running,5,5,3,9,"T25, T0, T11, T32"
-T38,C,Running,3,2,12,7,"T20, T23, T22"
-T39,B,Running,2,3,11,6,"T30, T5, T22"
-T40,B,Running,3,5,13,9,"T21, T24, T23, T4"
-T41,D,Not Running,1,3,9,4,"T16, T36, T28, T4, T21"
-T42,D,Not Running,1,9,5,8,"T30, T32, T33, T17, T12"
-T43,C,Running,3,4,9,1,
-T44,A,Running,3,1,2,10,T10
-T45,B,Running,2,9,11,5,"T44, T27, T4"
-T46,D,Not Running,5,1,2,7,T26
-T47,B,Running,4,6,11,3,"T24, T19, T29, T1"
-T48,C,Running,1,4,16,8,
-T49,B,Running,3,1,2,6,T35
-T50,B,Running,4,8,3,2,T48
-T51,A,Running,4,10,17,7,T45
-T52,D,Not Running,5,5,1,6,
-T53,C,Running,1,7,9,10,"T49, T3"
-T54,B,Not Running,5,10,1,10,"T39, T31, T2"
-T55,C,Running,2,4,14,5,"T54, T6, T39, T48, T4"
-T56,A,Running,3,10,17,4,"T24, T20, T19, T3, T31"
-T57,C,Running,1,10,7,7,
-T58,C,Not Running,5,3,16,7,"T56, T33, T5, T42"
-T59,D,Running,4,5,5,5,"T17, T38, T25"
-T60,C,Running,1,5,17,1,"T24, T14"
-T61,C,Running,4,3,17,5,"T55, T43, T9"
-T62,D,Not Running,4,8,4,1,"T4, T2"
-T63,B,Running,4,3,4,10,"T35, T34, T36"
-T64,B,Running,3,2,13,1,"T20, T30"
-T65,B,Not Running,4,8,4,10,"T31, T59"
-T66,A,Running,2,4,10,7,"T30, T31, T28"
-T67,D,Not Running,1,9,3,8,"T39, T63"
-T68,C,Not Running,4,7,14,5,
-T69,B,Not Running,4,9,2,5,"T23, T62, T2, T9, T20"
-T70,B,Running,1,10,4,5,
-T71,D,Not Running,3,4,9,3,
-T72,C,Running,2,5,16,1,"T31, T68, T54"
-T73,D,Not Running,1,1,10,2,T37
-T74,D,Not Running,1,8,1,10,"T41, T65, T14"
-T75,C,Running,2,5,6,10,T5
-T76,C,Running,4,6,9,8,"T4, T66, T40, T46"
-T77,D,Not Running,3,6,9,1,
-T78,D,Running,5,6,9,4,"T53, T22"
-T79,B,Not Running,4,7,13,5,
-T80,C,Running,4,6,14,6,T32
-T81,B,Not Running,1,2,6,3,"T19, T20, T75, T57, T11"
-T82,A,Running,4,7,20,3,
-T83,D,Running,1,4,1,1,"T64, T82, T21, T53, T59"
-T84,D,Running,5,8,1,4,"T11, T2, T49"
-T85,D,Not Running,2,9,8,6,T20
-T86,B,Running,3,7,3,1,
-T87,B,Running,5,5,10,3,"T59, T52, T81"
-T88,D,Running,5,10,8,0,"T30, T4, T70, T2"
-T89,B,Not Running,5,4,12,9,"T66, T47"
-T90,A,Running,2,9,9,3,"T27, T47"
-T91,A,Running,3,10,9,4,"T2, T21, T53, T83"
-T92,D,Not Running,2,9,3,4,
-T93,D,Not Running,1,4,4,7,"T59, T88, T30, T41"
-T94,C,Not Running,3,4,17,6,T43
-T95,A,Running,5,9,19,6,"T90, T8, T6, T24, T20"
-T96,C,Running,1,5,5,1,"T60, T27, T12, T37, T29"
-T97,B,Running,2,6,5,3,
-T98,B,Not Running,4,4,13,10,"T19, T6, T35"
-T99,B,Running,2,7,4,7,T75
-T100,A,Running,1,7,10,7,
-T101,D,Running,3,8,9,10,"T36, T76, T53, T69"
-T102,C,Running,1,1,17,3,"T50, T76"
-T103,A,Not Running,3,3,6,2,
-T104,A,Running,5,3,6,7,
-T105,D,Not Running,4,3,10,2,
-T106,B,Not Running,5,4,13,10,"T18, T68, T90"
-T107,D,Running,3,10,5,2,"T23, T22, T74, T72, T38"
-T108,C,Not Running,5,1,6,1,T94
-T109,A,Not Running,1,7,6,4,"T67, T36, T97, T9, T0"
-T110,B,Not Running,3,6,12,6,"T25, T87, T1, T60"
-T111,B,Running,5,7,6,10,"T42, T74"
-T112,A,Not Running,5,5,17,1,"T63, T58, T35, T66"
-T113,C,Running,2,9,7,6,T45
-T114,D,Running,5,10,3,5,"T24, T75"
-T115,C,Running,5,8,1,2,"T97, T84"
-T116,C,Not Running,4,9,12,7,"T58, T55"
-T117,B,Running,1,8,14,0,"T14, T1, T18"
-T118,C,Running,5,6,10,8,"T2, T99, T26, T47, T80"
-T119,C,Running,5,3,13,1,"T48, T78, T38"
-T120,B,Running,5,1,7,1,"T6, T115, T97, T24, T96"
-T121,D,Running,1,3,8,7,"T56, T21"
-T122,C,Not Running,3,7,8,2,"T18, T112, T12, T32"
-T123,B,Running,3,10,12,10,
-T124,B,Running,4,8,3,7,
-T125,A,Running,5,10,8,2,"T57, T123, T104"
-T126,B,Running,4,6,7,3,T54
-T127,B,Running,2,10,12,8,"T92, T109, T11, T110"
-T128,A,Running,1,7,10,4,"T115, T73"
-T129,D,Running,5,3,8,5,"T32, T120, T70, T117"
-T130,A,Not Running,3,3,1,1,"T125, T47"
-T131,A,Not Running,2,4,18,0,"T88, T84, T57, T86, T72"
-T132,D,Running,4,5,3,10,"T55, T120"
-T133,A,Not Running,5,1,4,3,T74
-T134,C,Running,5,4,11,10,T112
-T135,B,Running,2,10,1,3,"T102, T104, T47, T123, T126"
-T136,B,Running,2,5,3,8,"T95, T81, T115"
-T137,A,Not Running,3,10,17,4,
-T138,B,Not Running,1,5,5,3,"T42, T84, T57, T3"
-T139,B,Running,5,4,9,3,"T130, T39, T135, T27"
-T140,D,Running,1,5,7,9,"T111, T38, T87, T50, T26"
-T141,C,Not Running,1,9,7,1,"T12, T4, T45"
-T142,C,Not Running,3,1,15,2,"T13, T123, T119, T26, T11"
-T143,C,Running,3,8,16,5,
-T144,A,Running,4,6,7,3,"T69, T141"
-T145,B,Running,3,10,16,8,"T23, T105, T81, T90, T18"
-T146,D,Running,2,2,3,6,"T132, T17, T126"
-T147,B,Running,3,10,4,2,"T48, T51, T15, T29, T33"
-T148,B,Not Running,3,4,5,7,"T132, T10, T72, T24, T51"
-T149,D,Not Running,5,3,6,6,"T75, T10, T77, T117, T120"
-T150,C,Running,5,7,17,5,T117
-T151,C,Running,2,4,10,5,"T141, T116, T49, T59, T145"
-T152,C,Running,5,5,6,7,"T80, T139"
-T153,C,Not Running,3,5,18,1,"T19, T98, T56, T104"
-T154,D,Not Running,3,3,8,6,"T50, T99, T130, T52, T20"
-T155,B,Not Running,5,8,2,10,"T98, T62, T40, T115, T31"
-T156,A,Running,1,7,1,8,"T4, T87"
-T157,C,Running,5,8,4,6,"T42, T24, T65"
-T158,B,Not Running,4,1,6,9,"T131, T141, T75"
-T159,A,Not Running,3,7,3,1,"T32, T47"
-T160,D,Not Running,2,4,6,8,"T119, T41, T59, T107, T31"
-T161,B,Not Running,3,6,6,5,"T24, T35, T40"
-T162,D,Running,3,4,5,6,"T117, T12, T73, T37"
-T163,C,Not Running,2,5,2,1,"T46, T160, T35, T4"
-T164,C,Running,4,2,18,10,"T100, T27, T8, T84"
-T165,D,Running,3,7,5,5,"T15, T150"
-T166,C,Running,3,2,7,9,"T44, T46, T26"
-T167,C,Running,1,1,6,6,"T103, T118"
-T168,B,Running,2,8,11,2,T55
-T169,A,Not Running,3,10,13,6,T113
-T170,B,Not Running,4,4,5,10,
-T171,B,Running,4,6,10,6,
-T172,B,Not Running,5,5,10,7,T8
-T173,C,Running,1,3,15,6,"T42, T97, T145"
-T174,D,Running,1,7,7,6,
-T175,A,Running,1,5,13,8,"T147, T103"
-T176,B,Running,3,3,3,6,"T35, T124, T133, T129"
-T177,C,Not Running,4,9,9,6,"T153, T40"
-T178,B,Not Running,4,2,10,6,"T83, T114, T54, T75"
-T179,B,Not Running,1,10,14,1,"T121, T60, T122"
-T180,C,Running,5,1,1,3,T7
-T181,A,Not Running,5,4,8,7,"T35, T128, T71"
-T182,C,Running,3,9,3,1,"T169, T92, T161, T88"
-T183,A,Not Running,2,8,4,5,"T36, T121, T92, T60"
-T184,B,Not Running,5,6,16,9,"T63, T58, T29, T113, T177"
-T185,C,Running,5,4,12,1,T64
-T186,C,Not Running,1,9,14,2,
-T187,D,Running,4,4,9,6,T85
-T188,C,Running,1,10,5,7,T62
-T189,C,Not Running,2,1,6,10,"T180, T136"
-T190,B,Not Running,1,7,1,9,"T83, T8, T154, T137"
-T191,A,Not Running,5,1,3,2,T84
-T192,C,Running,3,10,17,7,
-T193,D,Not Running,5,3,1,1,"T116, T21"
-T194,D,Not Running,1,1,6,5,"T53, T167, T158, T6, T95"
-T195,B,Not Running,5,2,6,8,"T125, T187, T5"
-T196,D,Not Running,2,1,3,6,"T8, T167"
-T197,B,Running,2,8,8,5,"T28, T102, T76"
-T198,D,Not Running,3,9,4,8,"T67, T44, T166, T103, T49"
-T199,A,Running,5,7,17,4,T84
-T200,D,Running,4,10,6,4,
-T201,C,Not Running,3,8,14,5,"T113, T189, T148"
-T202,C,Not Running,4,8,15,2,"T62, T193, T7"
-T203,A,Not Running,4,8,20,7,"T94, T12"
-T204,A,Not Running,2,8,3,10,"T48, T61, T22, T140, T68"
-T205,B,Not Running,3,7,16,6,"T143, T110"
-T206,D,Running,2,4,9,5,"T155, T27, T47, T185, T197"
-T207,A,Not Running,3,6,7,8,
-T208,B,Running,4,6,7,10,"T48, T188, T207, T115, T24"
-T209,C,Running,5,8,4,7,"T81, T5, T73, T126"
-T210,D,Running,1,7,7,3,"T72, T86"
-T211,C,Running,3,6,10,0,"T138, T4, T81, T16"
-T212,C,Running,2,2,17,10,"T18, T0, T192"
-T213,A,Running,3,9,7,9,"T99, T77, T184, T89, T4"
-T214,C,Not Running,1,4,11,0,"T180, T8, T91, T133"
-T215,A,Running,4,1,14,9,"T171, T29, T43, T80"
-T216,C,Running,3,7,16,1,"T53, T89, T0"
-T217,B,Not Running,4,5,3,5,
-T218,C,Running,2,5,9,9,T94
-T219,C,Running,5,4,16,7,T131
-T220,B,Running,2,2,11,8,T32
-T221,B,Running,3,3,16,7,T82
-T222,B,Not Running,2,10,8,0,"T157, T2, T97, T72, T26"
-T223,B,Not Running,3,9,4,0,T218
-T224,D,Running,5,1,6,9,"T51, T98"
-T225,C,Not Running,4,5,4,4,"T163, T193, T105, T115, T187"
-T226,A,Not Running,4,4,3,6,"T115, T128, T194, T192"
-T227,A,Running,4,10,1,9,"T10, T171, T30"
-T228,A,Running,1,3,12,9,"T190, T14, T174, T13, T4"
-T229,A,Not Running,1,5,17,8,"T66, T37, T144, T45"
-T230,D,Running,4,9,10,10,"T111, T132"
-T231,A,Running,1,10,3,7,"T214, T146, T117"
-T232,B,Not Running,1,4,5,1,"T29, T42, T148"
-T233,D,Not Running,4,6,1,10,
-T234,D,Not Running,2,3,10,8,T58
-T235,C,Not Running,2,4,2,3,"T231, T159, T106, T22"
-T236,D,Not Running,3,2,1,0,"T117, T225, T203, T124, T158"
-T237,B,Running,2,10,16,8,"T200, T123, T216"
-T238,D,Running,2,8,3,4,
-T239,C,Not Running,5,3,3,1,"T44, T172, T52, T193, T140"
-T240,D,Not Running,5,6,5,3,"T40, T39"
-T241,C,Not Running,5,6,15,10,"T96, T222, T10, T218"
-T242,A,Running,1,8,3,7,T161
-T243,A,Not Running,2,3,14,0,"T55, T14, T109, T195"
-T244,D,Running,3,1,6,10,"T173, T35"
-T245,C,Running,5,2,7,9,"T13, T101, T26, T95, T69"
-T246,D,Running,3,3,7,6,
-T247,C,Running,1,2,1,5,
-T248,C,Not Running,5,8,2,6,"T176, T20, T197, T208"
-T249,A,Not Running,3,3,8,1,"T247, T129"
-T250,B,Not Running,1,6,9,2,T170
-T251,A,Not Running,2,1,4,5,"T148, T29, T244"
-T252,C,Running,1,7,18,3,"T247, T94, T189, T162, T174"
-T253,C,Not Running,1,5,12,0,"T144, T11"
-T254,B,Not Running,3,6,1,1,
-T255,D,Not Running,2,7,7,5,
-T256,A,Not Running,3,2,13,2,"T61, T18"
-T257,C,Not Running,4,7,11,8,
-T258,B,Running,3,4,5,0,
-T259,C,Running,5,4,1,4,"T114, T67, T197, T187, T34"
-T260,C,Not Running,3,9,6,2,"T180, T134, T198"
-T261,D,Running,3,10,5,5,T252
-T262,B,Running,2,3,14,3,"T116, T7"
-T263,C,Not Running,4,7,7,6,"T201, T114"
-T264,A,Not Running,2,8,13,8,"T159, T210"
-T265,A,Running,5,9,1,9,"T169, T226"
-T266,B,Not Running,1,7,14,3,"T182, T91, T193, T76"
-T267,C,Not Running,3,10,14,5,
-T268,A,Running,3,1,8,3,
-T269,A,Running,1,9,9,10,T255
-T270,C,Running,3,8,10,4,"T139, T95, T131, T33, T171"
-T271,D,Not Running,2,4,1,6,"T228, T155, T265"
-T272,A,Running,5,6,20,9,T152
-T273,C,Not Running,1,9,7,2,"T247, T189, T17, T240"
-T274,D,Not Running,5,2,3,2,T254
-T275,C,Running,1,8,9,0,"T179, T141, T103"
-T276,D,Not Running,2,1,6,10,T173
-T277,A,Not Running,4,4,6,4,"T265, T253, T4"
-T278,B,Running,2,1,16,4,"T18, T55, T212"
-T279,A,Running,5,1,21,1,
-T280,D,Not Running,3,6,6,1,T23
-T281,B,Running,3,2,6,4,
-T282,B,Not Running,1,8,5,9,"T155, T160, T39, T209"
-T283,B,Not Running,5,7,12,5,
-T284,C,Not Running,4,2,8,9,"T166, T102, T242, T180, T189"
-T285,A,Running,4,1,22,5,"T239, T71, T108, T138"
-T286,D,Not Running,3,3,2,10,"T91, T95, T42, T195, T222"
-T287,A,Not Running,4,8,3,4,
-T288,D,Not Running,4,8,3,5,"T234, T31, T110, T6"
-T289,C,Running,2,1,7,7,"T190, T123"
-T290,A,Not Running,2,6,19,2,
-T291,A,Not Running,4,4,14,10,"T218, T175"
-T292,D,Not Running,2,5,1,10,"T191, T257"
-T293,D,Not Running,1,10,6,2,"T108, T155"
-T294,B,Not Running,3,1,3,10,"T161, T181, T118, T130"
-T295,B,Not Running,5,9,5,7,"T270, T81"
-T296,A,Not Running,1,4,3,3,
-T297,C,Not Running,3,3,8,6,"T171, T254, T19"
-T298,C,Not Running,5,1,10,5,T285
-T299,D,Running,5,5,1,6,"T156, T142, T197, T193, T41"
-T300,C,Not Running,4,2,1,0,"T158, T274, T136, T153"
-T301,C,Running,3,2,14,10,"T177, T219, T144, T10, T28"
-T302,A,Not Running,3,6,10,8,T52
-T303,C,Running,4,7,4,0,T216
-T304,D,Running,2,3,1,2,
-T305,B,Not Running,1,8,3,1,"T213, T244, T302, T180"
-T306,B,Not Running,5,4,16,10,"T198, T164, T227, T114"
-T307,A,Not Running,5,6,2,6,"T250, T289, T162, T10"
-T308,C,Running,5,9,7,10,"T110, T165, T99, T19"
-T309,A,Running,5,7,2,6,"T10, T162"
-T310,B,Not Running,4,1,8,2,"T131, T187, T11, T154, T196"
-T311,B,Running,2,1,15,10,"T306, T152, T303, T149, T187"
-T312,B,Not Running,5,3,12,4,"T4, T100, T21"
-T313,C,Running,3,1,18,5,"T269, T172, T124, T310, T60"
-T314,A,Running,4,10,14,8,"T1, T153, T137"
-T315,A,Not Running,3,8,1,5,"T257, T309, T9, T304, T69"
-T316,B,Running,1,4,14,2,"T232, T293, T260"
-T317,D,Running,2,1,7,2,"T216, T153"
-T318,B,Not Running,5,8,15,0,"T90, T109"
-T319,C,Not Running,5,10,8,6,"T299, T219, T218"
-T320,B,Running,2,7,16,2,"T283, T116"
-T321,B,Not Running,5,2,8,10,T115
-T322,B,Not Running,1,7,12,9,"T108, T266, T149"
-T323,D,Not Running,5,4,6,3,
-T324,D,Running,5,6,4,9,"T168, T290"
-T325,B,Running,3,10,8,7,"T31, T94, T246, T271"
-T326,C,Running,1,2,7,6,"T78, T214, T131"
-T327,A,Not Running,5,5,2,7,"T308, T109, T312, T161, T324"
-T328,C,Running,1,10,13,3,"T43, T322, T306"
-T329,B,Not Running,1,6,2,7,"T35, T101, T223"
-T330,C,Running,1,7,13,4,T17
-T331,B,Running,5,3,16,8,"T24, T316, T23, T11, T266"
-T332,B,Not Running,1,1,15,8,T209
-T333,B,Running,4,9,16,3,"T273, T209, T309"
-T334,C,Running,5,7,3,5,"T20, T195"
-T335,B,Not Running,5,5,14,9,"T261, T319, T196, T1, T153"
-T336,D,Not Running,2,9,4,1,"T278, T156"
-T337,A,Not Running,5,9,17,9,"T314, T250, T272"
-T338,D,Not Running,5,3,3,0,"T310, T65, T90"
-T339,A,Not Running,2,3,19,3,"T73, T155"
-T340,B,Running,2,5,10,0,T49
-T341,B,Not Running,3,3,2,0,T136
-T342,C,Not Running,1,3,4,3,"T323, T194, T115, T67"
-T343,D,Not Running,4,1,3,9,"T86, T36"
-T344,A,Not Running,3,10,2,3,
-T345,C,Running,5,10,15,10,T343
-T346,A,Running,3,10,13,8,
-T347,D,Not Running,3,6,4,9,
-T348,B,Running,1,2,12,5,"T171, T190"
-T349,D,Running,1,7,7,6,"T41, T107, T206"
-T350,D,Running,5,10,1,4,
-T351,D,Running,2,6,10,6,
-T352,C,Running,5,2,8,5,"T298, T262, T217, T79"
-T353,A,Running,2,10,15,3,"T202, T235, T21, T310"
-T354,B,Not Running,2,8,11,1,"T174, T223"
-T355,B,Running,2,2,14,0,"T9, T352"
-T356,C,Running,4,1,11,8,"T147, T101"
-T357,D,Not Running,5,10,3,5,"T247, T66"
-T358,C,Running,5,5,5,1,"T98, T20, T126"
-T359,C,Running,5,8,17,9,
-T360,D,Not Running,3,7,4,4,T172
-T361,A,Running,1,5,22,8,"T100, T200, T122, T247, T205"
-T362,B,Not Running,1,10,13,8,"T290, T284, T30, T173"
-T363,C,Not Running,3,8,16,6,"T44, T138, T105, T334"
-T364,B,Running,3,6,12,8,"T81, T127, T356, T216, T327"
-T365,B,Not Running,4,1,8,4,"T116, T171, T30, T214, T282"
-T366,B,Running,1,5,15,1,"T178, T360, T160, T228, T140"
-T367,C,Not Running,3,10,5,6,T11
-T368,C,Running,4,8,3,9,T158
-T369,A,Running,4,1,1,2,
-T370,C,Running,3,10,9,4,
-T371,A,Not Running,5,4,2,1,"T79, T168"
-T372,A,Running,4,10,3,6,
-T373,B,Not Running,4,1,16,4,
-T374,D,Not Running,5,9,10,9,"T179, T97, T195"
-T375,D,Not Running,4,2,3,10,T297
-T376,C,Not Running,5,3,18,2,"T300, T277, T371"
-T377,D,Running,4,8,3,2,"T227, T282, T123, T203"
-T378,C,Running,1,3,4,3,"T49, T88, T35"
-T379,D,Not Running,4,8,10,8,T281
-T380,A,Not Running,1,7,2,4,T91
-T381,A,Not Running,2,6,17,2,"T379, T299, T107, T13"
-T382,C,Running,5,5,14,1,"T5, T345, T49, T263, T308"
-T383,D,Not Running,4,6,4,7,"T329, T185"
-T384,C,Not Running,1,7,13,9,"T85, T283, T307, T123, T97"
-T385,B,Not Running,4,8,9,4,"T213, T123, T187"
-T386,D,Not Running,2,8,1,2,"T361, T177, T101"
-T387,C,Not Running,3,6,3,3,T382
-T388,D,Not Running,1,5,3,4,
-T389,C,Running,1,9,15,8,"T25, T362, T147, T150, T173"
-T390,C,Not Running,2,8,16,6,"T328, T112"
-T391,C,Running,2,9,3,1,"T9, T329, T364"
-T392,A,Not Running,5,7,11,9,"T116, T232, T334"
-T393,C,Running,3,8,2,10,"T143, T150, T304"
-T394,B,Running,4,1,12,10,"T120, T387, T346, T13, T97"
-T395,A,Not Running,2,8,1,8,"T245, T89, T201, T227"
-T396,A,Running,2,8,14,9,
-T397,A,Running,5,5,6,2,"T232, T159"
-T398,A,Not Running,3,2,22,6,"T38, T219, T100"
-T399,B,Not Running,1,2,7,2,T224
-T400,A,Not Running,1,8,10,6,"T373, T321, T81, T354"
-T401,D,Not Running,1,3,8,10,"T55, T371"
-T402,D,Not Running,1,8,8,5,"T324, T330"
-T403,A,Running,4,1,2,4,"T7, T53, T100, T56, T72"
-T404,B,Not Running,2,4,15,1,"T40, T110, T101, T196"
-T405,C,Not Running,1,9,12,6,"T300, T162, T64"
-T406,C,Not Running,3,5,11,5,"T385, T300, T133, T377, T203"
-T407,A,Running,4,2,17,10,"T289, T55, T41, T150, T339"
-T408,B,Running,5,3,10,1,"T78, T224, T87, T327, T274"
-T409,C,Running,1,1,1,9,"T331, T47"
-T410,D,Running,3,8,9,2,"T264, T306, T41"
-T411,A,Running,3,10,18,3,"T378, T104, T346, T357, T29"
-T412,C,Running,1,10,13,1,"T196, T348, T364"
-T413,C,Running,4,8,13,4,"T349, T276, T178"
-T414,D,Running,2,4,5,1,T237
-T415,A,Running,3,10,20,1,"T88, T116, T92, T234, T89"
-T416,C,Not Running,3,7,17,8,"T220, T72, T149, T316, T140"
-T417,D,Running,1,1,4,2,"T377, T373, T269"
-T418,C,Running,3,10,11,5,
-T419,D,Not Running,4,6,2,3,"T198, T389"
-T420,B,Running,1,4,6,7,"T393, T322, T304, T211"
-T421,C,Not Running,4,6,3,10,"T218, T162"
-T422,B,Running,3,4,6,6,"T261, T408, T347, T411, T155"
-T423,A,Running,2,4,18,6,"T123, T35, T165, T138"
-T424,B,Not Running,4,7,11,3,"T378, T136"
-T425,C,Running,3,3,13,6,
-T426,B,Not Running,2,4,16,1,T228
-T427,B,Running,3,7,12,3,"T237, T279, T111, T142, T13"
-T428,C,Running,4,9,9,4,
-T429,D,Running,1,7,9,1,"T390, T13, T346, T272"
-T430,B,Running,5,6,1,9,"T237, T253, T293, T223, T7"
-T431,D,Running,5,5,8,0,"T429, T234, T121, T77"
-T432,C,Not Running,5,9,10,9,"T343, T152, T428, T33"
-T433,A,Running,3,5,22,7,"T64, T269, T432, T364"
-T434,B,Not Running,3,1,4,2,T143
-T435,C,Not Running,1,3,3,9,T398
-T436,C,Running,1,4,12,3,
-T437,C,Running,2,2,18,2,T303
-T438,C,Not Running,4,4,8,4,"T198, T181, T139, T53, T146"
-T439,B,Not Running,2,3,11,9,"T333, T231, T181, T93, T58"
-T440,D,Not Running,2,6,6,10,"T67, T305, T342, T371"
-T441,B,Not Running,2,4,12,2,"T430, T433, T322, T283"
-T442,A,Not Running,3,5,16,4,T2
-T443,B,Not Running,1,9,16,8,T30
-T444,B,Running,4,1,9,1,
-T445,D,Not Running,4,10,5,2,"T435, T316, T193, T271, T185"
-T446,C,Not Running,1,6,15,10,"T94, T247, T398"
-T447,C,Running,5,9,12,3,"T10, T341, T263, T312"
-T448,D,Not Running,2,1,3,5,"T7, T425, T182, T305, T159"
-T449,D,Running,2,2,3,0,T23
-T450,B,Not Running,5,8,13,9,T323
-T451,C,Running,3,7,6,1,T372
-T452,D,Running,2,7,2,4,"T443, T156, T237"
-T453,A,Not Running,5,3,5,3,"T400, T9, T311, T5"
-T454,D,Not Running,1,6,8,8,"T15, T371, T338"
-T455,B,Not Running,5,3,5,0,
-T456,D,Not Running,4,9,6,8,"T362, T48, T3, T170"
-T457,C,Not Running,5,8,14,5,"T84, T455, T110, T259, T294"
-T458,B,Running,2,10,1,6,"T163, T76, T107, T262, T424"
-T459,A,Running,4,2,15,0,"T24, T422, T444, T450, T166"
-T460,D,Not Running,3,7,1,10,"T121, T242"
-T461,C,Running,2,8,17,0,"T317, T322, T256"
-T462,B,Not Running,5,2,1,2,"T259, T37"
-T463,A,Running,2,1,8,3,"T251, T379, T105"
-T464,B,Not Running,5,4,3,1,T131
-T465,B,Running,5,4,15,2,"T118, T352"
-T466,A,Running,1,8,19,8,"T35, T0, T390, T72, T177"
-T467,C,Not Running,2,10,10,0,"T110, T153"
-T468,A,Not Running,1,3,18,10,"T41, T374, T335, T312, T252"
-T469,C,Not Running,2,4,6,9,"T446, T432, T208"
-T470,D,Running,1,7,8,6,"T93, T267, T394, T26"
-T471,A,Running,4,3,18,9,"T93, T212, T104, T155, T465"
-T472,C,Running,5,8,12,3,"T465, T340, T367"
-T473,D,Running,5,5,8,1,"T129, T248, T365"
-T474,A,Not Running,3,1,10,9,
-T475,B,Not Running,1,2,2,0,"T263, T25, T440, T108"
-T476,B,Running,1,2,10,7,"T387, T165"
-T477,C,Not Running,1,9,14,4,"T363, T60, T63, T417, T160"
-T478,B,Running,2,9,4,5,"T75, T354"
-T479,C,Running,2,5,4,4,
-T480,D,Running,1,2,7,10,"T193, T86"
-T481,D,Not Running,4,1,10,10,"T118, T8, T80, T442, T445"
-T482,A,Not Running,2,9,19,7,"T31, T83"
-T483,B,Not Running,5,8,13,3,"T21, T348, T395, T148"
-T484,A,Running,5,2,1,10,"T214, T445, T337, T18"
-T485,A,Running,5,10,9,10,T223
-T486,D,Running,5,3,2,6,T261
-T487,C,Running,5,7,11,7,T212
-T488,D,Not Running,4,8,1,4,T368
-T489,A,Running,5,4,4,3,"T232, T255, T390, T481"
-T490,C,Not Running,2,5,9,10,"T474, T15, T86, T150"
-T491,B,Running,2,4,8,3,T215
-T492,B,Not Running,2,5,3,8,"T10, T355, T303, T13"
-T493,C,Running,2,9,15,9,T20
-T494,A,Running,4,7,9,3,"T133, T387"
-T495,D,Running,1,4,10,0,"T95, T250, T487"
-T496,D,Not Running,5,6,2,4,
-T497,C,Not Running,4,2,3,9,"T161, T209, T54, T470"
-T498,D,Not Running,5,10,5,10,"T421, T56, T183, T57"
-T499,A,Not Running,3,2,10,5,"T413, T460"
-T500,D,Running,1,2,3,0,"T204, T257"
-T501,C,Running,1,7,15,1,T318
-T502,C,Not Running,1,1,9,3,"T222, T154, T242, T405, T35"
-T503,D,Not Running,5,6,7,10,"T466, T50"
-T504,C,Not Running,4,9,14,10,T437
-T505,C,Not Running,5,6,16,2,
-T506,A,Running,4,5,6,6,"T261, T228, T106, T345, T363"
-T507,B,Not Running,5,10,9,9,"T331, T23, T482, T76, T427"
-T508,D,Running,4,3,2,9,T97
-T509,A,Not Running,2,8,19,9,"T281, T146, T75"
-T510,A,Running,3,1,19,3,
-T511,C,Running,2,9,16,1,T310
-T512,B,Running,2,9,13,3,
-T513,D,Running,3,8,9,6,
-T514,C,Running,2,1,5,3,"T401, T340, T316"
-T515,D,Not Running,3,6,6,8,T326
-T516,B,Running,3,3,6,3,T308
-T517,B,Not Running,1,2,16,1,
-T518,D,Running,4,6,1,8,T517
-T519,A,Running,2,7,10,0,
-T520,D,Running,1,5,7,1,"T60, T99"
-T521,A,Running,3,1,21,10,T51
-T522,C,Running,1,4,5,2,T465
-T523,D,Not Running,1,7,3,6,"T449, T32, T224, T313, T272"
-T524,A,Not Running,4,2,9,10,"T387, T366"
-T525,D,Running,1,2,8,1,
-T526,A,Not Running,2,9,8,2,"T508, T352, T13"
-T527,A,Not Running,4,1,7,5,"T83, T0, T38, T516, T425"
-T528,C,Not Running,2,2,1,7,"T60, T37, T45, T40, T307"
-T529,A,Running,2,1,11,6,T469
-T530,D,Running,3,7,8,9,
-T531,D,Running,5,2,2,9,T503
-T532,D,Running,1,5,3,9,"T149, T60, T259, T130"
-T533,A,Not Running,5,5,1,3,"T502, T496, T17, T454"
-T534,B,Not Running,1,8,4,7,"T231, T485"
-T535,A,Not Running,1,5,9,5,T104
-T536,A,Running,5,3,7,3,"T213, T11"
-T537,A,Not Running,4,6,18,1,T128
-T538,D,Not Running,4,3,4,6,
-T539,A,Running,3,8,21,5,T266
-T540,A,Not Running,3,8,9,7,T413
-T541,A,Running,5,1,8,5,"T36, T2, T232, T370, T496"
-T542,D,Not Running,1,10,4,6,"T406, T48, T150, T411"
-T543,D,Running,5,4,10,2,
-T544,D,Running,5,10,1,2,
-T545,B,Not Running,2,3,4,5,"T447, T528, T91, T72, T292"
-T546,D,Running,4,10,9,8,"T374, T202, T20, T503"
-T547,D,Running,2,3,10,0,"T144, T460"
-T548,A,Not Running,1,9,9,8,T158
-T549,B,Not Running,3,4,1,10,T142
-T550,D,Not Running,2,1,4,4,"T182, T526, T19"
-T551,A,Running,1,5,20,0,"T143, T12, T252"
-T552,B,Running,3,1,10,5,
-T553,D,Not Running,1,4,4,2,"T484, T378, T278"
-T554,B,Not Running,2,2,14,6,
-T555,A,Running,2,2,21,8,"T530, T394"
-T556,B,Running,2,6,5,7,"T177, T88, T143, T89, T56"
-T557,C,Not Running,4,9,2,5,"T75, T150, T232, T10, T384"
-T558,D,Running,2,5,4,8,"T54, T29"
-T559,C,Not Running,5,6,4,1,"T268, T5"
-T560,B,Running,4,10,10,3,"T353, T273"
-T561,D,Not Running,4,5,10,4,T158
-T562,D,Not Running,5,1,8,10,"T262, T53"
-T563,B,Not Running,5,8,1,10,"T335, T405, T265, T550"
-T564,A,Running,4,1,9,7,"T244, T38, T274, T40"
-T565,C,Running,3,10,8,7,"T416, T382"
-T566,D,Not Running,1,6,2,1,"T293, T306, T393, T28, T162"
-T567,A,Not Running,4,8,5,6,
-T568,B,Not Running,3,5,16,5,T387
-T569,A,Not Running,4,1,11,8,
-T570,C,Running,4,4,8,8,
-T571,D,Running,4,5,8,9,"T27, T374, T188"
-T572,A,Not Running,5,5,9,4,"T140, T534, T567, T166"
-T573,A,Not Running,1,6,2,0,"T83, T531, T256, T6"
-T574,D,Running,4,4,4,10,
-T575,B,Running,1,7,13,3,"T186, T76, T510, T172, T0"
-T576,A,Not Running,5,5,18,2,"T481, T451"
-T577,C,Running,1,8,3,4,"T309, T142, T127"
-T578,B,Not Running,1,3,11,3,"T244, T26, T111, T257, T209"
-T579,C,Not Running,3,8,5,7,"T204, T380, T396, T165"
-T580,C,Not Running,3,3,7,4,"T292, T175"
-T581,B,Running,4,2,10,2,"T358, T189, T1"
-T582,C,Not Running,5,10,11,8,
-T583,A,Running,4,3,11,10,"T486, T489"
-T584,C,Not Running,5,5,14,2,"T261, T555"
-T585,C,Not Running,4,5,5,1,"T58, T170, T535"
-T586,D,Running,5,6,6,5,
-T587,A,Not Running,3,7,17,4,T541
-T588,D,Not Running,5,9,6,6,"T81, T457, T433, T578"
-T589,C,Running,4,10,4,4,T35
-T590,C,Running,4,7,18,5,"T302, T584, T114, T335, T548"
-T591,B,Not Running,5,1,1,7,"T162, T584, T446"
-T592,C,Not Running,2,2,2,1,
-T593,C,Running,2,6,10,5,T145
-T594,C,Not Running,1,9,2,3,"T470, T430, T234"
-T595,A,Running,3,4,14,9,
-T596,B,Not Running,3,6,6,8,"T354, T485, T464"
-T597,D,Not Running,5,8,10,5,"T139, T573, T105"
-T598,C,Running,4,1,10,8,"T436, T285, T34"
-T599,B,Not Running,1,9,4,1,"T187, T418, T254"
-T600,A,Not Running,4,8,20,2,
-T601,C,Not Running,1,1,9,0,
-T602,A,Running,1,5,4,7,"T554, T56, T528, T288"
-T603,B,Not Running,3,10,11,0,T129
-T604,B,Not Running,3,5,12,2,"T341, T469, T519"
-T605,A,Running,2,4,5,6,
-T606,A,Running,4,6,9,3,T577
-T607,B,Running,5,5,5,8,"T326, T451, T14"
-T608,C,Not Running,2,8,18,10,"T177, T550, T138, T307"
-T609,D,Running,3,8,2,0,"T323, T510, T511"
-T610,A,Not Running,1,10,16,1,"T131, T178, T87, T498"
-T611,A,Running,4,5,2,0,"T27, T529, T437, T436"
-T612,C,Not Running,4,7,9,4,"T411, T280, T101, T253, T381"
-T613,C,Not Running,4,4,16,8,T577
-T614,D,Running,1,7,5,1,"T538, T340"
-T615,D,Running,2,2,7,8,"T250, T587, T475, T216, T437"
-T616,C,Not Running,5,9,13,2,
-T617,D,Not Running,5,7,1,2,T160
-T618,B,Not Running,1,3,2,3,"T296, T123, T373, T378"
-T619,C,Not Running,2,9,18,6,T349
-T620,A,Not Running,5,1,9,0,"T127, T451, T426, T364"
-T621,C,Running,5,9,9,5,"T150, T169, T460"
-T622,D,Not Running,5,8,3,10,"T56, T225, T577, T140"
-T623,B,Running,1,8,5,1,
-T624,C,Running,3,3,16,2,"T479, T80"
-T625,C,Running,3,9,16,6,
-T626,C,Running,5,9,9,8,"T6, T76, T152, T585"
-T627,D,Running,5,3,9,4,T564
-T628,B,Running,4,10,4,5,"T257, T46, T23, T317, T104"
-T629,A,Not Running,3,3,10,0,"T101, T289"
-T630,B,Not Running,3,5,5,0,
-T631,A,Not Running,3,5,19,10,
-T632,A,Running,2,2,2,1,"T183, T34, T506"
-T633,C,Not Running,4,10,10,1,"T392, T121, T290"
-T634,B,Not Running,4,1,8,8,"T526, T123, T307, T499"
-T635,B,Not Running,2,9,16,10,T8
-T636,C,Not Running,2,7,10,3,"T58, T127, T626, T426"
-T637,C,Not Running,5,1,2,1,T342
-T638,B,Not Running,2,4,4,4,"T599, T524, T529"
-T639,C,Running,2,1,9,8,
-T640,C,Not Running,3,4,7,9,T351
-T641,C,Running,3,6,8,9,"T46, T190, T620, T78, T558"
-T642,A,Running,4,2,18,1,"T549, T164, T374, T412"
-T643,B,Running,1,1,16,2,T431
-T644,B,Running,2,2,15,3,"T67, T361, T392"
-T645,C,Running,4,3,5,9,"T447, T213, T548, T420"
-T646,B,Not Running,3,8,8,5,"T59, T168, T88, T111"
-T647,B,Running,4,8,10,2,"T273, T101"
-T648,D,Running,2,10,1,10,
-T649,D,Not Running,3,4,7,2,T137
-T650,B,Running,2,7,1,7,"T462, T297"
-T651,C,Not Running,2,4,15,6,"T574, T601, T422, T21"
-T652,B,Not Running,4,2,4,8,"T37, T373, T232"
-T653,A,Not Running,2,9,18,2,"T48, T68, T355, T242, T598"
-T654,D,Running,5,6,8,4,"T79, T625"
-T655,A,Running,1,10,19,8,T501
-T656,A,Running,2,8,3,4,"T582, T320, T331"
-T657,C,Not Running,1,1,6,4,"T69, T273, T5, T134, T121"
-T658,B,Running,1,5,3,1,"T210, T457"
-T659,D,Running,1,5,8,7,"T194, T148, T157, T529, T599"
-T660,D,Running,4,6,2,0,
-T661,C,Not Running,3,4,3,8,T132
-T662,C,Not Running,5,2,4,1,
-T663,D,Running,2,7,7,7,"T294, T308"
-T664,C,Not Running,1,10,5,10,"T244, T630, T634, T405, T276"
-T665,B,Running,1,6,13,0,"T127, T206, T488, T195"
-T666,A,Not Running,4,9,10,0,"T283, T514, T633"
-T667,B,Not Running,4,2,14,9,"T210, T260, T383"
-T668,C,Running,3,7,16,7,"T471, T609"
-T669,D,Not Running,2,2,10,3,"T609, T30"
-T670,D,Not Running,4,7,3,6,"T622, T103, T97"
-T671,B,Not Running,5,5,9,9,"T134, T126, T361, T304"
-T672,B,Not Running,3,7,12,4,"T444, T495"
-T673,D,Running,4,7,4,6,T232
-T674,B,Running,5,7,13,0,T30
-T675,C,Running,1,2,8,0,"T650, T265"
-T676,B,Running,2,5,14,6,
-T677,D,Not Running,3,7,2,5,"T633, T493, T530, T478"
-T678,D,Not Running,5,7,6,1,T40
-T679,C,Not Running,4,3,4,9,T405
-T680,D,Running,1,4,7,5,
-T681,B,Not Running,4,3,8,1,"T14, T651, T530, T91, T413"
-T682,A,Running,1,6,20,9,"T30, T515, T121, T176"
-T683,C,Running,2,5,4,7,"T11, T535, T141, T286, T510"
-T684,A,Not Running,5,7,4,9,"T249, T226, T29"
-T685,C,Running,5,1,1,2,T626
-T686,B,Not Running,3,9,11,7,"T85, T448, T560"
-T687,A,Running,2,9,15,7,
-T688,C,Running,3,6,8,10,
-T689,D,Running,4,7,9,8,"T209, T183, T275"
-T690,D,Running,1,8,5,1,"T321, T443, T601, T107"
-T691,C,Not Running,1,5,8,5,T320
-T692,B,Running,3,7,9,10,"T97, T627, T157, T383, T147"
-T693,A,Running,1,1,8,1,T390
-T694,B,Running,3,8,8,6,T518
-T695,B,Not Running,3,8,13,10,"T165, T587"
-T696,D,Running,3,8,8,5,"T480, T235, T546"
-T697,B,Running,1,4,9,4,"T214, T129, T234"
-T698,D,Not Running,5,3,3,4,"T566, T154"
-T699,A,Not Running,5,7,6,4,T681
-T700,C,Not Running,2,1,4,5,
-T701,D,Not Running,1,6,2,4,"T518, T346, T179"
-T702,A,Not Running,4,1,18,10,"T529, T312"
-T703,A,Not Running,3,7,13,6,"T318, T370"
-T704,B,Running,1,4,14,1,"T107, T676, T406, T22, T101"
-T705,D,Not Running,1,3,8,6,"T236, T457, T335"
-T706,B,Running,2,5,1,5,
-T707,B,Not Running,4,10,2,7,"T639, T56, T479, T288"
-T708,A,Not Running,4,9,1,4,T298
-T709,B,Not Running,4,6,10,2,
-T710,D,Running,5,7,6,3,
-T711,B,Not Running,1,2,1,5,
-T712,D,Running,3,3,2,7,
-T713,C,Not Running,2,6,10,2,
-T714,C,Not Running,2,2,15,3,
-T715,C,Running,4,8,18,1,T162
-T716,D,Running,2,9,2,3,"T472, T383, T372, T51, T116"
-T717,C,Running,2,1,3,7,"T126, T364, T569"
-T718,B,Running,5,3,3,7,
-T719,C,Running,2,6,5,6,"T118, T604, T30, T192"
-T720,A,Not Running,3,5,19,8,T248
-T721,A,Running,3,5,15,8,
-T722,C,Not Running,3,6,8,0,"T539, T78, T696, T460"
-T723,A,Not Running,4,1,3,1,"T60, T582"
-T724,A,Running,1,9,4,3,"T21, T214, T626"
-T725,C,Running,3,8,9,1,
-T726,B,Not Running,4,10,3,1,"T369, T439, T548, T321"
-T727,C,Not Running,4,1,17,3,
-T728,A,Running,1,8,19,10,"T203, T674, T381, T288"
-T729,A,Running,4,6,18,4,"T650, T382, T369, T304"
-T730,A,Running,4,4,1,8,"T352, T15, T316"
-T731,C,Not Running,3,7,1,10,
-T732,A,Not Running,3,4,10,2,T223
-T733,D,Not Running,4,5,6,0,"T410, T669, T296"
-T734,D,Running,4,5,7,7,T458
-T735,B,Not Running,3,1,7,8,
-T736,C,Running,4,9,17,9,"T200, T476, T428, T419, T4"
-T737,B,Not Running,5,7,5,5,"T126, T164, T360, T673, T141"
-T738,A,Running,2,3,5,8,"T426, T339, T504, T462"
-T739,A,Not Running,3,2,15,10,T732
-T740,D,Not Running,2,4,3,8,"T356, T249, T334, T34, T526"
-T741,D,Not Running,1,10,10,9,"T62, T16, T27"
-T742,D,Running,1,5,2,3,T324
-T743,A,Not Running,4,9,2,7,"T703, T4"
-T744,C,Running,2,8,7,0,"T118, T339, T408"
-T745,C,Running,2,4,5,1,
-T746,B,Not Running,2,7,8,3,"T540, T507"
-T747,A,Running,5,9,6,10,T264
-T748,D,Not Running,1,6,1,9,"T408, T300, T243, T600"
-T749,C,Running,3,3,6,8,"T147, T459"
-T750,B,Running,5,7,16,3,T393
-T751,B,Running,1,3,14,6,T497
-T752,C,Running,5,9,8,9,"T100, T418, T578, T15"
-T753,B,Running,4,3,1,1,"T386, T437, T547, T130"
-T754,A,Running,5,2,18,9,"T358, T200"
-T755,D,Running,3,3,7,0,"T151, T367"
-T756,A,Not Running,3,4,16,5,T287
-T757,C,Running,1,10,14,4,
-T758,C,Running,3,4,10,6,"T650, T682, T756"
-T759,D,Running,5,6,1,1,"T338, T197, T650"
-T760,D,Running,4,6,3,6,T673
-T761,C,Not Running,4,1,12,4,"T527, T62, T423, T494"
-T762,D,Running,3,4,2,7,"T702, T147"
-T763,D,Not Running,2,2,10,6,"T298, T391, T507, T615, T229"
-T764,C,Running,3,4,16,5,"T413, T243, T383, T720, T660"
-T765,B,Not Running,2,5,13,4,T379
-T766,A,Running,2,3,7,1,
-T767,B,Running,3,6,5,1,"T624, T255, T699, T278"
-T768,C,Not Running,4,2,14,8,"T682, T476, T46, T326"
-T769,A,Running,3,3,13,4,T170
-T770,D,Running,1,5,10,7,
-T771,A,Not Running,4,6,15,10,"T143, T162, T499, T640, T732"
-T772,B,Running,1,6,9,6,
-T773,D,Not Running,2,1,2,0,"T170, T377, T249, T650, T87"
-T774,D,Running,4,3,7,9,"T758, T725, T636, T411"
-T775,D,Running,2,6,2,5,
-T776,D,Running,1,4,1,10,"T284, T182"
-T777,B,Running,1,9,6,10,
-T778,A,Running,1,6,2,2,"T257, T191, T437, T525"
-T779,C,Running,2,8,1,9,"T602, T726"
-T780,D,Running,3,5,4,1,
-T781,D,Running,4,3,2,4,"T2, T719"
-T782,D,Running,1,2,5,9,"T101, T437, T30, T107, T96"
-T783,D,Running,3,3,10,1,
-T784,D,Not Running,4,5,1,2,"T764, T206, T381"
-T785,D,Running,3,9,3,8,"T357, T441, T128, T446"
-T786,C,Running,1,1,17,9,"T364, T181, T40"
-T787,B,Not Running,2,1,3,6,"T297, T502, T492"
-T788,B,Not Running,1,6,7,6,"T115, T433"
-T789,C,Running,2,6,3,7,"T465, T542, T697, T70"
-T790,A,Not Running,1,5,14,6,"T350, T500, T496"
-T791,A,Running,3,6,10,9,"T68, T216, T388, T610"
-T792,D,Not Running,1,3,3,2,"T445, T415"
-T793,C,Not Running,1,3,10,6,"T567, T568, T33, T224, T400"
-T794,A,Running,3,6,10,2,
-T795,C,Not Running,4,9,6,7,"T737, T321, T357, T573, T533"
-T796,B,Not Running,4,7,1,5,"T296, T152"
-T797,D,Not Running,1,1,5,4,"T471, T691"
-T798,B,Running,1,6,10,0,"T642, T747"
-T799,D,Running,4,10,6,6,"T293, T429, T741, T410"
-T800,A,Running,1,6,9,4,"T268, T662, T591"
-T801,A,Not Running,3,9,5,6,"T423, T512, T545, T65, T122"
-T802,B,Not Running,4,3,12,6,"T176, T419"
-T803,C,Running,1,3,10,9,"T386, T281, T746"
-T804,B,Running,3,5,7,4,"T689, T383, T715"
-T805,A,Running,4,1,13,9,"T277, T411"
-T806,C,Running,4,1,1,4,"T636, T417, T657"
-T807,D,Running,1,10,8,1,T308
-T808,A,Running,1,10,8,4,"T242, T57"
-T809,C,Not Running,5,10,1,2,
-T810,C,Not Running,1,5,17,6,"T366, T52, T604, T322, T228"
-T811,D,Not Running,1,2,1,3,"T63, T281"
-T812,B,Not Running,4,5,5,3,T620
-T813,D,Running,3,1,7,0,"T533, T603"
-T814,B,Not Running,3,7,8,10,"T305, T761, T676"
-T815,C,Running,1,1,11,10,"T325, T698"
-T816,A,Not Running,1,6,9,7,"T126, T43, T444, T421, T473"
-T817,C,Running,1,8,1,3,"T206, T46, T364, T82"
-T818,C,Running,2,8,17,5,"T213, T600"
-T819,C,Not Running,3,2,1,0,
-T820,D,Not Running,3,4,7,4,"T45, T693, T48"
-T821,D,Running,1,2,8,0,"T53, T750"
-T822,A,Running,1,6,13,5,
-T823,A,Not Running,3,10,3,1,"T186, T155, T101, T709, T779"
-T824,C,Running,2,5,8,9,T684
-T825,A,Running,4,8,4,10,"T552, T215, T487"
-T826,C,Not Running,1,8,13,1,
-T827,B,Running,5,9,15,8,"T786, T16"
-T828,B,Running,5,2,1,6,"T655, T569"
-T829,B,Running,1,1,6,2,
-T830,C,Not Running,1,10,17,1,"T472, T393"
-T831,A,Running,5,3,13,0,"T714, T149, T723, T432"
-T832,D,Running,1,4,5,10,"T724, T67"
-T833,A,Not Running,3,7,6,1,"T424, T500, T295, T735, T323"
-T834,D,Running,4,3,3,3,T277
-T835,B,Running,1,9,9,10,"T14, T391, T29"
-T836,A,Not Running,3,6,8,3,"T591, T640, T379, T205"
-T837,D,Running,2,1,6,0,"T334, T115"
-T838,C,Not Running,5,7,5,10,T235
-T839,D,Running,2,3,7,10,T348
-T840,B,Not Running,1,3,6,7,"T643, T119, T605"
-T841,A,Not Running,2,8,12,8,
-T842,B,Not Running,5,9,12,1,"T440, T731"
-T843,D,Running,2,6,9,9,T615
-T844,C,Running,1,6,13,0,"T503, T147, T387"
-T845,A,Not Running,1,1,11,1,"T238, T134, T541, T672"
-T846,A,Running,1,4,8,10,"T245, T212, T806, T367, T824"
-T847,D,Not Running,2,4,10,6,"T575, T515, T675, T392, T647"
-T848,D,Not Running,2,3,4,3,"T483, T348"
-T849,C,Running,5,8,2,5,
-T850,C,Running,4,6,11,10,"T52, T232, T400, T370, T480"
-T851,B,Running,5,8,6,7,"T763, T166"
-T852,B,Not Running,1,4,13,8,"T220, T44, T334, T102, T803"
-T853,A,Running,4,4,4,3,T754
-T854,C,Running,5,10,2,10,"T656, T108, T65"
-T855,C,Not Running,1,1,3,1,
-T856,D,Running,1,6,9,5,
-T857,C,Running,2,3,7,6,"T603, T57, T732"
-T858,D,Running,2,2,4,0,T485
-T859,A,Running,3,10,7,10,"T505, T189, T787, T498, T233"
-T860,A,Not Running,1,6,3,10,"T334, T525, T95"
-T861,A,Running,4,5,19,7,"T133, T436"
-T862,B,Not Running,1,9,11,8,"T681, T171, T593, T295, T330"
-T863,A,Running,4,1,5,0,"T800, T80, T397"
-T864,D,Not Running,5,9,10,5,
-T865,C,Not Running,5,7,17,8,"T147, T198, T217"
-T866,B,Not Running,4,5,14,1,T132
-T867,B,Not Running,3,3,16,5,"T61, T591, T816, T158, T530"
-T868,D,Running,2,8,2,0,"T696, T691"
-T869,A,Not Running,2,4,19,6,"T179, T765, T188"
-T870,C,Not Running,2,6,18,2,"T292, T866"
-T871,B,Not Running,3,10,15,10,"T859, T435, T336"
-T872,C,Not Running,1,5,9,5,"T499, T335, T674, T199, T671"
-T873,D,Not Running,2,5,8,10,
-T874,A,Not Running,4,2,10,8,
-T875,C,Running,5,4,4,8,
-T876,C,Not Running,3,8,3,7,"T865, T808, T213"
-T877,C,Running,5,4,17,8,"T103, T483, T554"
-T878,B,Not Running,4,4,5,9,"T401, T187"
-T879,C,Not Running,3,6,7,0,"T305, T288, T687, T626"
-T880,A,Running,3,6,3,1,T680
-T881,D,Not Running,1,8,10,2,"T341, T533, T292, T344, T482"
-T882,A,Running,2,3,1,6,"T452, T144, T820, T66, T554"
-T883,B,Running,1,10,14,8,"T791, T345, T858"
-T884,D,Running,1,6,10,9,"T536, T337, T401, T827"
-T885,A,Not Running,4,9,12,1,"T72, T684, T537"
-T886,A,Running,5,4,13,3,"T277, T94, T575"
-T887,D,Not Running,2,10,1,9,"T880, T252, T115, T3, T835"
-T888,D,Not Running,2,8,4,9,"T319, T144, T368, T684, T196"
-T889,B,Running,5,10,9,0,T188
-T890,D,Not Running,1,6,9,9,"T390, T686, T728, T321, T888"
-T891,C,Not Running,5,1,5,9,"T11, T784"
-T892,A,Running,1,1,9,5,"T78, T758, T141, T374, T850"
-T893,A,Not Running,2,4,18,5,
-T894,B,Running,2,6,14,10,"T662, T771, T234, T133, T847"
-T895,C,Not Running,1,1,5,0,"T689, T430"
-T896,C,Not Running,3,3,18,9,"T325, T347, T421, T888"
-T897,D,Not Running,5,4,1,3,"T834, T579"
-T898,A,Not Running,5,5,4,6,"T107, T8, T521, T529, T851"
-T899,D,Not Running,4,1,2,8,"T37, T117, T868, T350"
-T900,A,Not Running,1,4,19,5,"T435, T676, T887, T348, T619"
-T901,D,Not Running,5,3,4,8,
-T902,A,Running,1,9,5,0,
-T903,B,Running,1,2,5,8,T304
-T904,C,Not Running,2,10,7,10,"T676, T521, T183"
-T905,B,Running,1,3,13,7,"T142, T782, T185"
-T906,C,Running,4,7,13,6,"T28, T737"
-T907,C,Not Running,2,5,16,5,"T722, T225"
-T908,C,Running,1,6,10,4,"T327, T689, T150, T544, T111"
-T909,A,Running,1,6,2,8,"T72, T593"
-T910,B,Running,5,9,12,4,T493
-T911,A,Running,5,1,18,10,"T840, T771, T585, T882, T756"
-T912,D,Running,1,5,3,9,T695
-T913,C,Not Running,3,9,10,0,"T550, T739, T72, T441"
-T914,A,Not Running,4,4,10,9,"T215, T876, T472"
-T915,C,Running,4,10,1,1,
-T916,D,Not Running,2,9,9,3,"T157, T141, T568"
-T917,C,Not Running,3,9,7,8,
-T918,D,Running,1,7,2,4,"T724, T620, T60"
-T919,D,Not Running,3,8,9,5,T886
-T920,C,Not Running,3,6,18,10,"T859, T910, T896, T787"
-T921,B,Running,4,7,14,2,
-T922,C,Not Running,5,4,6,2,"T788, T495"
-T923,A,Running,5,2,18,5,"T23, T216"
-T924,C,Running,2,7,15,8,
-T925,B,Running,1,10,7,1,
-T926,A,Not Running,5,6,17,1,"T228, T315, T905, T562, T352"
-T927,A,Running,4,7,6,1,T923
-T928,D,Running,2,1,6,5,"T546, T53"
-T929,C,Not Running,2,2,3,8,"T635, T477, T696"
-T930,C,Running,4,5,9,2,"T805, T28, T479"
-T931,A,Not Running,5,1,22,7,"T740, T141, T894, T35, T91"
-T932,C,Running,5,6,7,0,T96
-T933,C,Running,3,4,6,3,T348
-T934,C,Running,2,10,11,4,"T888, T399"
-T935,C,Running,2,7,15,5,"T307, T591, T408"
-T936,C,Running,2,5,7,0,"T22, T143, T635"
-T937,B,Running,1,9,10,9,"T3, T43"
-T938,C,Running,1,1,12,6,
-T939,A,Running,3,2,14,1,"T151, T867, T788, T71"
-T940,B,Running,2,1,16,10,T282
-T941,C,Running,3,5,11,7,"T718, T598, T858, T653, T741"
-T942,A,Not Running,2,8,17,2,"T882, T800, T646"
-T943,C,Running,5,10,9,1,"T818, T164, T222, T221, T799"
-T944,A,Not Running,1,8,11,2,"T518, T640"
-T945,C,Running,2,10,8,5,
-T946,C,Running,4,1,1,1,"T321, T849, T411, T307, T767"
-T947,B,Not Running,2,9,7,9,T378
-T948,D,Not Running,2,5,1,5,"T739, T613"
-T949,C,Running,3,4,13,4,"T631, T612, T502, T593, T506"
-T950,B,Running,5,4,1,8,"T50, T574, T298"
-T951,A,Running,3,4,22,5,"T279, T931, T727, T418"
-T952,D,Running,5,8,3,7,
-T953,D,Not Running,3,1,4,9,T89
-T954,A,Running,1,7,17,0,"T259, T904"
-T955,A,Running,4,5,16,2,"T371, T717"
-T956,A,Not Running,1,6,10,6,"T497, T409, T240, T453"
-T957,C,Running,4,4,9,2,"T954, T700, T360, T278"
-T958,A,Running,2,1,18,8,"T192, T885"
-T959,D,Running,2,10,8,4,"T98, T327"
-T960,A,Running,2,4,22,5,"T690, T790"
-T961,D,Running,2,2,9,1,"T662, T737"
-T962,D,Not Running,1,6,1,6,T203
-T963,B,Running,2,5,10,2,T655
-T964,D,Running,2,9,4,5,"T397, T660, T110, T541"
-T965,B,Running,2,6,15,3,"T134, T163"
-T966,D,Running,1,1,10,4,"T700, T33, T186, T402"
-T967,C,Not Running,4,5,6,8,"T241, T876, T438"
-T968,B,Not Running,3,7,3,9,T859
-T969,B,Running,1,4,1,2,"T503, T425"
-T970,A,Not Running,5,4,1,4,T205
-T971,A,Not Running,2,4,4,1,"T582, T293, T84"
-T972,C,Not Running,5,1,7,1,"T474, T622, T905, T951"
-T973,C,Not Running,5,3,10,7,"T158, T369, T537, T446"
-T974,A,Running,5,1,3,8,"T345, T109, T961, T330, T58"
-T975,D,Not Running,5,7,5,3,"T563, T521, T168"
-T976,B,Not Running,2,1,5,5,"T327, T397"
-T977,B,Running,1,1,12,8,"T972, T291"
-T978,C,Running,2,9,15,3,"T499, T298, T690, T609"
-T979,C,Running,3,5,13,2,"T843, T887, T767, T896, T597"
-T980,B,Running,2,4,8,8,
-T981,D,Not Running,3,7,4,4,"T725, T514"
-T982,D,Not Running,3,4,8,3,
-T983,B,Not Running,2,5,14,5,T257
-T984,C,Running,2,8,8,0,"T251, T538, T550, T957, T662"
-T985,B,Running,1,9,1,3,
-T986,B,Running,2,4,5,9,"T684, T413, T741, T68"
-T987,D,Running,3,4,5,5,
-T988,A,Running,4,3,5,10,T835
-T989,D,Not Running,1,6,6,9,"T50, T786, T297, T204, T264"
-T990,C,Not Running,1,4,5,8,"T409, T653, T208"
-T991,A,Not Running,3,4,7,4,"T221, T561, T583, T908"
-T992,A,Not Running,1,1,2,5,"T802, T830, T581, T919, T478"
-T993,C,Not Running,5,8,2,1,
-T994,D,Running,5,10,8,3,
-T995,B,Running,4,3,5,5,"T950, T925"
-T996,C,Not Running,4,3,12,0,"T100, T921"
-T997,B,Running,4,6,10,4,"T15, T840, T928, T20"
-T998,C,Running,2,9,3,2,"T853, T743, T702, T905, T587"
-T999,A,Running,5,1,20,9,"T612, T140, T953, T840"
+T0,B,Running,2,5,4,9,
+T1,A,Not Running,4,2,18,10,
+T2,C,Not Running,2,5,7,10,"T1, T0"
+T3,B,Running,3,2,9,8,T1
+T4,A,Not Running,1,8,18,8,"T0, T1"
+T5,A,Not Running,1,10,13,9,T3
+T6,A,Running,3,4,22,1,"T2, T0, T5, T3"
+T7,D,Not Running,4,4,10,2,"T0, T3, T6, T1, T2, T4, T5"
+T8,D,Running,2,3,5,7,"T6, T5, T2"
+T9,D,Not Running,5,10,1,5,"T6, T0"
+T10,B,Running,3,5,16,5,"T0, T4, T1, T6, T3, T9, T7"
+T11,A,Running,5,5,21,9,"T6, T2, T0, T1, T10, T7"
+T12,C,Running,4,5,11,3,"T0, T5"
+T13,B,Running,2,4,9,4,"T12, T6, T11, T8, T4"
+T14,A,Running,2,2,4,0,"T9, T1, T8, T11, T2, T5, T10"
+T15,B,Not Running,2,9,3,6,"T12, T2, T1, T8, T3, T7, T14, T13"
+T16,A,Not Running,2,9,21,6,"T8, T3, T9"
+T17,B,Running,3,1,6,6,"T8, T12, T0, T2, T1, T5, T16, T13, T14, T10"
+T18,A,Running,2,6,19,3,"T4, T11, T0, T17, T13, T5"
+T19,C,Running,4,8,11,5,"T4, T9, T16"
+T20,B,Not Running,5,2,6,9,"T5, T13, T17, T15, T8, T2, T16, T6, T0"
+T21,C,Running,2,4,15,1,"T2, T1, T8, T5, T19"
+T22,B,Running,2,1,6,2,"T5, T6, T11, T16, T21"
+T23,B,Running,1,8,4,2,"T5, T22, T8, T20, T1, T6, T16"
+T24,A,Not Running,2,4,17,4,"T20, T13, T4, T1, T18, T8, T17"
+T25,A,Not Running,1,8,5,2,"T18, T6, T7"
+T26,A,Not Running,4,7,18,10,"T6, T16, T14"
+T27,C,Running,1,2,16,9,T23
+T28,D,Not Running,5,10,10,10,"T11, T10, T25, T1, T7"
+T29,A,Running,1,7,11,2,"T9, T12, T22"
+T30,C,Not Running,5,7,17,0,"T4, T27, T25, T24"
+T31,D,Not Running,1,6,7,4,"T26, T8, T28, T6, T17"
+T32,A,Running,4,9,10,4,"T15, T12, T30, T19, T28, T2, T11, T31"
+T33,D,Not Running,2,1,4,2,"T2, T26, T11, T21, T4"
+T34,A,Running,4,4,4,10,"T14, T4, T13, T5, T20, T29, T24, T18, T19"
+T35,A,Running,5,1,4,9,
+T36,B,Running,5,2,3,6,"T1, T5"
+T37,A,Running,1,5,2,1,"T20, T29, T21, T7, T6, T24, T3, T17, T34"
+T38,C,Not Running,4,2,15,7,"T7, T3, T18, T21, T1"
+T39,D,Not Running,5,9,9,2,
+T40,D,Not Running,3,8,9,6,"T22, T36, T30"
+T41,C,Not Running,1,3,2,0,
+T42,D,Not Running,5,1,3,4,"T23, T16"
+T43,B,Not Running,4,2,14,5,T2
+T44,D,Running,2,1,10,5,"T0, T11, T15, T9, T30, T4, T31, T35"
+T45,A,Not Running,4,2,19,3,"T44, T4, T29, T39, T6, T20, T33, T34, T13"
+T46,B,Running,3,8,5,1,"T8, T6, T29, T23, T11, T43, T45, T18"
+T47,B,Not Running,1,7,12,0,"T41, T3, T5, T1, T13, T29, T46, T23"
+T48,D,Running,4,5,3,3,"T29, T19, T17, T8, T34, T4, T15, T20, T0"
+T49,B,Running,2,4,12,7,
+T50,A,Running,5,8,4,0,"T2, T22, T0, T42, T19"
+T51,B,Not Running,3,1,6,0,"T35, T13"
+T52,C,Running,2,7,12,6,"T33, T17, T48, T6, T10, T31, T43, T13, T42, T24"
+T53,C,Not Running,3,4,7,1,"T33, T37, T46, T3, T43, T49, T14, T5, T11, T29"
+T54,A,Not Running,1,10,2,0,"T37, T21, T14"
+T55,D,Not Running,3,3,7,2,"T52, T31, T39, T18, T50, T7, T37"
+T56,A,Running,3,2,20,3,"T12, T42, T34, T53, T47, T20, T27"
+T57,A,Not Running,3,9,21,10,"T24, T18, T42, T40, T8, T20, T3"
+T58,D,Not Running,5,2,10,0,"T5, T17, T49, T15, T48, T35, T0, T9, T18, T43"
+T59,C,Not Running,5,4,4,3,
+T60,C,Running,3,9,11,0,"T57, T42, T36, T14"
+T61,D,Running,5,2,7,9,"T15, T1, T11, T40, T4, T36, T39"
+T62,A,Running,4,2,18,7,"T55, T44, T19, T9, T49, T45"
+T63,B,Running,3,3,1,7,"T61, T31, T3, T47, T52, T62"
+T64,D,Not Running,4,8,10,9,"T59, T51, T24, T1, T21, T37, T46, T42, T49, T5"
+T65,C,Running,1,8,17,6,
+T66,A,Not Running,4,4,17,5,"T48, T35, T14, T50, T15, T45, T17"
+T67,D,Not Running,4,6,10,6,T50
+T68,B,Running,3,6,6,3,"T32, T12, T38, T62, T5, T33"
+T69,D,Running,1,7,1,3,"T40, T29, T20, T23, T53, T44, T55, T62, T36"
+T70,B,Not Running,3,4,16,1,"T42, T30, T8, T61, T13, T35, T3, T52, T41, T56"
+T71,C,Not Running,4,4,18,4,"T57, T32, T41"
+T72,C,Running,5,8,8,10,"T18, T4, T11, T3, T60, T9, T41, T25, T56, T28"
+T73,A,Running,3,5,8,4,"T48, T17, T27, T32, T44, T3, T46, T31"
+T74,B,Running,1,10,6,9,"T42, T22"
+T75,B,Not Running,2,7,4,8,"T59, T70, T0, T63"
+T76,C,Not Running,2,8,10,2,"T37, T70, T49, T35, T53, T52, T8, T38, T17, T3"
+T77,A,Not Running,3,7,2,9,"T72, T9, T50"
+T78,C,Running,3,6,14,4,"T32, T27, T57"
+T79,D,Not Running,3,9,4,8,"T21, T36"
+T80,A,Running,4,7,4,9,"T40, T76, T45, T69, T22, T46, T7, T78, T64"
+T81,B,Not Running,5,10,13,10,"T45, T71, T28, T54, T63"
+T82,C,Running,3,9,14,1,"T9, T40, T71, T44, T43"
+T83,B,Not Running,5,1,2,7,"T20, T70, T47, T60, T71"
+T84,A,Running,1,7,19,0,"T82, T50, T70"
+T85,A,Running,4,2,16,5,"T70, T16, T79, T22"
+T86,A,Not Running,1,6,6,3,"T43, T52, T54"
+T87,A,Not Running,4,4,9,5,"T61, T40, T85"
+T88,B,Running,2,9,9,10,T74
+T89,A,Running,1,3,5,2,"T10, T50, T44, T18"
+T90,D,Running,3,8,7,0,"T38, T57, T6"
+T91,D,Not Running,3,1,9,1,"T16, T54, T43, T18, T28, T0, T90, T19, T13"
+T92,A,Not Running,3,7,20,9,"T64, T44"
+T93,A,Running,3,5,9,4,"T63, T40, T20"
+T94,B,Not Running,5,3,7,2,"T82, T74, T10, T12"
+T95,A,Not Running,2,2,20,10,"T50, T9, T87, T3, T12, T30"
+T96,D,Not Running,5,5,6,5,
+T97,D,Running,4,8,4,8,"T63, T46, T44, T20, T6"
+T98,C,Not Running,2,2,15,5,"T79, T36, T5, T54"
+T99,B,Running,5,5,4,1,"T57, T11, T89, T25"
+T100,A,Not Running,5,5,17,3,"T91, T17, T1, T94, T79, T89"
+T101,D,Not Running,5,2,5,2,"T16, T43, T28, T69"
+T102,B,Running,2,9,5,10,"T61, T4"
+T103,A,Running,5,7,4,4,"T48, T47, T31, T41, T81, T83, T58"
+T104,C,Not Running,3,4,6,3,"T85, T58, T91, T77, T16, T24, T81, T3"
+T105,D,Not Running,3,6,1,3,"T70, T49, T79"
+T106,D,Not Running,4,7,8,8,
+T107,A,Running,1,7,22,1,"T15, T66, T44, T83, T59, T0, T71, T75, T69"
+T108,D,Not Running,3,3,7,4,"T42, T85, T30, T91, T35"
+T109,B,Running,1,3,4,7,"T26, T102, T25, T58, T52, T101, T38, T17, T36"
+T110,C,Running,5,3,13,6,"T6, T55, T30, T54, T89, T27, T98"
+T111,B,Not Running,4,6,8,7,"T103, T54"
+T112,A,Running,5,7,1,1,"T71, T21, T7, T94, T101, T15, T2"
+T113,C,Not Running,5,10,14,9,"T66, T4"
+T114,B,Not Running,4,9,3,1,
+T115,B,Running,3,6,14,0,"T76, T20, T19, T39, T61, T101"
+T116,A,Running,5,10,6,8,"T38, T100"
+T117,D,Not Running,4,5,9,10,"T13, T20, T53, T70, T49, T15"
+T118,C,Not Running,2,1,16,1,
+T119,D,Running,2,2,6,4,T83
+T120,A,Running,5,9,4,3,"T36, T31, T9, T20, T1, T62, T25, T15"
+T121,A,Running,1,2,9,2,"T0, T19, T23, T24"
+T122,D,Not Running,4,1,7,7,"T63, T53, T28, T38, T75, T81, T94, T55, T118, T15"
+T123,B,Not Running,3,10,5,0,"T28, T3, T4, T2"
+T124,A,Not Running,2,5,11,10,
+T125,C,Running,1,4,16,10,"T116, T34"
+T126,A,Running,4,7,19,5,"T53, T84, T43"
+T127,D,Running,5,4,5,6,
+T128,D,Running,2,3,5,9,"T11, T93"
+T129,C,Running,3,8,18,3,"T107, T114, T84, T24, T122, T103, T109"
+T130,B,Not Running,5,9,11,0,"T85, T77, T50, T69, T106, T129, T101, T104, T16, T93"
+T131,D,Not Running,3,5,7,1,T69
+T132,A,Running,1,3,19,5,T3
+T133,A,Running,5,5,13,9,"T122, T77, T43, T121, T117, T53, T95, T74"
+T134,A,Not Running,4,5,5,3,"T133, T128, T108"
+T135,B,Not Running,3,1,15,10,"T26, T25, T34, T127, T114"
+T136,B,Not Running,3,3,6,6,"T135, T79, T35, T130, T104"
+T137,D,Not Running,5,2,10,7,"T68, T45, T121, T22, T114"
+T138,B,Running,3,5,7,10,"T39, T59, T44, T32, T100, T75"
+T139,C,Running,5,1,17,7,"T22, T102, T60, T2"
+T140,D,Running,4,5,4,4,"T77, T105, T28, T107, T49, T89"
+T141,B,Running,5,4,10,3,
+T142,D,Not Running,4,3,10,1,
+T143,C,Running,1,9,15,4,"T46, T104, T130"
+T144,A,Not Running,3,4,14,10,"T125, T124, T137"
+T145,C,Not Running,4,7,3,2,T63
+T146,B,Not Running,3,6,8,7,"T28, T21, T115, T58, T116, T1"
+T147,D,Not Running,5,2,7,4,"T145, T128, T44, T130, T139, T32, T63, T111, T13, T38"
+T148,D,Not Running,5,10,2,8,"T103, T126, T18, T98, T101, T34, T15, T146, T14, T36"
+T149,B,Running,3,10,2,10,"T128, T51"
+T150,B,Not Running,5,8,12,10,"T83, T59, T44, T81, T48, T66, T19, T141, T16, T56"
+T151,C,Running,4,1,9,8,"T96, T140, T50"
+T152,D,Running,4,10,6,8,"T114, T20"
+T153,B,Running,5,3,16,2,"T119, T50, T65, T142, T94, T56, T19, T151"
+T154,D,Not Running,5,1,4,3,"T92, T111, T28, T89, T145, T80, T104, T11"
+T155,C,Not Running,1,10,1,10,"T27, T86, T57, T15, T34, T94"
+T156,A,Not Running,5,7,10,8,"T106, T69, T42, T6"
+T157,A,Running,5,6,15,9,
+T158,B,Not Running,5,10,4,7,"T90, T104, T100, T49, T136, T73, T82, T78, T21, T59"
+T159,A,Not Running,2,1,18,10,"T140, T12, T152"
+T160,B,Running,5,5,1,6,"T62, T113, T47, T112"
+T161,B,Not Running,3,3,4,0,T158
+T162,B,Running,4,9,5,5,"T92, T61, T84, T11"
+T163,B,Running,4,4,1,0,"T118, T38, T44, T129"
+T164,A,Running,3,8,5,3,"T88, T55, T71, T133, T72"
+T165,B,Running,1,2,11,6,"T81, T160"
+T166,D,Running,5,8,1,6,"T140, T90, T66, T75, T123, T154, T19, T103, T50"
+T167,C,Running,3,8,14,5,"T101, T93"
+T168,C,Running,2,6,14,2,"T108, T110, T80, T75, T79, T125, T86, T141"
+T169,D,Not Running,1,2,9,4,"T150, T32, T68, T153, T141, T76"
+T170,C,Running,5,2,2,0,"T118, T70, T39"
+T171,B,Running,4,3,8,10,"T81, T15, T99, T79, T67, T101, T42, T108"
+T172,A,Running,3,6,17,5,"T18, T15, T41, T164, T141, T73, T89"
+T173,D,Not Running,1,5,6,1,"T54, T117, T145, T66, T116, T30, T132, T94, T162, T131"
+T174,A,Not Running,1,5,21,3,"T149, T59, T121, T152, T5, T127, T65, T72, T130"
+T175,A,Not Running,5,9,14,10,"T166, T116, T57, T73, T47, T129, T144, T125, T16, T29"
+T176,C,Not Running,5,3,10,1,"T80, T107, T17"
+T177,D,Running,1,9,1,9,"T17, T35, T20"
+T178,C,Running,4,4,12,8,"T95, T50, T176, T135, T24, T125, T117, T28, T21"
+T179,A,Running,3,3,16,10,"T7, T109, T39"
+T180,B,Running,3,10,9,4,"T150, T42"
+T181,B,Not Running,4,5,9,7,"T102, T78, T138, T80, T139, T119"
+T182,C,Running,1,6,1,3,"T37, T142, T98"
+T183,A,Running,1,8,17,0,"T113, T23, T73, T46, T82, T137, T29"
+T184,A,Running,4,10,17,2,
+T185,A,Not Running,1,9,6,3,"T74, T153, T107"
+T186,D,Not Running,5,5,3,7,"T150, T88, T53, T9, T164, T126, T64, T158, T135"
+T187,C,Not Running,4,2,11,3,"T136, T182, T98, T96, T35, T84, T53"
+T188,C,Not Running,1,7,14,5,"T103, T174, T36, T173, T123, T3, T165"
+T189,C,Not Running,4,3,12,10,"T110, T48, T63, T147, T23, T160, T82"
+T190,A,Not Running,3,5,18,2,
+T191,C,Not Running,4,2,4,3,"T17, T75, T40, T107, T53, T106, T35"
+T192,D,Not Running,4,4,7,3,"T86, T47, T35, T5"
+T193,C,Not Running,3,2,13,3,"T190, T159, T42, T129, T121, T93"
+T194,B,Running,2,7,13,8,"T130, T179, T160, T114, T67, T105, T57, T110"
+T195,B,Running,1,2,2,7,
+T196,D,Running,1,8,7,7,
+T197,D,Not Running,5,4,3,6,"T19, T152, T193, T93, T180, T134"
+T198,C,Not Running,1,8,4,2,"T94, T169, T63, T168, T93"
+T199,D,Running,1,7,2,2,"T128, T115, T83, T132"
+T200,A,Running,3,10,17,0,"T86, T48, T132"
+T201,A,Not Running,3,2,20,6,"T86, T108, T8, T21, T182, T93, T17, T94"
+T202,C,Not Running,1,6,11,0,
+T203,B,Not Running,3,10,5,8,"T135, T126, T93"
+T204,D,Not Running,1,5,10,0,"T164, T123, T11, T105, T16, T154"
+T205,A,Not Running,3,6,7,8,"T173, T13, T126, T27, T153"
+T206,B,Running,2,9,7,8,"T26, T3, T112, T80, T6"
+T207,D,Not Running,2,10,7,8,"T136, T10, T66, T57, T161, T150, T17, T75, T171, T147"
+T208,D,Running,1,8,9,5,"T0, T17, T195"
+T209,D,Running,3,3,9,0,"T45, T23"
+T210,D,Running,4,6,6,0,"T12, T111, T91, T14"
+T211,B,Running,1,5,9,7,"T73, T90, T195, T146, T136, T5, T175, T75"
+T212,D,Not Running,4,8,3,1,T162
+T213,C,Not Running,2,2,16,2,"T134, T143, T44, T36, T175, T111, T16, T118, T156"
+T214,A,Running,1,5,22,5,"T125, T96, T46, T14, T95, T169, T137, T12, T3"
+T215,A,Not Running,4,9,13,2,
+T216,D,Running,4,3,6,8,"T20, T7, T86, T175, T29, T105"
+T217,C,Not Running,2,6,14,10,T212
+T218,A,Not Running,3,9,12,5,"T203, T89, T50, T2, T53, T41"
+T219,D,Not Running,2,3,6,6,
+T220,A,Running,4,3,7,8,T10
+T221,D,Running,5,10,3,7,"T151, T95, T112, T42"
+T222,D,Not Running,1,7,9,10,"T2, T27, T84, T146, T215, T4, T131, T41, T158"
+T223,B,Running,4,1,2,9,"T6, T83, T82, T203"
+T224,A,Running,5,9,4,2,"T185, T151, T137, T166, T20, T108, T150"
+T225,A,Running,3,7,19,10,"T151, T106, T92, T13, T107"
+T226,B,Not Running,2,3,14,6,"T15, T101, T162, T121"
+T227,B,Running,4,8,6,2,T102
+T228,B,Not Running,5,3,16,5,T88
+T229,C,Not Running,5,1,9,6,"T116, T215, T179, T212, T113, T222, T69, T19, T53, T58"
+T230,B,Not Running,2,7,16,0,
+T231,B,Running,1,5,9,10,
+T232,D,Running,2,5,8,0,"T107, T213, T149"
+T233,B,Running,4,3,3,7,"T209, T72, T139, T222, T215, T71, T92, T59, T204, T158"
+T234,D,Running,4,3,10,1,"T180, T47"
+T235,C,Not Running,3,5,8,4,"T171, T56, T228, T183, T30, T15, T213, T47, T33"
+T236,D,Running,2,1,2,10,"T31, T216, T14, T32, T147, T57, T34, T141"
+T237,A,Running,3,2,10,7,"T11, T112, T215"
+T238,B,Not Running,1,8,16,0,"T19, T95, T234, T178, T96, T220, T175, T124"
+T239,C,Running,3,4,13,4,"T155, T227, T238, T82, T209, T197, T128, T221"
+T240,C,Running,1,6,14,2,T17
+T241,A,Not Running,5,7,5,10,"T23, T143, T47, T133, T24, T208, T15, T147, T139"
+T242,D,Running,2,8,8,6,"T132, T95, T185, T100"
+T243,C,Not Running,4,4,17,7,"T36, T160, T10, T28, T96, T150"
+T244,A,Running,1,8,10,6,"T35, T202, T213, T18"
+T245,B,Not Running,2,8,12,3,"T111, T37, T90, T114, T220, T149, T215"
+T246,D,Running,1,2,6,2,"T81, T2, T45, T116"
+T247,D,Running,4,7,3,8,"T71, T228, T172, T176, T180, T57, T63, T145"
+T248,C,Not Running,4,8,18,9,"T50, T203, T241, T173, T39, T213, T61, T158"
+T249,D,Running,5,10,5,9,"T66, T157, T12, T26"
+T250,A,Running,2,10,3,3,
+T251,D,Not Running,1,2,4,6,"T247, T12, T174, T71, T191, T178, T213, T112"
+T252,A,Running,2,3,17,8,"T18, T24, T123, T16, T105, T45, T81"
+T253,C,Not Running,2,6,11,8,"T53, T50, T23, T28, T24, T152"
+T254,D,Running,2,7,8,10,"T186, T77, T193, T113"
+T255,D,Not Running,5,10,6,5,
+T256,B,Not Running,3,10,16,4,"T45, T28, T19, T9, T130, T42, T161, T17"
+T257,A,Running,3,4,8,8,"T100, T4, T205"
+T258,C,Not Running,5,8,6,10,"T238, T81, T26, T232, T104, T54, T149"
+T259,C,Running,1,9,5,10,"T47, T34, T145, T30, T61"
+T260,D,Not Running,4,5,9,4,"T32, T198, T212, T92, T133"
+T261,D,Not Running,5,9,4,10,"T255, T85, T229, T133, T243"
+T262,C,Running,5,5,16,6,T221
+T263,C,Running,2,2,12,4,"T83, T262, T70, T188, T154, T255, T191, T37, T4, T27"
+T264,B,Not Running,3,8,15,7,"T155, T157, T205, T26, T35, T17"
+T265,B,Running,3,9,2,9,"T261, T63, T65, T229, T81, T192, T217, T168, T26, T241"
+T266,C,Not Running,2,8,16,7,T0
+T267,C,Not Running,5,7,5,9,"T236, T102, T11, T124, T242, T60, T93, T41"
+T268,D,Not Running,1,4,9,2,"T46, T88, T160, T176, T261, T11, T13, T74, T58"
+T269,B,Running,2,9,9,8,"T3, T158, T82, T21, T11, T130, T146, T183"
+T270,D,Running,3,8,7,9,"T199, T128, T127, T266, T231, T45"
+T271,A,Not Running,5,2,5,4,"T153, T231, T106, T39, T161, T199, T168"
+T272,D,Running,4,6,1,10,"T239, T262"
+T273,C,Not Running,4,10,1,2,T57
+T274,C,Not Running,3,9,2,0,"T225, T263, T236, T30"
+T275,C,Running,5,2,1,4,"T146, T1"
+T276,A,Not Running,1,9,20,2,"T62, T165, T94, T152, T133, T146, T193, T14, T262"
+T277,A,Not Running,1,3,4,3,
+T278,D,Not Running,5,4,2,2,"T209, T246, T156, T73, T168, T13, T31"
+T279,D,Running,2,5,6,9,T41
+T280,D,Not Running,2,6,3,7,"T199, T37, T272, T236, T260, T235, T134"
+T281,C,Not Running,2,6,8,4,"T231, T190, T102, T236, T198, T280"
+T282,C,Not Running,2,9,12,7,"T85, T48, T258, T21, T35, T174, T150, T155"
+T283,D,Not Running,2,4,8,5,"T183, T258, T15, T213, T228, T104, T266"
+T284,C,Not Running,5,2,2,10,"T268, T1"
+T285,C,Running,5,1,9,5,"T127, T262, T34, T275, T63, T196, T124, T199, T85"
+T286,B,Running,5,2,4,2,"T36, T23, T16, T117, T161, T27"
+T287,A,Running,3,4,3,4,"T122, T91, T115"
+T288,D,Running,4,4,6,9,"T214, T37, T278, T287, T14"
+T289,C,Not Running,1,9,9,8,"T114, T256"
+T290,A,Running,4,4,22,7,"T130, T67"
+T291,B,Running,3,6,3,8,"T6, T79, T205"
+T292,A,Running,2,8,9,2,"T106, T239, T53"
+T293,D,Running,5,6,3,1,"T26, T212, T230, T254, T83"
+T294,A,Not Running,2,4,13,0,"T61, T279, T35, T194, T36, T289, T78, T13, T181"
+T295,C,Not Running,5,7,6,10,"T225, T18, T135, T266, T21, T53"
+T296,A,Running,2,5,9,9,
+T297,C,Running,5,3,15,0,T96
+T298,D,Running,2,2,1,5,"T285, T93, T145, T69, T78, T224"
+T299,D,Running,2,1,5,1,"T118, T271, T70, T216, T246"
+T300,D,Not Running,5,2,3,7,
+T301,C,Not Running,5,9,17,8,
+T302,D,Not Running,5,1,9,8,"T106, T36, T134, T117, T83, T132, T209, T21"
+T303,D,Running,1,10,5,8,
+T304,A,Running,2,5,18,6,"T123, T284, T168, T0, T231, T28, T138"
+T305,B,Running,1,6,2,10,"T19, T252, T87, T158, T160"
+T306,A,Running,5,3,6,7,"T138, T117, T268"
+T307,A,Running,5,1,15,4,"T141, T202, T174, T21, T18"
+T308,A,Running,5,3,7,4,"T4, T233, T130, T125, T283, T0, T306, T10, T107, T47"
+T309,D,Not Running,1,5,4,7,"T228, T272"
+T310,A,Running,2,4,13,6,"T199, T295, T256"
+T311,C,Running,3,9,5,6,"T64, T88, T55, T185"
+T312,A,Not Running,3,10,11,10,"T68, T105, T181"
+T313,B,Running,2,4,11,0,"T85, T30, T14, T205, T124, T172, T45"
+T314,B,Not Running,5,4,15,4,"T253, T100, T246, T309"
+T315,B,Running,3,3,8,4,"T263, T84, T279, T164, T249"
+T316,B,Not Running,4,7,16,6,"T32, T199, T235, T2, T179, T7, T106"
+T317,A,Running,3,7,4,9,"T233, T265, T288, T92, T241, T24, T113, T117"
+T318,D,Not Running,1,9,9,8,"T45, T195"
+T319,A,Running,3,1,5,9,"T31, T134, T315, T292, T79, T303, T247, T163, T23, T309"
+T320,A,Running,3,3,9,10,"T301, T173"
+T321,C,Running,1,5,17,9,"T232, T205, T65, T147, T131, T142, T209, T88, T4"
+T322,C,Running,1,8,6,7,"T320, T167, T162, T72, T164, T263"
+T323,C,Running,5,10,15,0,"T241, T220, T224, T8"
+T324,B,Running,3,9,8,1,"T94, T99, T162, T226, T127, T313, T93, T71, T28, T296"
+T325,B,Not Running,2,6,16,9,"T119, T206, T198, T196, T7, T199, T43, T1, T279, T156"
+T326,D,Not Running,4,1,3,1,"T233, T212, T35, T77, T0, T209, T302, T227, T14"
+T327,C,Not Running,4,5,2,6,"T205, T74, T140, T315"
+T328,C,Running,2,8,18,9,"T156, T178, T252, T240, T37"
+T329,C,Not Running,1,6,4,3,"T240, T81, T0"
+T330,D,Running,3,4,1,10,"T288, T223, T284, T66"
+T331,C,Not Running,2,5,12,0,
+T332,A,Running,3,1,13,4,"T114, T237, T285, T317, T109, T149, T1, T25, T75"
+T333,C,Running,1,4,4,7,"T82, T71, T19"
+T334,D,Not Running,2,8,3,1,"T244, T54, T72, T52, T29, T288, T0, T26, T2"
+T335,C,Running,2,8,4,2,"T159, T57, T295"
+T336,D,Running,4,10,5,6,
+T337,A,Not Running,1,6,8,0,
+T338,B,Running,3,9,10,1,"T140, T303, T295, T318"
+T339,D,Not Running,2,3,10,5,"T49, T152"
+T340,B,Not Running,3,6,16,2,"T283, T207, T20, T313"
+T341,D,Not Running,2,8,1,0,"T109, T154, T258, T82, T60"
+T342,D,Not Running,5,8,2,5,"T22, T150, T133, T226, T4, T181, T278"
+T343,B,Running,2,5,12,8,"T67, T275, T262, T211, T306, T150, T209, T122"
+T344,A,Running,1,3,15,1,"T153, T44, T265, T41, T124, T152, T269, T202"
+T345,D,Running,1,5,1,4,T254
+T346,C,Running,2,7,3,10,
+T347,C,Running,2,1,14,10,"T87, T307, T18, T236, T306"
+T348,C,Not Running,4,8,2,3,"T304, T162, T113, T82, T272, T198, T281, T77, T163"
+T349,C,Not Running,1,10,2,6,"T188, T301, T91, T68, T26, T279, T292, T5, T217, T14"
+T350,A,Not Running,2,10,10,2,"T135, T82"
+T351,B,Running,5,10,14,7,"T194, T298, T151, T219, T236, T16, T85, T233, T173"
+T352,B,Not Running,5,7,12,4,"T74, T156, T224, T316, T190"
+T353,C,Not Running,5,4,13,2,"T13, T260, T170, T8"
+T354,A,Not Running,4,9,6,7,T194
+T355,A,Running,3,6,17,5,"T354, T243, T123, T335, T207, T161, T318, T23, T353, T157"
+T356,D,Running,2,4,6,2,
+T357,C,Running,4,1,17,9,"T312, T207, T23, T286, T247, T153, T3, T16"
+T358,A,Not Running,2,1,11,1,
+T359,B,Not Running,1,5,13,4,
+T360,C,Running,5,1,5,1,"T86, T322, T245, T168, T178, T103"
+T361,D,Not Running,5,7,4,6,"T166, T304"
+T362,B,Not Running,5,10,5,3,"T237, T38, T83, T343, T48, T35, T24, T6, T108"
+T363,C,Not Running,5,8,16,4,"T253, T80, T103, T277, T84, T186"
+T364,D,Not Running,4,10,5,5,"T150, T216, T74, T17, T337, T107, T218"
+T365,D,Not Running,3,5,6,6,
+T366,A,Not Running,2,4,18,7,"T306, T107, T312, T277, T49, T102, T248, T189, T336, T294"
+T367,A,Running,4,7,18,4,"T21, T159"
+T368,A,Running,1,4,22,4,"T94, T79, T226, T120, T40, T152, T347, T307"
+T369,A,Running,5,4,3,10,T117
+T370,A,Not Running,1,2,7,9,"T178, T289, T26, T354, T125, T361, T218, T224"
+T371,D,Running,5,9,9,1,"T97, T7, T4, T152, T341, T5"
+T372,D,Running,2,2,5,1,"T173, T69, T232, T63, T203, T139, T366"
+T373,A,Running,1,1,21,9,"T329, T82, T190, T307, T115"
+T374,B,Running,3,9,7,2,"T263, T286, T163, T146, T295, T75"
+T375,D,Running,5,10,8,9,"T203, T133, T106, T49, T77, T100, T190, T65"
+T376,A,Running,2,9,6,4,"T276, T202, T117, T119, T273, T231, T51, T46"
+T377,C,Running,4,2,18,7,"T287, T251, T190, T54"
+T378,B,Not Running,1,10,11,10,T193
+T379,D,Running,2,9,3,7,"T376, T149, T110, T161, T148, T180, T98"
+T380,A,Not Running,4,10,21,9,"T185, T363, T319, T284, T263"
+T381,A,Running,4,9,13,2,"T330, T212, T79"
+T382,D,Not Running,5,3,3,1,
+T383,B,Running,1,9,1,8,"T177, T208, T287"
+T384,A,Not Running,3,7,22,2,"T278, T252, T167, T199, T45"
+T385,B,Not Running,4,4,4,2,"T221, T52, T311, T262, T7, T265, T257, T222, T72, T264"
+T386,D,Running,4,8,3,1,"T122, T331, T274, T288, T59"
+T387,C,Running,5,2,10,7,"T149, T13, T215, T176, T84, T1, T224"
+T388,D,Running,2,3,4,9,"T360, T238, T197, T247, T263"
+T389,D,Not Running,1,1,10,9,"T181, T60, T324, T16, T92, T268, T249, T257, T356"
+T390,C,Not Running,3,10,2,6,"T356, T134, T62, T346, T340, T135, T326, T227"
+T391,C,Not Running,5,5,1,8,
+T392,D,Not Running,3,9,4,0,"T84, T166, T137, T319"
+T393,B,Running,4,10,7,4,"T91, T151, T368, T126, T158, T313, T66, T323, T319, T316"
+T394,B,Not Running,5,4,14,0,"T195, T361, T172, T309, T30, T247, T23, T385, T167, T318"
+T395,B,Not Running,5,1,13,0,"T9, T266"
+T396,D,Running,3,5,1,2,"T362, T73, T61, T195, T159"
+T397,B,Running,2,8,4,6,"T171, T274"
+T398,B,Not Running,2,1,9,0,T144
+T399,B,Not Running,5,9,1,3,"T328, T379, T116, T226, T389, T71, T250"
+T400,C,Running,3,4,1,9,"T110, T387, T338, T309"
+T401,A,Running,2,6,19,0,"T29, T39, T329, T385, T318, T392, T80, T93, T312"
+T402,C,Running,2,1,16,1,"T399, T91, T286, T139, T378"
+T403,D,Running,2,1,8,2,"T311, T19, T373, T84, T102, T73, T347, T356, T352"
+T404,D,Running,1,9,7,1,"T282, T176, T115, T199"
+T405,D,Not Running,3,2,10,8,"T74, T261, T16, T297, T209"
+T406,D,Not Running,1,5,2,6,"T179, T316, T210, T226, T108, T308"
+T407,D,Not Running,4,2,5,4,"T291, T239, T130, T168, T354, T357, T97"
+T408,D,Not Running,3,1,1,3,
+T409,C,Not Running,3,8,11,0,"T114, T297, T367"
+T410,A,Not Running,2,4,9,1,
+T411,D,Not Running,2,6,4,10,"T123, T110, T7"
+T412,C,Running,3,10,17,2,"T391, T120, T170, T267"
+T413,D,Running,3,6,7,3,"T5, T157"
+T414,B,Not Running,5,6,9,0,
+T415,D,Running,3,4,1,1,"T125, T156, T323, T236, T23, T209, T253, T72, T241, T208"
+T416,A,Running,2,4,1,7,
+T417,C,Not Running,2,3,1,4,T120
+T418,A,Running,1,4,15,3,"T122, T393, T132, T288, T64, T201"
+T419,A,Running,3,5,15,9,"T302, T370, T314, T43, T393, T277"
+T420,A,Not Running,1,6,20,7,"T383, T78, T196, T83, T325, T323, T376, T12, T133, T31"
+T421,B,Running,4,8,2,3,"T362, T328, T273, T139, T22"
+T422,C,Running,2,10,15,3,"T177, T171, T140, T333, T151, T242, T61"
+T423,C,Not Running,2,3,4,9,"T226, T401"
+T424,B,Not Running,4,2,7,3,
+T425,C,Running,5,7,16,5,"T252, T16, T315"
+T426,D,Running,4,6,8,9,"T10, T159, T108, T165"
+T427,A,Running,3,6,11,0,
+T428,B,Not Running,5,3,1,4,"T31, T193, T244, T382"
+T429,B,Not Running,1,8,1,1,"T335, T110, T90, T16"
+T430,A,Not Running,1,1,7,6,"T237, T33, T160"
+T431,B,Not Running,5,9,10,7,"T199, T290, T95, T52, T342"
+T432,D,Running,2,7,7,1,"T150, T279, T397"
+T433,C,Running,3,5,3,6,"T123, T94, T358, T154"
+T434,B,Running,4,5,13,7,"T411, T183"
+T435,C,Not Running,3,6,1,6,T264
+T436,C,Running,3,1,9,1,"T126, T36, T78, T428, T258, T181, T359, T20, T418"
+T437,A,Running,2,9,5,2,"T381, T193, T373, T430, T436"
+T438,D,Not Running,5,3,4,6,
+T439,C,Running,4,10,15,0,"T365, T192, T363"
+T440,C,Not Running,3,9,1,3,
+T441,D,Not Running,5,9,8,2,
+T442,C,Running,1,7,14,10,"T95, T122, T5, T0"
+T443,D,Running,1,2,2,7,"T325, T317, T358"
+T444,B,Running,4,9,6,9,"T55, T226, T181, T114, T69"
+T445,B,Not Running,3,4,8,8,"T417, T133, T282, T323, T1, T181, T49"
+T446,B,Not Running,5,8,11,0,"T337, T312, T394, T286, T382, T378, T7, T428, T33, T139"
+T447,D,Running,1,3,10,6,
+T448,B,Not Running,1,1,4,8,"T367, T172, T311, T49, T31, T443"
+T449,A,Running,5,8,9,8,"T99, T278, T49, T53, T115, T148, T281, T217"
+T450,C,Running,3,9,2,6,"T96, T415, T133, T289, T102, T161"
+T451,A,Not Running,2,5,10,3,"T101, T379, T139, T311, T53, T438, T228, T214, T136, T237"
+T452,A,Not Running,3,6,18,8,"T97, T311, T435, T422, T89, T408, T261, T197, T439"
+T453,B,Running,2,3,4,2,T82
+T454,A,Running,4,7,19,0,
+T455,D,Not Running,2,10,6,5,"T321, T216"
+T456,D,Running,1,6,2,2,"T249, T432, T198, T125, T358, T323"
+T457,C,Not Running,1,10,14,3,"T148, T190, T26, T454, T443, T332, T244, T450"
+T458,B,Running,4,1,8,8,T41
+T459,D,Running,2,10,5,9,"T270, T380, T423, T138, T203, T437"
+T460,A,Running,3,8,4,0,"T408, T110, T402, T272, T44, T128, T301, T345, T235, T129"
+T461,D,Not Running,1,3,8,2,"T237, T151, T142, T351, T391, T307, T279, T281, T309"
+T462,B,Running,4,4,10,8,"T287, T79, T169, T308, T386, T377"
+T463,A,Running,5,4,10,3,"T287, T207, T304, T442, T457, T95, T229, T80, T219"
+T464,C,Not Running,3,5,18,2,"T388, T404"
+T465,A,Running,1,3,13,4,"T376, T447, T318, T292, T271, T417"
+T466,D,Running,4,8,3,0,
+T467,C,Running,5,8,13,10,"T402, T119, T148, T76, T79"
+T468,B,Not Running,2,9,8,0,T444
+T469,C,Running,4,4,6,9,"T97, T429"
+T470,A,Running,1,5,22,1,T66
+T471,D,Running,4,3,4,8,"T248, T356"
+T472,C,Not Running,3,1,4,1,"T414, T12, T360, T291, T233, T411, T343"
+T473,B,Not Running,2,2,6,6,"T85, T165, T35, T329, T246, T283, T203"
+T474,B,Not Running,5,10,3,10,"T305, T99, T219, T237, T325, T353, T472, T420, T456, T161"
+T475,A,Not Running,5,3,3,8,"T140, T331"
+T476,C,Not Running,1,5,12,9,T314
+T477,D,Not Running,5,10,10,10,"T403, T262"
+T478,B,Running,4,7,15,0,"T276, T133, T451, T261"
+T479,A,Not Running,5,2,6,4,
+T480,C,Running,1,2,16,0,T17
+T481,C,Running,4,6,11,4,T349
+T482,B,Running,1,4,4,1,"T148, T54, T86, T225, T87, T403, T152"
+T483,B,Not Running,3,4,7,9,"T9, T338, T426, T229, T270, T166"
+T484,C,Not Running,2,3,6,3,"T112, T326, T472, T104, T454, T16, T479, T358"
+T485,B,Running,2,6,7,9,T357
+T486,B,Not Running,1,4,10,10,"T95, T469, T231, T36"
+T487,D,Running,4,4,5,4,
+T488,A,Running,3,7,17,3,"T248, T453, T223, T124, T101, T14, T307"
+T489,A,Running,5,5,17,8,"T138, T14, T477, T257, T11, T136, T97, T321, T127, T91"
+T490,D,Not Running,3,1,6,4,
+T491,C,Running,3,10,4,3,
+T492,A,Not Running,2,6,1,3,"T105, T203, T442, T285, T251, T55, T126, T45, T218, T419"
+T493,A,Not Running,2,4,9,3,"T459, T76, T325, T24"
+T494,A,Not Running,2,6,13,0,"T79, T389, T41, T209, T233, T130, T456"
+T495,B,Running,1,6,5,0,"T96, T464, T113"
+T496,B,Not Running,1,3,12,2,T374
+T497,C,Running,2,10,6,2,"T488, T313, T7, T255, T387, T461, T80, T238"
+T498,A,Running,2,9,14,6,"T496, T27, T438, T304, T220, T300, T62, T188, T298, T202"
+T499,D,Not Running,1,8,9,4,"T241, T340, T85, T255"
+T500,A,Running,2,10,12,9,"T248, T143, T442, T353"
+T501,B,Running,1,4,15,2,"T70, T276, T288, T191, T373, T160, T472, T66"
+T502,A,Not Running,2,6,10,9,"T363, T493, T478, T294"
+T503,D,Running,1,4,8,3,"T495, T492, T39, T466, T444, T476, T313"
+T504,D,Not Running,4,1,1,2,"T21, T386, T24, T338, T256, T66, T5, T100, T181, T442"
+T505,C,Running,4,7,18,9,
+T506,A,Not Running,1,3,14,5,"T354, T200, T183, T9, T324, T239, T335, T333, T48"
+T507,C,Running,2,2,14,4,"T485, T4, T414, T492, T200, T505, T407, T56, T347"
+T508,A,Not Running,4,9,17,3,"T127, T291, T443, T174, T318, T481, T193"
+T509,D,Running,2,5,1,6,"T127, T96, T365"
+T510,C,Not Running,1,6,17,6,"T146, T319, T299, T411"
+T511,B,Not Running,3,3,3,5,"T86, T278, T182, T427"
+T512,C,Running,1,2,1,4,"T419, T93, T104, T6, T24, T458, T433, T311, T405, T90"
+T513,C,Not Running,3,8,16,9,"T30, T235, T164, T311, T53"
+T514,C,Not Running,5,5,18,8,"T296, T419, T139"
+T515,A,Running,1,2,2,0,"T358, T449, T11, T441, T91, T236, T219, T117"
+T516,D,Running,4,3,3,5,"T339, T319, T4, T284, T351"
+T517,D,Running,3,5,7,5,"T120, T20, T34, T442, T153, T366, T314"
+T518,B,Not Running,2,4,11,8,"T386, T88, T436, T384, T257, T266, T239, T97, T467, T30"
+T519,A,Not Running,1,8,16,1,"T84, T92, T355, T165, T27, T312, T47, T32"
+T520,B,Running,3,6,8,2,"T277, T71, T306, T166, T14"
+T521,C,Not Running,4,8,14,4,
+T522,D,Not Running,3,4,3,8,"T10, T109, T511, T70, T361, T236"
+T523,C,Not Running,3,8,1,8,T499
+T524,D,Not Running,4,3,10,0,"T403, T129, T143, T452, T476, T152, T301, T336"
+T525,C,Running,5,4,2,6,"T182, T309"
+T526,A,Running,5,4,7,10,"T517, T322, T345, T3, T288, T523, T167, T437, T497, T275"
+T527,A,Running,2,8,12,8,T259
+T528,C,Not Running,1,7,1,4,"T317, T455, T389, T67, T103, T396, T216, T13, T497, T119"
+T529,C,Running,1,10,11,6,"T38, T519, T22, T250, T84, T152, T116"
+T530,C,Running,2,3,11,1,"T120, T54, T290, T97, T159, T496, T529, T78, T190, T137"
+T531,A,Running,5,9,1,6,T200
+T532,D,Running,2,10,5,10,"T43, T94, T196, T125, T375, T271, T218, T403"
+T533,B,Running,1,10,16,6,"T223, T334"
+T534,C,Running,5,8,9,4,"T399, T29, T49, T226, T384, T284"
+T535,C,Not Running,1,10,8,6,"T353, T485, T498, T317"
+T536,A,Running,4,5,1,5,
+T537,C,Not Running,3,3,10,1,
+T538,B,Not Running,3,9,6,2,"T125, T150, T60, T35, T54"
+T539,C,Not Running,2,2,8,5,"T493, T185, T424, T178, T310, T0, T202, T237"
+T540,C,Running,3,6,18,4,"T409, T390, T160, T232, T294"
+T541,C,Not Running,1,9,4,0,"T306, T487, T441, T324, T482, T476, T278, T55, T207, T368"
+T542,B,Not Running,1,4,11,9,"T88, T296, T186, T118, T432, T32, T500, T370, T108"
+T543,B,Not Running,5,9,15,8,"T20, T254"
+T544,D,Not Running,4,7,6,1,"T395, T289, T530, T216, T344, T211, T146, T401"
+T545,D,Not Running,1,8,4,1,
+T546,C,Not Running,2,5,11,4,T113
+T547,C,Not Running,2,2,4,9,"T211, T237, T206, T517"
+T548,B,Not Running,4,5,9,7,"T332, T335, T376, T498, T27, T155, T213"
+T549,A,Not Running,3,4,20,2,
+T550,D,Not Running,2,3,6,6,"T542, T363, T249, T414, T315"
+T551,D,Not Running,5,9,2,10,
+T552,C,Not Running,4,8,13,4,"T174, T150, T495, T380"
+T553,C,Not Running,4,9,17,3,"T311, T67, T339, T301, T201, T321, T304"
+T554,A,Running,3,8,19,0,"T545, T355, T188, T361, T426, T265, T321"
+T555,D,Running,3,5,7,9,"T314, T266, T404, T533, T48, T460, T18"
+T556,B,Not Running,1,10,9,4,"T24, T140, T457, T96, T485, T396, T74"
+T557,A,Running,2,8,14,8,"T519, T238, T108"
+T558,B,Running,5,3,5,9,"T485, T91, T143, T351"
+T559,A,Not Running,3,1,17,6,T58
+T560,A,Not Running,1,4,12,5,"T75, T134, T185, T250, T446, T89, T363, T426"
+T561,C,Not Running,2,10,17,8,"T481, T350, T521, T301, T431, T293"
+T562,B,Running,2,3,4,1,"T115, T511, T479, T91, T58"
+T563,C,Running,2,6,2,8,
+T564,B,Running,3,10,1,1,"T419, T390, T291, T371, T447, T235, T162, T431, T376, T102"
+T565,A,Not Running,5,1,13,6,"T161, T390, T116, T5, T79, T122, T288, T338, T522, T393"
+T566,A,Not Running,5,9,21,4,"T77, T243, T190, T46, T420, T183, T529, T293, T109, T221"
+T567,C,Running,3,2,4,9,"T491, T37, T499, T464"
+T568,A,Not Running,5,3,5,6,"T278, T501, T386, T356, T453, T488, T555, T541, T149, T161"
+T569,B,Running,3,9,7,6,"T509, T183, T218, T267, T294"
+T570,A,Running,4,5,6,9,"T537, T174, T477"
+T571,A,Running,2,3,22,10,"T111, T134, T473, T202, T370, T499, T479"
+T572,A,Running,3,8,22,5,"T550, T145"
+T573,B,Running,5,7,6,10,"T98, T372, T231, T117, T215, T504, T209, T255, T292"
+T574,D,Running,3,3,4,5,"T370, T481, T557, T151, T99, T524, T475, T322, T369"
+T575,C,Not Running,5,6,3,2,"T410, T536, T482, T8"
+T576,C,Running,1,1,10,9,"T165, T246, T472, T126, T169"
+T577,D,Not Running,4,6,2,1,"T245, T452, T500, T448, T192, T304, T340, T205, T31, T571"
+T578,B,Running,5,5,4,7,"T466, T119, T37, T130, T277, T100, T242"
+T579,D,Running,1,10,1,9,"T219, T106, T30, T195, T18, T66, T79, T372, T166"
+T580,D,Running,5,9,6,0,
+T581,B,Not Running,3,9,14,2,"T441, T437, T20, T539, T159, T536, T31, T132, T372"
+T582,D,Running,2,10,2,6,T104
+T583,C,Running,4,3,8,3,"T477, T405, T29, T204, T74, T22, T235, T138, T60"
+T584,B,Running,2,8,14,10,"T474, T301"
+T585,C,Not Running,5,10,13,0,"T14, T241, T85, T288, T96"
+T586,A,Running,1,5,8,3,"T451, T104, T294, T377, T311, T227, T428, T532"
+T587,D,Not Running,5,8,3,9,"T332, T509, T169"
+T588,A,Running,4,5,8,4,"T233, T166, T267, T388, T553, T130, T395, T315, T129"
+T589,A,Running,4,6,4,5,T286
+T590,D,Not Running,1,9,7,7,T452
+T591,B,Running,5,5,6,5,"T63, T563, T152, T423, T272, T126, T576, T398"
+T592,D,Running,5,3,10,1,"T576, T299, T495, T117, T494, T131, T522, T434, T486, T36"
+T593,C,Not Running,5,4,4,8,"T24, T135, T144, T396, T141"
+T594,D,Not Running,2,10,7,2,"T431, T364, T378"
+T595,B,Running,1,10,1,8,"T257, T549"
+T596,C,Running,4,4,10,8,T187
+T597,A,Running,1,1,2,9,T514
+T598,B,Running,3,3,14,3,"T315, T563"
+T599,B,Not Running,2,5,4,0,"T269, T336"
+T600,A,Not Running,4,3,8,2,
+T601,A,Running,1,1,8,7,"T452, T316, T188"
+T602,A,Running,4,9,3,1,"T292, T386, T69, T480, T478, T428, T497, T146, T32, T165"
+T603,B,Not Running,4,1,13,5,"T94, T244, T8"
+T604,D,Not Running,3,1,10,5,
+T605,D,Running,3,8,8,7,T39
+T606,C,Running,3,6,10,8,"T206, T389, T83, T554, T368"
+T607,A,Not Running,3,2,12,5,"T570, T137, T495, T351, T1, T279, T456"
+T608,D,Not Running,5,3,5,7,"T333, T102"
+T609,B,Running,2,3,10,5,T12
+T610,C,Not Running,1,3,18,7,"T404, T54, T64, T38, T568, T593"
+T611,D,Not Running,1,1,2,8,"T203, T226, T321, T523, T418, T71, T481, T155, T36"
+T612,A,Running,2,3,7,7,"T50, T42"
+T613,D,Not Running,1,9,6,0,
+T614,B,Running,4,8,10,4,"T144, T501, T222, T600, T392, T318, T479"
+T615,A,Not Running,5,5,4,6,T426
+T616,C,Running,3,9,18,10,"T83, T572, T584, T385, T611"
+T617,D,Running,2,6,3,0,"T318, T531, T48, T411, T175, T589"
+T618,D,Not Running,5,10,5,0,"T479, T297, T241, T9, T146, T142, T457, T471, T278"
+T619,C,Running,2,2,4,3,"T356, T598, T373, T481, T289, T390, T615, T613, T454"
+T620,A,Running,1,2,18,8,"T613, T585, T537, T387, T437, T463, T460, T481, T462, T454"
+T621,B,Running,4,4,16,5,"T26, T543, T151, T305, T204, T526, T238"
+T622,D,Running,5,9,8,4,
+T623,B,Running,5,1,10,4,"T304, T540, T525, T232, T456, T487, T130, T500, T242"
+T624,D,Not Running,3,5,8,8,"T236, T534"
+T625,C,Running,1,8,4,10,"T212, T274, T540, T477, T526, T342, T187"
+T626,B,Running,5,2,16,5,T578
+T627,A,Running,4,10,6,7,"T556, T80, T132, T249, T399, T270, T596, T162, T329, T174"
+T628,D,Not Running,3,4,10,4,"T500, T395, T90, T133"
+T629,A,Not Running,1,2,19,0,"T169, T569, T110, T614, T94, T257, T335, T219, T284, T166"
+T630,C,Running,2,1,14,6,"T17, T97, T373, T94, T362, T30, T476, T333, T376"
+T631,A,Running,2,7,2,4,"T150, T252, T414, T208"
+T632,C,Running,2,5,15,3,"T457, T298, T152, T385, T443, T481, T349, T467"
+T633,A,Not Running,1,10,17,7,T37
+T634,B,Running,3,3,15,7,T478
+T635,A,Running,5,1,14,8,"T218, T122, T157"
+T636,A,Running,2,7,21,7,"T351, T73"
+T637,D,Running,4,8,4,5,
+T638,A,Running,5,3,5,2,"T9, T81, T442, T88, T562, T187, T422, T283, T133, T143"
+T639,B,Not Running,4,9,16,1,
+T640,A,Running,3,6,10,9,"T96, T341, T491, T588, T181, T342, T457, T290"
+T641,D,Running,2,1,8,10,
+T642,B,Not Running,4,2,16,10,T228
+T643,A,Not Running,1,7,14,9,"T23, T446, T218, T296, T28"
+T644,C,Running,2,2,14,0,"T47, T261, T145, T127, T562, T322, T283, T91"
+T645,B,Running,3,1,7,3,"T32, T51, T250, T388, T74, T375"
+T646,B,Not Running,4,7,12,0,
+T647,C,Not Running,1,1,15,0,"T50, T32, T73, T453, T301, T410"
+T648,D,Running,1,3,4,10,"T205, T340, T129, T401, T513"
+T649,A,Running,2,6,22,5,"T527, T318, T133, T549, T597, T68, T274"
+T650,C,Running,5,4,17,0,"T318, T389, T642, T107, T550, T337, T123, T342"
+T651,C,Running,1,8,12,6,
+T652,D,Not Running,1,10,10,2,"T66, T107, T306, T345, T104, T450, T470, T407"
+T653,A,Not Running,3,6,11,3,"T440, T54, T151, T92, T154"
+T654,C,Running,1,2,3,10,T524
+T655,B,Not Running,2,10,7,1,"T152, T18, T641, T246, T256, T189, T161, T569"
+T656,A,Running,1,9,8,5,"T257, T610, T381, T142, T206, T249, T559, T570"
+T657,D,Running,3,7,8,3,T506
+T658,C,Not Running,5,3,12,9,"T619, T567, T596, T130"
+T659,B,Not Running,2,4,2,4,"T396, T443, T339, T438, T332, T31"
+T660,B,Not Running,1,9,14,5,"T96, T75, T382, T465, T498, T411, T367, T480, T294, T570"
+T661,B,Running,5,5,15,9,T253
+T662,D,Running,1,5,5,6,T390
+T663,A,Not Running,3,8,3,10,"T251, T631, T240, T285"
+T664,C,Not Running,5,7,2,10,"T617, T624, T414, T404, T2, T90, T548, T319, T366"
+T665,D,Not Running,1,6,7,9,
+T666,B,Running,1,2,11,6,"T370, T128, T522, T219, T231, T545, T127, T151, T153, T273"
+T667,B,Not Running,3,6,12,6,"T139, T365, T106, T137, T444, T284, T614"
+T668,D,Not Running,3,6,2,0,"T116, T51, T197"
+T669,D,Not Running,3,10,7,5,"T259, T465, T292, T535, T563, T602, T344"
+T670,B,Not Running,4,9,1,6,"T58, T78, T102, T162"
+T671,B,Running,3,9,6,5,"T576, T68, T319, T594, T652"
+T672,A,Running,4,2,15,10,"T1, T326, T63, T667"
+T673,C,Running,2,4,2,9,"T615, T77, T551, T484, T145"
+T674,D,Not Running,1,10,10,10,"T448, T335, T615"
+T675,D,Running,5,6,2,2,
+T676,D,Running,2,10,1,10,"T62, T535, T485, T650, T212, T119, T506, T83, T143"
+T677,A,Running,4,6,16,0,"T91, T285, T333, T437, T248, T497, T368"
+T678,C,Running,1,2,7,8,T356
+T679,A,Not Running,4,8,22,3,"T151, T322, T643"
+T680,D,Not Running,5,1,2,5,"T6, T216, T155, T103, T439, T604, T24, T259, T305"
+T681,B,Not Running,3,3,10,3,
+T682,A,Running,1,5,9,3,"T572, T21, T498, T471, T584"
+T683,B,Running,4,7,1,1,"T312, T556, T233"
+T684,B,Running,1,8,6,8,
+T685,A,Not Running,3,7,15,0,"T641, T64, T590, T38"
+T686,B,Not Running,1,10,13,10,"T225, T607, T403, T325, T487, T649, T288, T510, T238, T88"
+T687,B,Not Running,5,6,12,10,"T386, T435, T342"
+T688,B,Running,1,10,9,3,"T133, T680, T240"
+T689,D,Running,4,4,2,3,T422
+T690,C,Not Running,3,10,4,2,"T265, T339, T8, T139, T497, T336, T641, T271, T275"
+T691,B,Running,5,7,1,2,
+T692,D,Not Running,3,6,3,1,"T160, T13, T6, T635, T495, T561, T1, T418, T252"
+T693,A,Running,2,9,18,9,"T35, T423"
+T694,D,Running,2,2,1,8,"T501, T408, T668, T457, T138, T621"
+T695,A,Not Running,3,10,4,3,"T540, T542"
+T696,A,Not Running,2,4,3,10,"T289, T454, T366, T440, T132, T695"
+T697,C,Not Running,5,4,14,8,"T442, T681, T303, T416, T568, T298"
+T698,A,Not Running,4,8,17,4,T560
+T699,D,Running,4,8,3,2,T504
+T700,B,Running,1,5,8,9,"T347, T629, T288"
+T701,B,Not Running,2,6,15,10,"T489, T444, T677, T261, T32, T68, T20, T361, T689, T367"
+T702,A,Running,5,3,10,4,"T108, T202, T320, T464, T398, T43, T515, T272, T683"
+T703,C,Running,5,7,14,2,"T630, T157, T367, T71, T584, T248, T443, T119, T635, T696"
+T704,B,Not Running,1,8,16,3,"T213, T258, T662, T40, T19, T580, T68, T185, T263, T415"
+T705,B,Running,2,10,3,7,"T88, T408, T637, T113, T57, T70, T245"
+T706,C,Not Running,1,7,7,5,"T287, T565, T133, T66, T540"
+T707,A,Not Running,3,5,12,3,"T298, T607, T153, T194, T66, T238, T400"
+T708,D,Not Running,3,3,5,1,"T615, T441, T537, T394, T313, T75"
+T709,D,Running,2,4,7,1,T515
+T710,D,Running,1,5,6,10,"T547, T559"
+T711,A,Not Running,4,9,19,2,"T279, T472, T70, T372, T15"
+T712,B,Running,1,2,2,0,"T550, T615, T196, T497, T576, T100, T409"
+T713,D,Running,3,9,8,5,
+T714,A,Running,4,2,17,10,T100
+T715,B,Not Running,3,7,1,5,"T401, T534"
+T716,B,Not Running,2,9,3,5,"T693, T437, T668, T349, T48, T37, T665, T699"
+T717,C,Not Running,2,9,17,5,"T283, T565"
+T718,C,Running,5,8,4,7,"T66, T532, T297, T493, T447, T579"
+T719,C,Not Running,2,8,5,9,"T702, T281, T449, T7, T128, T717, T116"
+T720,C,Running,3,2,2,10,T660
+T721,B,Running,1,7,8,8,
+T722,C,Not Running,4,2,9,5,"T438, T49, T339, T22, T552, T421, T568, T317"
+T723,A,Running,1,7,22,0,
+T724,D,Running,1,1,9,10,"T124, T388, T334, T704, T443"
+T725,A,Running,3,4,2,9,"T599, T703, T548, T351, T645, T344, T234, T490"
+T726,C,Running,5,6,18,7,"T391, T366, T622, T406, T464, T28, T536, T92, T279"
+T727,D,Running,4,2,7,2,"T141, T607, T429"
+T728,C,Not Running,1,2,13,10,"T522, T315, T498"
+T729,B,Running,3,3,3,7,"T524, T55, T239"
+T730,A,Not Running,1,5,7,9,"T524, T32, T191, T499, T500, T448, T208, T515"
+T731,A,Running,1,8,7,9,"T156, T524, T723, T106, T269, T186, T719, T121, T110, T201"
+T732,C,Running,3,3,6,3,"T622, T353, T499"
+T733,C,Running,4,8,2,3,T356
+T734,C,Not Running,2,8,2,8,"T422, T372, T692, T678, T320, T381, T259, T156, T125, T225"
+T735,B,Running,2,4,6,0,"T558, T327, T234, T462, T617"
+T736,D,Running,1,3,5,7,"T339, T296, T146, T556, T436, T672"
+T737,A,Not Running,4,8,16,7,"T0, T261, T215, T402, T225"
+T738,C,Not Running,4,1,2,1,"T321, T318, T385, T236, T535"
+T739,B,Running,4,7,15,3,"T512, T432, T195, T697, T426, T387, T95"
+T740,C,Running,1,5,8,4,"T176, T175"
+T741,A,Running,1,10,4,9,"T666, T58, T63, T731, T19, T314, T439"
+T742,D,Running,4,7,6,10,"T652, T376, T718, T184, T730, T120, T199, T349, T282, T678"
+T743,D,Running,1,2,9,5,T280
+T744,C,Not Running,3,4,2,6,"T307, T467, T487"
+T745,D,Running,4,6,6,6,"T56, T285, T439, T469, T730, T159"
+T746,B,Not Running,5,10,10,6,"T159, T580, T26, T650"
+T747,C,Not Running,2,10,5,2,"T547, T73, T155, T363, T609, T702, T37, T431, T26"
+T748,B,Running,5,3,8,4,"T467, T20, T233, T616, T644, T298, T301, T413, T336"
+T749,C,Not Running,2,9,7,7,"T645, T244, T684, T60, T567, T428, T275, T21"
+T750,C,Running,3,1,12,7,"T245, T593, T557, T252, T41, T6, T11, T609, T28"
+T751,A,Running,2,7,14,5,"T359, T433, T173"
+T752,C,Running,3,2,2,4,"T468, T112"
+T753,B,Not Running,1,2,2,8,T2
+T754,A,Running,5,1,1,1,"T386, T655, T640, T682, T61, T95, T595"
+T755,C,Running,2,9,7,10,"T454, T424, T754"
+T756,A,Not Running,2,8,12,10,
+T757,C,Running,2,7,11,10,T607
+T758,A,Not Running,3,5,4,0,"T293, T223, T422, T406, T215, T357, T524"
+T759,B,Running,3,4,1,7,"T74, T437, T613, T385, T418, T538, T262"
+T760,D,Running,2,3,2,5,"T167, T742, T371, T520, T262, T736"
+T761,B,Running,4,4,14,10,"T604, T344, T521, T264, T347, T750, T648, T397, T454, T74"
+T762,D,Running,3,3,4,8,"T663, T308, T437, T571, T633"
+T763,A,Running,1,3,10,5,"T419, T705, T234, T55, T436, T573, T41"
+T764,B,Running,1,8,12,0,"T57, T203, T232, T458, T619"
+T765,C,Running,3,3,3,7,"T641, T595, T721, T548, T695"
+T766,C,Running,2,3,3,8,"T122, T634, T395"
+T767,B,Not Running,3,6,15,1,"T670, T698, T623"
+T768,B,Running,4,2,12,2,"T753, T374, T557, T670, T294, T610, T318"
+T769,B,Running,4,7,9,2,"T480, T563, T473, T595, T463, T652, T66"
+T770,D,Running,4,6,6,9,"T306, T64, T576"
+T771,C,Not Running,1,10,6,1,"T700, T600, T634, T64"
+T772,D,Not Running,2,9,2,7,"T474, T145, T516"
+T773,A,Running,3,3,10,3,"T132, T9, T254, T744, T318"
+T774,C,Running,5,6,5,9,T513
+T775,D,Running,4,8,8,3,"T106, T560"
+T776,D,Running,1,9,4,0,"T514, T146, T341, T534, T335, T616"
+T777,D,Not Running,5,2,7,0,"T58, T60, T585"
+T778,A,Not Running,2,9,14,4,"T395, T114, T375, T382, T432, T449, T212, T41"
+T779,C,Running,5,5,17,10,"T700, T214, T708, T68, T193, T17, T538"
+T780,A,Running,2,1,14,8,"T75, T770, T233, T503, T208, T365, T460, T664, T86, T45"
+T781,A,Not Running,4,9,7,1,"T623, T366, T553, T649, T427, T5, T773"
+T782,B,Not Running,1,2,7,1,"T338, T610, T98, T587"
+T783,B,Running,2,8,7,0,"T477, T538, T248, T605, T710, T617, T606, T395"
+T784,B,Running,5,7,16,0,"T72, T366"
+T785,B,Not Running,3,2,1,3,
+T786,B,Not Running,3,5,14,2,T119
+T787,A,Not Running,2,3,4,10,"T7, T640"
+T788,B,Not Running,4,10,8,6,"T120, T776, T676, T642, T713, T310, T199"
+T789,C,Not Running,2,1,2,1,T177
+T790,C,Running,5,2,16,5,"T547, T542, T232, T486"
+T791,B,Not Running,1,2,11,0,"T615, T56, T606"
+T792,C,Not Running,3,7,8,1,"T638, T45, T518"
+T793,D,Running,4,9,4,4,"T485, T180, T445, T787, T258, T444"
+T794,D,Not Running,5,10,5,6,"T35, T469"
+T795,A,Not Running,4,10,6,0,
+T796,B,Not Running,3,9,12,0,"T133, T446, T27, T141"
+T797,D,Not Running,2,10,9,3,"T681, T454, T143, T10, T90, T742, T679"
+T798,B,Running,2,4,14,3,"T714, T488, T734, T602, T69, T709"
+T799,A,Running,1,5,19,8,"T439, T584, T693, T166, T55, T277, T565"
+T800,C,Not Running,5,2,2,5,T55
+T801,B,Running,3,4,11,10,"T380, T798, T383, T158, T588, T108, T701, T244, T451, T707"
+T802,A,Not Running,4,5,2,8,"T446, T793, T273, T186, T594, T93, T351"
+T803,A,Not Running,2,1,13,8,"T429, T711, T188, T388, T623, T708, T605, T661, T258, T495"
+T804,C,Not Running,4,9,11,3,"T802, T202, T278, T95, T591, T563, T128, T735"
+T805,A,Running,2,9,5,6,T583
+T806,A,Not Running,5,6,3,7,"T451, T305, T5, T454, T399, T82, T102"
+T807,C,Running,1,6,16,5,"T406, T347"
+T808,C,Running,3,5,12,6,"T807, T653, T680"
+T809,D,Not Running,2,5,8,1,"T458, T456, T120, T588"
+T810,B,Running,3,3,5,9,"T343, T471, T777, T171, T116, T515, T180, T0"
+T811,C,Not Running,3,6,12,4,"T438, T25, T663"
+T812,D,Running,1,8,9,6,"T689, T627, T261, T240"
+T813,D,Running,3,7,2,1,"T535, T91, T183, T77"
+T814,D,Running,3,5,9,10,"T41, T507, T212, T486, T159, T447"
+T815,C,Running,4,9,13,2,"T295, T129, T797, T610, T302, T475, T136, T317"
+T816,B,Running,3,5,4,0,"T52, T359, T555, T526"
+T817,D,Not Running,4,6,3,1,"T658, T38, T113, T93"
+T818,D,Running,3,5,9,9,"T647, T718, T540, T764, T322"
+T819,A,Not Running,5,1,14,4,T23
+T820,D,Running,4,1,3,6,"T338, T410, T751, T258, T170, T81"
+T821,D,Running,4,7,9,4,"T517, T299, T663, T818, T127, T702, T349, T367, T466, T37"
+T822,C,Not Running,2,4,13,1,"T633, T468, T14"
+T823,C,Running,5,7,2,2,"T128, T121, T447, T44, T90, T224, T199"
+T824,D,Not Running,1,8,9,1,T289
+T825,C,Not Running,4,3,9,5,"T317, T110, T322"
+T826,C,Not Running,4,9,5,3,"T199, T396, T782, T809, T298, T728, T308, T206"
+T827,A,Not Running,4,4,11,8,"T384, T638"
+T828,B,Not Running,2,5,3,4,"T416, T608, T600, T459, T5, T450, T343"
+T829,B,Not Running,5,1,15,10,"T417, T640, T717, T131, T187, T368, T369, T121, T205"
+T830,C,Not Running,2,6,12,10,"T821, T658, T472, T610, T45, T352, T137, T551, T484, T803"
+T831,C,Not Running,3,1,10,3,"T99, T231, T112, T480, T432, T387, T160"
+T832,A,Not Running,3,5,9,6,"T317, T2, T180, T710"
+T833,D,Not Running,3,8,4,3,
+T834,B,Not Running,4,5,10,8,"T185, T166, T816, T734, T676, T497, T721"
+T835,B,Not Running,1,1,1,7,
+T836,D,Running,2,9,6,5,"T202, T763"
+T837,B,Not Running,2,7,7,9,"T433, T736, T164, T505, T400"
+T838,D,Running,3,6,2,8,"T584, T60, T582"
+T839,A,Running,2,10,16,1,T252
+T840,C,Not Running,2,10,10,3,"T786, T241, T109, T435, T742, T126, T536, T295"
+T841,D,Running,5,8,2,4,T179
+T842,C,Running,4,5,17,0,"T346, T263, T250, T463, T35"
+T843,D,Running,3,5,10,3,"T398, T340, T171, T332, T264, T143, T576, T313, T730, T402"
+T844,A,Running,1,9,4,4,"T150, T457, T224, T52, T670, T7, T167, T605, T443, T149"
+T845,C,Not Running,2,9,6,7,"T172, T712, T26, T194, T412, T42"
+T846,B,Not Running,3,1,13,5,"T491, T673"
+T847,C,Not Running,3,9,10,9,"T640, T333, T841, T250, T827, T688, T369, T176, T487, T453"
+T848,A,Running,2,4,15,9,"T669, T245, T201, T719, T311, T466, T240, T696"
+T849,A,Running,3,2,17,7,"T125, T700, T662, T121, T111, T46, T462, T362, T94, T690"
+T850,D,Running,2,3,8,1,"T528, T662, T60, T807, T633, T761, T22, T386, T431, T519"
+T851,A,Not Running,2,10,16,1,"T829, T430, T427, T394, T299, T152, T166, T590, T424, T233"
+T852,B,Not Running,4,4,5,3,"T360, T210, T791"
+T853,C,Not Running,1,3,18,3,"T427, T20, T840, T501, T140"
+T854,B,Running,1,2,5,5,"T772, T87"
+T855,D,Not Running,3,8,1,4,"T581, T367, T751"
+T856,D,Running,5,5,8,7,
+T857,A,Not Running,5,6,1,9,"T340, T509, T389"
+T858,A,Running,4,5,9,10,"T739, T184, T518, T18, T431, T519"
+T859,A,Running,5,4,15,1,
+T860,B,Not Running,2,1,8,5,"T748, T351, T686, T477, T599, T421"
+T861,C,Not Running,5,10,1,6,T472
+T862,B,Running,1,5,7,1,"T253, T223, T459"
+T863,C,Not Running,4,1,11,4,
+T864,D,Not Running,3,7,1,7,
+T865,D,Not Running,5,4,6,1,"T0, T506, T226, T526, T736"
+T866,A,Not Running,2,10,18,5,"T246, T560, T237, T129, T759, T133, T601, T613, T267"
+T867,B,Not Running,4,8,2,1,"T543, T460, T421, T2, T555, T194, T496"
+T868,A,Running,1,3,21,6,"T405, T129, T840"
+T869,D,Not Running,2,6,1,7,T232
+T870,C,Not Running,5,8,9,5,"T556, T12, T87, T823, T14, T175, T659, T449"
+T871,A,Running,4,9,15,3,"T43, T207"
+T872,B,Running,3,9,11,3,"T301, T17, T669, T215, T527, T749, T420"
+T873,B,Running,3,10,6,0,"T585, T782, T751, T12, T293, T90, T629, T799"
+T874,A,Running,4,8,16,9,"T647, T60, T79, T102, T517, T152, T800, T646"
+T875,C,Running,3,7,11,8,"T71, T682, T434"
+T876,D,Running,3,10,10,9,T174
+T877,C,Running,5,10,15,2,"T549, T577, T254, T258, T241, T741, T146, T428, T261, T833"
+T878,B,Running,4,1,3,9,"T295, T425, T472"
+T879,C,Running,5,9,9,4,
+T880,C,Running,4,5,7,3,
+T881,B,Running,5,9,10,5,"T612, T590, T253, T78, T461, T662, T607, T640, T548, T589"
+T882,A,Running,4,10,8,9,"T382, T809, T37, T800, T838, T628, T737, T3, T292, T13"
+T883,C,Not Running,4,1,2,1,
+T884,D,Running,4,3,4,1,
+T885,D,Not Running,5,9,7,1,"T712, T491"
+T886,D,Not Running,4,1,8,10,"T659, T869, T64, T819, T56, T548, T598, T738, T539"
+T887,C,Running,2,4,9,2,"T98, T248, T517, T144, T458, T318, T126, T646"
+T888,A,Running,5,10,3,10,"T552, T698, T221, T139, T596, T834"
+T889,C,Not Running,4,5,4,7,T136
+T890,C,Running,2,7,16,8,"T784, T499, T335, T813, T615, T740, T599, T86"
+T891,B,Not Running,1,7,10,6,"T177, T657, T379, T431, T66, T466, T426"
+T892,B,Not Running,3,5,6,1,"T763, T301"
+T893,B,Not Running,4,5,4,8,"T564, T328"
+T894,B,Not Running,1,7,7,3,"T130, T706, T635, T741"
+T895,D,Running,1,2,3,0,"T892, T408, T42, T135, T705, T404, T743, T154, T254"
+T896,A,Not Running,2,5,11,0,"T767, T745, T455, T75, T89, T614, T438, T532, T292, T413"
+T897,D,Not Running,4,9,5,5,"T808, T391, T120, T768"
+T898,B,Not Running,5,5,6,4,"T883, T829, T819"
+T899,C,Running,1,5,3,7,T718
+T900,C,Running,5,3,12,9,"T238, T23, T787, T479, T710, T835"
+T901,B,Running,5,9,7,5,"T156, T341, T461, T595, T591, T226, T630, T498"
+T902,C,Running,2,7,3,2,T863
+T903,D,Not Running,5,8,6,3,"T771, T26, T799, T569, T736"
+T904,D,Not Running,2,9,6,0,"T511, T687, T733, T870, T749, T740, T658"
+T905,B,Running,1,4,4,8,"T36, T620, T647, T50, T840, T356, T643, T549, T765"
+T906,A,Running,1,2,7,4,T506
+T907,B,Not Running,3,8,5,6,"T830, T275, T164, T33, T406, T862, T435"
+T908,A,Not Running,4,8,12,6,"T826, T461, T858, T140, T102, T511"
+T909,D,Running,5,6,9,7,"T299, T114, T400, T574, T353, T698, T305, T473, T686"
+T910,C,Running,5,4,12,10,
+T911,A,Running,4,8,21,6,"T68, T556, T331, T549, T712, T755, T642, T455, T874, T464"
+T912,D,Running,3,4,2,10,"T7, T866"
+T913,D,Running,2,10,10,9,"T897, T38, T805, T728, T162, T464, T743"
+T914,A,Not Running,3,2,19,3,
+T915,C,Running,4,10,8,3,"T257, T565, T111, T585, T737, T880"
+T916,D,Not Running,5,6,10,1,"T206, T160, T864, T257, T721, T685"
+T917,A,Running,1,3,3,9,T575
+T918,D,Running,1,3,2,3,"T257, T131, T914, T855, T55, T795, T367, T103, T571"
+T919,D,Running,5,10,7,0,"T47, T571, T288, T121, T156, T715, T354"
+T920,C,Running,5,3,10,0,"T411, T53, T605, T320, T615, T614, T496"
+T921,D,Not Running,5,2,6,2,"T278, T597"
+T922,D,Running,4,6,3,7,"T463, T563, T76, T363, T66, T174, T360, T160"
+T923,B,Not Running,4,5,13,8,"T33, T356, T805, T597, T619, T780, T647"
+T924,B,Running,5,3,7,5,"T33, T411, T15, T268, T760, T98, T518, T623"
+T925,D,Not Running,3,1,7,2,"T562, T742, T508, T621, T29, T7, T150, T194, T410, T809"
+T926,A,Running,1,6,2,8,"T424, T41, T566, T695, T436, T645, T293, T426, T252, T227"
+T927,C,Running,2,10,10,1,"T485, T194, T251, T172, T342, T177, T867"
+T928,B,Not Running,4,7,7,10,"T63, T662, T208, T798, T403"
+T929,C,Not Running,3,5,10,2,T837
+T930,B,Not Running,4,6,14,10,"T792, T904, T598, T320"
+T931,B,Not Running,1,10,16,2,"T277, T71, T869, T767, T408, T765, T206, T597, T388"
+T932,D,Not Running,3,2,1,1,
+T933,A,Not Running,3,8,19,0,"T214, T889, T731, T472, T88, T201, T765, T273, T825, T533"
+T934,D,Not Running,3,10,6,4,"T324, T439, T230, T157"
+T935,A,Running,5,8,10,9,"T534, T713, T80"
+T936,A,Not Running,4,4,15,7,"T669, T458, T249, T530, T641, T681"
+T937,A,Not Running,5,7,1,1,"T356, T213, T152, T660, T537, T555, T531, T767"
+T938,C,Running,2,4,13,8,"T683, T822, T381, T355, T475, T457"
+T939,D,Running,2,5,1,4,"T245, T697, T292, T496, T460, T86, T804, T689"
+T940,C,Running,5,2,6,1,
+T941,B,Running,4,6,13,8,"T407, T358, T336, T493, T761"
+T942,A,Running,4,2,9,6,"T331, T756, T631, T745"
+T943,D,Running,4,3,4,8,"T792, T224, T521, T401, T264, T823, T526, T599"
+T944,D,Running,4,7,5,1,"T773, T391"
+T945,D,Running,4,2,4,1,T218
+T946,B,Not Running,1,5,2,0,"T455, T402"
+T947,D,Not Running,2,2,3,1,"T447, T442, T189, T641, T789, T463, T656, T526, T82, T770"
+T948,A,Running,4,1,8,6,"T176, T549, T453, T472, T383, T24, T826, T770, T107"
+T949,B,Not Running,2,5,14,0,"T468, T374, T67, T893, T544, T3, T475, T723, T240"
+T950,D,Running,3,8,8,8,"T212, T288"
+T951,D,Not Running,3,4,9,7,"T817, T206, T575, T346"
+T952,A,Running,1,2,22,6,"T800, T67, T461, T1, T422, T400"
+T953,D,Running,4,7,9,4,"T679, T826"
+T954,C,Running,4,9,14,1,"T453, T918"
+T955,A,Not Running,1,8,8,6,"T626, T747, T414, T834, T721, T441, T699, T751, T611"
+T956,A,Not Running,1,6,14,7,"T278, T517, T154, T927, T468, T18, T915"
+T957,D,Not Running,5,4,9,7,"T880, T747, T99, T898"
+T958,D,Running,1,6,4,9,"T305, T267, T486, T756"
+T959,C,Not Running,1,2,18,8,"T593, T672, T375, T347, T544, T815, T582"
+T960,B,Not Running,5,5,14,3,"T451, T786, T177, T686, T275, T98"
+T961,A,Running,4,1,6,0,
+T962,A,Running,4,2,15,8,
+T963,A,Running,5,10,2,1,"T561, T398, T780"
+T964,D,Running,2,3,2,0,"T622, T366, T903, T859, T939"
+T965,A,Not Running,4,3,11,6,"T127, T132, T497, T746, T585, T799, T692, T468"
+T966,A,Running,2,10,9,3,"T873, T266, T794, T812"
+T967,C,Not Running,4,3,9,0,"T580, T617, T326"
+T968,A,Running,3,9,19,2,T548
+T969,B,Not Running,3,3,3,0,"T485, T579, T866, T291, T359, T875, T385, T831"
+T970,C,Running,5,7,13,3,"T730, T746, T710, T394, T234, T743, T147, T73, T656, T198"
+T971,C,Not Running,3,8,3,5,"T720, T285, T396, T426, T290, T137"
+T972,A,Running,2,3,7,4,"T754, T687, T84, T835, T952, T403, T496, T55"
+T973,B,Running,3,1,12,6,"T624, T608, T465, T434, T400, T306, T870, T749, T406, T625"
+T974,A,Running,3,8,16,3,T43
+T975,A,Running,3,9,12,0,"T119, T928, T785"
+T976,B,Running,2,2,13,5,"T909, T728, T945, T397, T745, T667"
+T977,D,Not Running,1,4,7,10,"T17, T545, T852, T776"
+T978,B,Running,4,6,5,4,"T86, T494, T42, T971, T30, T298"
+T979,A,Not Running,2,8,16,9,
+T980,C,Running,4,9,3,6,"T435, T600, T493, T494, T487"
+T981,A,Not Running,4,10,20,10,"T840, T71"
+T982,D,Not Running,2,4,7,1,"T490, T881, T408, T498, T229, T111, T907, T952, T294, T434"
+T983,A,Running,5,4,1,2,"T837, T522, T644, T947, T248, T748, T302, T863, T211"
+T984,D,Not Running,1,3,2,5,"T746, T160, T264, T428, T475, T227"
+T985,C,Not Running,4,8,18,0,T686
+T986,D,Running,4,8,9,3,T894
+T987,C,Running,3,6,4,3,"T875, T881, T558, T938, T181, T889, T131"
+T988,D,Not Running,1,3,7,3,"T501, T219, T70, T146, T489, T391, T364, T137"
+T989,D,Running,2,4,9,8,"T584, T737, T803, T258, T68, T101, T728"
+T990,D,Running,4,4,6,8,"T394, T134, T830, T549, T292, T321, T230, T603, T414"
+T991,B,Not Running,4,8,13,4,"T174, T623, T289, T172, T241, T589, T928"
+T992,D,Running,4,7,10,8,"T113, T96, T920, T345, T857, T9"
+T993,A,Running,4,9,4,7,"T456, T610"
+T994,A,Not Running,3,7,4,10,"T83, T301"
+T995,C,Running,5,7,14,4,"T950, T746, T922, T680, T562, T673, T859, T530"
+T996,B,Running,5,3,14,5,T513
+T997,D,Not Running,5,6,7,5,"T771, T970, T141, T770, T779, T518, T803, T956"
+T998,D,Running,3,3,9,9,"T685, T830, T376, T468, T643"
+T999,C,Running,4,3,18,2,"T560, T985, T453, T847, T946, T661"
+T1000,B,Not Running,4,7,1,5,"T61, T804, T329, T845, T279, T762"
+T1001,A,Not Running,2,9,13,1,"T491, T810, T75, T747, T681"
+T1002,B,Not Running,5,2,3,7,
+T1003,C,Not Running,4,1,15,2,"T485, T20, T634, T666, T611, T160"
+T1004,B,Running,5,7,9,5,"T12, T477, T850, T728"
+T1005,A,Not Running,5,5,2,10,"T561, T115, T522, T871, T843, T254, T362"
+T1006,B,Not Running,2,10,4,7,"T190, T501, T172, T460, T212"
+T1007,D,Not Running,1,4,8,6,"T848, T163, T734, T782, T672, T741, T746"
+T1008,A,Running,2,7,22,6,"T379, T943, T854, T558"
+T1009,A,Not Running,1,5,12,6,
+T1010,A,Not Running,3,8,6,10,
+T1011,A,Running,4,5,15,7,
+T1012,D,Running,1,1,4,1,"T213, T457, T624, T528, T437, T959, T663, T489, T649, T375"
+T1013,D,Running,5,10,1,5,"T348, T282, T503, T93, T371, T868, T527, T682, T140, T880"
+T1014,B,Not Running,1,2,6,9,"T736, T23"
+T1015,B,Running,1,9,8,4,"T238, T808, T412, T355, T545, T910, T1012, T30, T275, T922"
+T1016,A,Not Running,4,5,9,5,"T830, T962, T518, T26, T639, T293, T326, T889, T692, T410"
+T1017,C,Running,3,5,9,7,"T122, T731, T469, T273, T793, T517, T451"
+T1018,C,Not Running,4,6,13,1,"T325, T659, T381, T911, T685, T890, T823, T612, T91, T803"
+T1019,C,Not Running,5,5,1,2,"T777, T241, T820"
+T1020,B,Not Running,1,4,1,9,"T717, T40, T191, T712, T473, T91, T13, T714, T548, T5"
+T1021,A,Not Running,5,10,12,10,"T979, T737, T531, T131, T115, T529, T603, T203"
+T1022,D,Running,4,10,5,7,"T485, T101, T969, T420, T851, T526, T243, T932"
+T1023,C,Running,1,10,10,7,"T438, T691, T277, T682, T401, T673, T8, T486, T923, T116"
+T1024,D,Running,3,7,4,4,
+T1025,C,Not Running,2,8,14,4,"T81, T575, T300, T902, T485, T238, T943, T574"
+T1026,D,Not Running,5,2,10,2,"T542, T979, T505, T863, T242, T183, T32, T374, T52, T618"
+T1027,D,Not Running,4,1,7,10,"T448, T514, T373, T804"
+T1028,B,Running,2,7,3,4,"T381, T797, T310, T932, T727, T1"
+T1029,C,Not Running,1,3,11,9,"T588, T719, T681"
+T1030,A,Running,4,6,11,2,"T511, T829, T1007"
+T1031,C,Running,4,6,8,2,"T477, T174"
+T1032,C,Running,2,8,4,0,T945
+T1033,D,Running,1,1,9,0,"T9, T812, T698, T212"
+T1034,D,Running,5,4,2,2,"T408, T133, T427"
+T1035,A,Not Running,4,1,16,6,"T966, T459, T497"
+T1036,D,Running,5,1,8,3,"T56, T407, T98, T175, T774, T502, T255, T438, T1, T721"
+T1037,D,Not Running,1,8,5,8,"T259, T409"
+T1038,C,Not Running,5,4,15,6,"T110, T401, T926, T389, T648, T81"
+T1039,C,Running,1,10,16,10,"T756, T307, T935, T100, T704, T588, T71, T513"
+T1040,C,Running,4,2,10,6,
+T1041,A,Not Running,5,2,8,5,"T239, T515, T92, T938, T1020"
+T1042,B,Running,3,3,3,2,T408
+T1043,C,Not Running,4,3,12,6,"T38, T579"
+T1044,D,Not Running,2,6,9,4,"T736, T785, T512, T522, T816, T284, T720, T494, T630"
+T1045,C,Running,4,10,9,6,"T145, T445, T750, T717, T893, T428, T474, T695, T347"
+T1046,D,Running,1,3,2,3,"T314, T951, T461, T1041, T604, T422, T376, T1032, T855"
+T1047,B,Not Running,4,8,12,2,"T362, T316, T783, T645, T585, T599, T731, T320"
+T1048,A,Not Running,4,2,5,10,
+T1049,C,Not Running,5,8,16,7,"T639, T519, T307, T115, T437"
+T1050,C,Not Running,1,3,13,5,"T652, T70, T75, T822, T649, T990, T7"
+T1051,B,Running,3,4,1,0,"T409, T484, T308, T1041, T556, T685, T694, T17, T745"
+T1052,C,Running,2,9,18,3,"T24, T267, T914, T841"
+T1053,A,Running,4,3,11,3,"T631, T618, T344, T711"
+T1054,B,Running,5,4,10,10,"T843, T736, T281, T789, T1006, T73, T465, T111, T483, T554"
+T1055,A,Running,1,10,17,6,
+T1056,A,Not Running,1,1,11,8,"T338, T529, T954, T403, T114, T725, T88"
+T1057,B,Not Running,1,5,5,8,"T219, T854, T886, T93, T215, T988, T642, T487, T677"
+T1058,C,Not Running,2,7,14,7,"T223, T817"
+T1059,C,Running,5,2,18,7,"T1040, T963, T860, T104, T292, T900, T213, T353"
+T1060,A,Running,3,9,1,9,T224
+T1061,A,Not Running,3,9,10,0,"T18, T600"
+T1062,B,Not Running,1,4,12,4,"T912, T35, T283"
+T1063,D,Running,5,9,4,1,"T900, T709, T207, T396, T399"
+T1064,B,Not Running,4,7,1,0,"T604, T867, T410, T748, T905, T783"
+T1065,A,Running,5,7,4,8,"T480, T955, T1056, T407, T195, T8"
+T1066,A,Not Running,3,6,1,10,"T26, T948, T281, T470"
+T1067,B,Running,5,2,1,3,"T832, T46, T480, T408, T10, T193, T720"
+T1068,B,Not Running,4,4,1,0,"T876, T173, T644, T583, T720"
+T1069,A,Running,1,10,22,9,"T12, T541, T204, T963, T464, T994, T191, T742, T96, T431"
+T1070,B,Not Running,5,8,7,5,"T294, T1033, T679, T321, T324, T310, T681"
+T1071,A,Not Running,4,3,22,8,"T296, T899, T398, T557, T1041, T915"
+T1072,A,Running,3,2,1,1,"T255, T466, T301, T142, T254, T713, T44"
+T1073,C,Not Running,5,1,3,7,T737
+T1074,B,Not Running,4,2,16,0,"T880, T41, T257, T847, T910, T331, T1059, T809, T99, T83"
+T1075,D,Not Running,3,1,4,5,"T665, T584, T503, T126, T995, T68"
+T1076,C,Not Running,4,10,14,0,"T657, T938, T295, T100, T1013"
+T1077,D,Running,4,4,9,5,"T314, T864, T211, T1073, T300, T310, T1014, T242, T200"
+T1078,B,Running,5,8,10,3,"T805, T654, T437, T906"
+T1079,C,Not Running,3,6,4,2,"T122, T766, T1002, T176, T541, T939, T534"
+T1080,C,Running,4,3,1,5,"T1028, T39, T855, T608, T198, T212, T96"
+T1081,C,Running,2,5,2,2,"T1065, T900, T471, T260, T645, T588, T204, T324, T215, T472"
+T1082,A,Not Running,4,8,16,7,T960
+T1083,B,Running,2,5,11,8,
+T1084,D,Not Running,3,5,4,3,"T228, T814, T760, T593, T606"
+T1085,B,Not Running,1,4,1,10,
+T1086,C,Not Running,3,4,11,9,"T916, T35, T741, T539"
+T1087,B,Running,1,3,4,9,"T636, T325, T116, T482, T386, T715, T345, T759"
+T1088,D,Running,5,1,1,2,"T523, T724"
+T1089,C,Running,3,8,5,6,
+T1090,D,Running,5,9,2,6,T113
+T1091,D,Running,4,6,6,0,"T28, T339, T786, T310, T68, T287, T1047, T456"
+T1092,A,Not Running,1,5,5,9,
+T1093,D,Running,3,7,5,1,"T766, T796, T351, T188, T543, T918, T42, T696, T1087"
+T1094,B,Not Running,4,3,1,1,"T392, T748, T118"
+T1095,A,Not Running,2,7,5,8,"T724, T156, T892, T646, T204, T777, T949"
+T1096,A,Running,1,3,10,7,"T260, T206, T273, T384"
+T1097,B,Not Running,4,5,2,0,"T173, T662, T891, T375, T934, T398, T830, T1073"
+T1098,D,Not Running,1,10,9,9,
+T1099,B,Running,3,9,2,6,"T69, T707, T976"
+T1100,A,Running,1,7,1,8,
+T1101,C,Running,1,8,1,6,"T682, T325, T458, T321"
+T1102,A,Running,4,1,7,3,"T231, T101"
+T1103,A,Running,1,3,15,1,"T909, T865, T225, T668, T175, T107, T471, T1098"
+T1104,B,Not Running,5,6,4,9,
+T1105,D,Running,1,5,7,7,"T501, T154, T481, T957, T828, T568, T108, T729, T980"
+T1106,A,Running,5,2,7,9,"T812, T813, T808, T69, T810, T225, T1, T647, T765"
+T1107,C,Not Running,2,8,8,2,T437
+T1108,C,Not Running,4,10,5,9,"T207, T830, T914, T244, T664, T251, T70, T1018, T866, T316"
+T1109,C,Not Running,3,9,7,10,"T77, T467, T520, T89, T91, T292, T379, T413, T470"
+T1110,C,Running,1,1,10,6,"T67, T178, T777, T286, T907, T188, T1061, T267, T216, T421"
+T1111,D,Running,2,6,2,10,"T70, T200, T155, T948, T737, T806"
+T1112,C,Running,2,3,5,1,"T239, T374, T229, T259, T273, T597, T237, T1066"
+T1113,C,Running,5,7,18,6,"T1089, T778, T58"
+T1114,C,Running,1,7,1,3,"T237, T741, T155, T1045, T652, T302, T747, T164, T373, T220"
+T1115,D,Not Running,4,7,8,4,"T829, T619, T586, T376"
+T1116,A,Running,2,7,16,7,"T160, T285, T253, T852, T1049, T415, T803"
+T1117,B,Not Running,5,8,14,5,"T649, T1070, T658"
+T1118,D,Not Running,2,7,6,3,"T851, T702, T366, T488, T543, T577, T258, T850, T36"
+T1119,C,Running,2,7,15,6,"T458, T141, T889, T409, T339, T263"
+T1120,B,Not Running,4,5,9,2,"T1119, T307, T488, T357, T330"
+T1121,B,Not Running,3,4,6,8,"T697, T958, T316, T247, T1058, T254"
+T1122,D,Not Running,2,2,3,2,"T903, T175"
+T1123,B,Running,1,3,14,5,"T700, T246, T378"
+T1124,D,Not Running,4,2,1,9,"T640, T1051, T343, T88, T927, T646, T227, T652, T47, T461"
+T1125,A,Running,2,9,9,7,"T119, T959, T14, T587, T724, T981, T772, T712"
+T1126,B,Not Running,4,9,8,8,"T287, T915, T786, T514, T7"
+T1127,D,Not Running,4,6,5,6,"T315, T199, T525, T398"
+T1128,C,Running,5,3,14,6,"T265, T217, T682, T441"
+T1129,D,Running,5,8,10,0,"T582, T699, T640, T210, T338, T980, T308, T847, T2"
+T1130,D,Not Running,2,9,8,1,T854
+T1131,D,Not Running,1,5,1,3,"T1034, T285, T653"
+T1132,B,Not Running,2,10,7,1,"T67, T1052"
+T1133,A,Not Running,5,3,5,6,"T392, T559, T785, T867, T563"
+T1134,A,Running,1,5,6,8,"T16, T233, T721"
+T1135,A,Not Running,5,4,12,8,"T767, T619"
+T1136,B,Running,5,4,10,0,"T810, T479"
+T1137,A,Not Running,4,7,14,9,
+T1138,D,Not Running,4,10,7,2,"T922, T982"
+T1139,D,Running,1,3,6,0,"T719, T213, T554, T9, T451, T331, T892, T656, T790"
+T1140,D,Not Running,1,9,5,1,"T96, T697, T297, T1121, T774, T317, T567, T545, T490, T1122"
+T1141,D,Not Running,4,6,10,1,"T898, T752, T628, T882, T916, T638"
+T1142,D,Not Running,1,7,10,2,"T988, T8, T1139, T806, T283, T160, T737"
+T1143,A,Not Running,1,1,8,0,"T248, T77, T119, T306"
+T1144,C,Running,5,8,4,9,"T245, T705, T144, T362, T919, T360, T461, T623, T892"
+T1145,A,Not Running,3,8,8,5,"T1123, T642, T1024, T1063, T652, T860, T1026, T539, T875"
+T1146,D,Not Running,5,9,4,2,"T622, T1118, T234"
+T1147,D,Not Running,2,9,4,6,"T467, T498, T74, T501, T955, T1125, T875, T502, T157, T300"
+T1148,B,Not Running,2,5,11,4,"T425, T609, T234, T577, T50, T630, T456, T1052"
+T1149,D,Running,1,6,3,1,"T543, T918, T139, T701, T950, T479, T274, T547, T99, T1072"
+T1150,D,Not Running,3,4,4,8,"T651, T183, T945, T1090, T818"
+T1151,D,Running,3,8,6,3,T253
+T1152,A,Running,2,4,11,10,"T416, T419, T813, T861, T665, T468, T858, T658, T38, T588"
+T1153,C,Running,2,5,16,7,"T699, T385, T208, T788, T984"
+T1154,C,Not Running,1,2,1,4,"T1062, T184, T538, T850"
+T1155,D,Not Running,5,5,2,2,"T1049, T1014, T663, T1146, T355, T73, T170, T189, T1064, T470"
+T1156,A,Running,4,7,22,5,"T313, T811"
+T1157,B,Not Running,2,7,13,7,T371
+T1158,A,Running,4,9,1,2,"T365, T562, T189, T166"
+T1159,B,Not Running,2,7,7,6,"T513, T361, T519, T694, T764, T539, T508"
+T1160,C,Not Running,2,3,14,9,"T885, T427, T130, T897"
+T1161,A,Running,5,8,4,2,"T641, T143"
+T1162,C,Not Running,2,1,10,1,"T374, T701, T940, T238, T251, T200, T890, T310, T705"
+T1163,C,Not Running,4,9,14,0,"T150, T302, T811, T344, T832"
+T1164,A,Running,1,7,1,9,"T542, T838"
+T1165,D,Not Running,3,2,9,2,"T269, T801, T761, T229, T887, T62, T755, T643"
+T1166,C,Running,3,3,6,1,"T317, T1011, T23, T181, T339, T660"
+T1167,A,Running,4,6,18,10,"T504, T1011, T811, T1089, T945, T42, T794"
+T1168,C,Running,3,6,18,1,T849
+T1169,A,Running,4,9,21,10,"T1093, T606, T334, T370, T134, T667, T66, T844, T969, T59"
+T1170,C,Not Running,1,2,13,7,"T1026, T317, T696"
+T1171,B,Not Running,2,7,6,3,"T717, T607, T176, T976, T453, T1059, T229, T146, T913"
+T1172,C,Not Running,2,6,9,0,"T289, T548, T757"
+T1173,B,Not Running,4,5,16,4,"T902, T217, T102, T546, T827, T140, T1131, T608, T435"
+T1174,D,Not Running,3,8,5,7,"T800, T509, T1036, T714, T961, T115, T958, T750, T1116, T327"
+T1175,C,Not Running,2,2,11,10,"T38, T170"
+T1176,B,Running,5,1,4,4,"T246, T357, T199, T776, T743, T371, T241, T1165"
+T1177,A,Not Running,1,10,17,2,"T827, T1097, T847, T221"
+T1178,D,Running,5,10,2,5,"T665, T1000, T395, T124"
+T1179,C,Not Running,5,7,12,10,"T865, T606, T280, T991, T419, T375, T957, T340, T17"
+T1180,C,Not Running,1,3,5,7,"T786, T566, T817, T979"
+T1181,A,Not Running,2,4,1,7,"T234, T981, T577, T174, T819"
+T1182,B,Running,3,9,7,1,"T538, T944, T292"
+T1183,B,Running,4,2,3,8,T649
+T1184,D,Not Running,2,1,9,4,"T144, T245, T782, T545, T987, T717, T219, T231"
+T1185,B,Running,5,5,9,1,"T62, T178"
+T1186,A,Running,2,3,12,10,"T50, T377, T129, T1046, T214, T43, T1156"
+T1187,C,Not Running,5,1,3,0,"T1147, T1030, T987, T632, T502, T878, T48"
+T1188,A,Not Running,5,7,7,5,"T385, T142, T604, T1164, T795, T199, T771, T1031"
+T1189,A,Running,3,9,15,2,"T632, T541"
+T1190,B,Not Running,1,4,5,1,"T973, T458, T1005, T887"
+T1191,A,Not Running,3,4,16,7,"T198, T353"
+T1192,D,Running,4,7,5,3,T690
+T1193,B,Running,5,1,7,7,"T57, T774, T908, T58"
+T1194,D,Running,1,1,1,9,"T907, T731, T633, T233, T885, T299, T792, T684, T178, T92"
+T1195,D,Not Running,5,6,5,1,"T409, T1172, T260, T1039, T53, T880, T1159, T506, T32"
+T1196,A,Not Running,2,1,5,2,"T732, T745, T1103, T120, T797, T1173, T103, T743"
+T1197,C,Not Running,2,2,11,2,
+T1198,A,Not Running,1,2,4,7,T315
+T1199,D,Running,1,10,8,10,"T194, T606, T428, T350, T540, T1095, T948, T233, T925, T242"
+T1200,B,Running,4,7,9,1,"T400, T137"
+T1201,A,Not Running,3,7,9,3,"T219, T544"
+T1202,B,Running,5,3,9,0,"T781, T1140, T548, T578, T686, T1144, T296, T170, T227"
+T1203,B,Not Running,1,5,15,8,"T696, T41, T422, T771, T987, T1151, T36, T679, T849, T448"
+T1204,A,Not Running,3,3,15,4,"T229, T222, T912, T606, T569, T478, T707, T805"
+T1205,C,Not Running,1,7,11,5,"T655, T590, T932"
+T1206,A,Running,1,8,22,2,"T95, T316, T468, T827"
+T1207,A,Not Running,2,10,3,1,"T644, T299, T210, T606, T190, T688, T491"
+T1208,B,Not Running,2,4,14,9,"T768, T467, T363, T1076, T582, T390, T174"
+T1209,A,Not Running,2,6,14,3,"T955, T1027, T602, T945, T886"
+T1210,A,Running,1,6,7,9,"T724, T527, T647, T1031, T461, T281, T621, T571, T320, T841"
+T1211,A,Not Running,1,8,5,4,T1050
+T1212,D,Running,3,6,3,9,"T999, T836, T1147, T1145"
+T1213,B,Running,3,8,14,4,"T493, T747, T767, T958, T1084, T1180, T990"
+T1214,C,Running,4,1,8,4,"T443, T35"
+T1215,B,Not Running,4,6,10,5,"T752, T653, T1150, T248, T104, T1196, T950, T571, T412"
+T1216,B,Running,3,6,9,7,"T276, T184, T406, T130, T1208"
+T1217,A,Running,4,9,5,7,"T232, T1010"
+T1218,C,Running,4,8,2,3,
+T1219,A,Running,3,8,14,5,"T579, T1188, T51, T311, T113, T1095, T1020, T114"
+T1220,B,Running,5,4,2,3,"T942, T238"
+T1221,B,Running,3,3,12,0,"T369, T1107, T122, T90, T159, T534, T579"
+T1222,A,Running,1,5,13,2,"T633, T86, T1102, T891, T1034, T771, T227, T647, T695"
+T1223,D,Not Running,5,3,1,1,"T1124, T656, T1133, T896"
+T1224,B,Running,1,9,12,9,"T869, T399, T367"
+T1225,B,Running,4,1,5,1,"T891, T398, T304, T308, T1209, T1120"
+T1226,B,Running,4,7,9,8,"T316, T555, T57, T1040, T749, T688, T1082, T700"
+T1227,C,Running,2,8,4,10,"T753, T827"
+T1228,B,Not Running,5,2,13,9,"T532, T1005, T245, T438, T891, T1170, T577, T787, T1106, T1093"
+T1229,C,Running,5,2,10,2,"T978, T635, T309, T79, T493, T185"
+T1230,D,Not Running,5,5,5,3,"T1047, T966, T1130, T654, T437, T187"
+T1231,B,Not Running,3,7,14,0,"T228, T1221, T1206, T971, T197, T644"
+T1232,C,Not Running,5,3,17,9,"T812, T157, T792, T1169, T1017, T431"
+T1233,A,Running,3,4,5,1,"T874, T683, T341, T479, T329, T1186, T765, T71, T1062"
+T1234,A,Running,5,8,6,9,"T304, T1129, T96, T964, T184"
+T1235,A,Running,4,2,11,1,"T58, T361, T328, T1028, T756, T244, T1234, T1018, T533, T51"
+T1236,D,Running,2,6,10,6,
+T1237,A,Running,4,4,16,9,"T1137, T650, T367, T259, T152, T881, T149, T4, T911"
+T1238,D,Running,2,7,5,9,"T717, T279, T765, T971"
+T1239,D,Not Running,4,4,5,10,"T370, T711, T377, T434, T460, T660, T1089"
+T1240,B,Not Running,1,1,1,7,"T946, T781, T410, T1180, T641, T764, T1155, T434, T608, T887"
+T1241,B,Not Running,2,10,15,0,"T512, T480, T902, T619, T1168, T464, T333, T571"
+T1242,A,Running,1,5,21,1,"T197, T1219, T945, T910, T951, T953, T133, T815, T970"
+T1243,A,Not Running,1,8,13,0,"T598, T536, T860, T785, T813, T855, T171, T188, T380"
+T1244,D,Running,1,10,2,9,"T982, T665, T1026, T1133, T504, T1220"
+T1245,B,Not Running,3,10,6,7,"T1169, T254, T1086, T987, T12, T1118, T1221, T400"
+T1246,B,Running,2,1,10,6,T327
+T1247,C,Not Running,4,2,8,7,
+T1248,C,Running,5,9,14,3,"T87, T860, T1040"
+T1249,B,Running,5,4,10,1,"T1117, T306, T537, T377, T965"
+T1250,C,Not Running,3,3,4,8,"T897, T221, T1146, T658"
+T1251,D,Not Running,4,9,3,3,"T716, T58, T430"
+T1252,B,Running,5,1,15,4,"T519, T925"
+T1253,B,Running,3,4,12,2,"T434, T444, T189, T358, T646, T689"
+T1254,B,Not Running,5,6,15,0,"T614, T638"
+T1255,C,Not Running,3,1,10,4,"T1241, T446, T775, T500, T67, T969"
+T1256,D,Not Running,2,10,5,5,"T447, T569, T844, T1219, T86, T1031, T1249"
+T1257,D,Not Running,1,5,9,0,T1155
+T1258,D,Not Running,1,10,2,5,"T4, T934, T867, T237, T1127"
+T1259,B,Running,5,3,4,2,T870
+T1260,A,Not Running,2,3,2,7,"T573, T1167, T865, T62"
+T1261,A,Running,2,8,5,10,"T391, T925, T835, T514, T688, T693, T687"
+T1262,A,Running,2,3,19,4,T85
+T1263,C,Not Running,5,9,16,2,"T1233, T278"
+T1264,A,Not Running,1,6,15,4,"T859, T215, T542, T1035, T365, T602, T586, T891, T1261"
+T1265,B,Running,1,6,6,8,"T1034, T651, T198, T521, T1149, T1082, T144, T919, T891, T595"
+T1266,D,Not Running,4,10,6,9,"T111, T861, T345, T774, T395, T660, T1261, T789, T336"
+T1267,B,Not Running,2,3,6,0,"T725, T1168, T274, T569, T272, T509"
+T1268,C,Running,2,8,9,1,"T328, T285, T267"
+T1269,C,Running,4,2,2,2,
+T1270,A,Not Running,4,2,8,10,"T748, T930, T300, T914, T697, T404, T690, T665, T741, T236"
+T1271,B,Not Running,2,4,8,6,"T625, T864, T1018, T569, T566, T430, T763"
+T1272,C,Not Running,3,9,6,5,"T674, T352, T198, T810, T28, T143, T913, T958, T1183, T534"
+T1273,B,Running,5,3,12,3,"T829, T816, T873, T1180, T65, T1194"
+T1274,B,Running,3,10,5,8,"T694, T900, T489, T458"
+T1275,C,Not Running,1,3,7,1,"T62, T76, T757, T20, T1176, T13, T1132, T987"
+T1276,D,Not Running,2,2,5,10,"T225, T878, T416, T1058, T115"
+T1277,B,Running,2,4,6,7,"T266, T1054, T737, T1263, T1173"
+T1278,D,Not Running,3,2,10,3,T1012
+T1279,B,Running,1,8,12,7,"T670, T517, T737, T711, T9"
+T1280,D,Running,4,9,5,8,"T754, T620, T874, T814, T540, T21, T773"
+T1281,C,Running,5,8,9,7,
+T1282,A,Running,5,4,8,6,T438
+T1283,D,Not Running,1,7,6,6,"T58, T1251"
+T1284,A,Running,5,9,17,0,"T399, T267, T1078, T523, T372, T1177, T142, T629, T500, T286"
+T1285,C,Running,1,4,7,10,"T781, T230, T65, T1223, T976, T38"
+T1286,A,Running,4,10,3,0,"T184, T811, T1068, T655, T27, T502, T944, T48, T41, T321"
+T1287,A,Running,1,4,9,4,"T1285, T26, T203, T625, T412"
+T1288,D,Not Running,3,10,2,3,"T363, T279, T1213"
+T1289,C,Running,1,1,14,6,"T1175, T1092, T241, T370"
+T1290,D,Running,3,4,10,1,"T654, T441, T101, T948, T692, T1080, T181, T839, T153"
+T1291,A,Running,5,8,5,1,T194
+T1292,D,Not Running,2,6,9,6,"T728, T936, T137, T1067"
+T1293,A,Running,5,5,5,7,"T989, T1011, T1216, T341, T890, T674, T331, T96, T605"
+T1294,C,Running,3,6,7,10,"T817, T1183, T1139, T1007, T954"
+T1295,C,Not Running,4,3,4,1,"T1229, T814, T999, T798, T483, T477, T620, T1201, T88, T482"
+T1296,B,Running,3,3,11,7,"T937, T388"
+T1297,C,Not Running,1,9,8,9,"T562, T117, T1253, T1009, T570, T1040, T292"
+T1298,D,Not Running,1,3,10,9,"T626, T303, T894, T215, T314, T167"
+T1299,C,Running,1,5,16,3,
+T1300,D,Not Running,3,8,5,4,"T1077, T1222, T669, T1060, T919, T286, T227, T1211, T69, T1218"
+T1301,B,Not Running,4,3,2,4,"T1234, T73, T842, T1065"
+T1302,D,Running,3,6,6,5,"T720, T1178, T527, T209, T615, T550, T122, T1093"
+T1303,A,Not Running,4,8,15,1,"T237, T556, T1012, T1043, T619, T900, T931"
+T1304,D,Running,4,8,1,1,
+T1305,B,Running,4,10,3,3,"T398, T450"
+T1306,B,Not Running,1,8,16,2,"T1135, T896, T987"
+T1307,A,Not Running,4,6,6,2,T946
+T1308,D,Running,5,3,10,9,"T1231, T751, T675, T1148, T13, T287, T482"
+T1309,B,Running,2,5,8,4,"T397, T488, T448, T419, T430, T3, T962"
+T1310,B,Not Running,2,5,5,3,
+T1311,A,Running,5,7,6,8,"T1145, T530, T611, T574, T872, T270, T1049, T912, T764"
+T1312,B,Not Running,5,1,2,9,"T506, T300, T1081, T1256"
+T1313,C,Running,2,2,9,10,"T513, T767, T927, T674, T304, T1126, T857, T824"
+T1314,D,Not Running,3,10,9,9,"T1165, T728, T75"
+T1315,D,Not Running,2,6,7,3,"T690, T755, T37, T1307, T677, T672, T944"
+T1316,D,Running,5,9,9,9,"T1021, T802, T346, T913, T75, T752, T903"
+T1317,D,Not Running,2,4,10,3,"T519, T313, T871, T615, T1253, T543, T1060"
+T1318,D,Running,4,7,6,8,"T811, T437, T117"
+T1319,C,Running,4,1,16,1,"T173, T328, T147, T868, T1097, T430, T6"
+T1320,D,Not Running,3,5,3,2,"T283, T1289"
+T1321,B,Not Running,2,3,2,1,"T314, T376"
+T1322,D,Not Running,5,4,4,0,"T984, T1312, T31, T319, T474, T1212"
+T1323,D,Not Running,3,10,9,3,"T362, T437, T414, T808"
+T1324,A,Not Running,2,6,5,7,"T226, T1102, T812, T49, T725, T1042, T796, T949, T459"
+T1325,C,Not Running,4,4,6,8,
+T1326,C,Not Running,3,1,3,8,"T362, T486, T568, T930"
+T1327,A,Not Running,4,10,10,7,T940
+T1328,C,Not Running,1,4,7,1,"T1243, T499"
+T1329,D,Not Running,3,8,7,2,"T232, T124, T1027"
+T1330,D,Not Running,2,10,7,9,"T1326, T380, T353, T139, T534, T77, T410, T898"
+T1331,B,Not Running,4,10,15,5,"T364, T123, T797"
+T1332,C,Not Running,3,9,13,7,"T1211, T529"
+T1333,C,Running,1,10,8,8,"T875, T954, T526, T128, T822, T188, T802"
+T1334,C,Running,5,4,16,9,"T508, T236, T1119, T788, T463, T61, T1225, T555, T630, T758"
+T1335,C,Not Running,1,1,15,1,"T763, T96, T1169, T1217, T208, T521, T551, T624, T144, T869"
+T1336,D,Running,4,3,6,2,"T798, T754, T984, T791, T663, T188, T220, T310, T442"
+T1337,D,Not Running,2,10,4,6,"T1181, T677, T276, T868, T834"
+T1338,B,Running,5,3,15,3,"T353, T1302, T922, T276, T911, T696"
+T1339,C,Running,4,2,5,0,"T1269, T634, T1052, T81, T1198, T858"
+T1340,C,Running,1,4,10,9,
+T1341,D,Running,4,2,1,1,"T900, T1149"
+T1342,C,Running,1,1,4,7,"T638, T957, T1138, T924, T194, T630, T874, T1166"
+T1343,D,Not Running,4,10,8,0,"T480, T960, T1017, T802, T927, T400"
+T1344,A,Running,4,4,7,10,
+T1345,C,Not Running,4,10,10,8,
+T1346,D,Not Running,4,2,3,2,T533
+T1347,C,Running,4,2,2,2,T1168
+T1348,B,Not Running,4,5,10,3,
+T1349,C,Not Running,5,1,8,1,"T831, T800, T21, T755, T785, T255, T651, T779"
+T1350,B,Not Running,1,3,8,0,"T615, T458, T1206, T359, T1012, T752, T945, T1010, T716, T817"
+T1351,D,Not Running,3,10,4,10,
+T1352,C,Not Running,2,3,6,5,T751
+T1353,C,Not Running,3,1,11,3,"T42, T892"
+T1354,B,Not Running,2,4,9,0,"T440, T854, T94, T608, T145, T886, T957"
+T1355,D,Not Running,5,7,9,1,"T1059, T611, T1236, T991, T1216, T1293, T722"
+T1356,C,Not Running,4,4,14,3,"T1258, T660, T161, T1070, T202, T221, T437, T982, T663"
+T1357,D,Running,4,8,2,5,T121
+T1358,A,Running,5,8,14,9,T287
+T1359,C,Running,1,7,10,1,"T455, T859, T307"
+T1360,D,Running,3,9,8,5,"T1191, T1290, T1087, T1185, T526, T903, T1069, T617"
+T1361,D,Not Running,3,5,4,6,"T442, T877, T277, T1063, T226, T474"
+T1362,C,Not Running,1,8,16,8,"T199, T354, T1058"
+T1363,A,Not Running,5,7,3,5,"T279, T961"
+T1364,D,Running,2,9,1,7,"T1257, T435, T967"
+T1365,C,Running,1,8,13,8,"T1228, T862, T608, T889, T474, T976, T1325, T683, T459, T310"
+T1366,A,Running,1,7,5,8,"T1093, T1175, T445, T672, T993, T12"
+T1367,B,Not Running,2,7,5,2,"T1159, T51, T610, T128, T831, T961"
+T1368,D,Running,2,8,2,6,"T727, T925, T1296, T977, T346, T1024"
+T1369,D,Not Running,3,9,7,0,"T868, T843, T1124, T892"
+T1370,D,Not Running,5,10,6,5,"T987, T724"
+T1371,D,Not Running,5,10,9,6,"T148, T303, T1107, T894, T840"
+T1372,B,Not Running,2,5,11,7,"T607, T1339, T317, T935, T733, T316, T1128, T770, T1004"
+T1373,C,Running,1,7,3,7,T840
+T1374,A,Running,2,8,5,1,"T810, T1169"
+T1375,A,Not Running,2,2,18,7,"T13, T1066, T738, T156, T500, T1261, T174, T97, T760, T1102"
+T1376,D,Running,2,10,10,2,"T1042, T181, T817"
+T1377,D,Not Running,5,9,5,1,"T1041, T211, T19, T1065, T517, T949, T208, T617, T1328"
+T1378,A,Running,5,1,11,8,"T712, T1163, T1019, T665, T1146"
+T1379,B,Running,1,9,2,2,"T1357, T88, T1270, T1364, T837, T82"
+T1380,A,Not Running,1,1,3,6,"T975, T564, T1353, T630, T333, T1007, T945, T1048, T1191, T586"
+T1381,A,Not Running,3,4,6,0,T615
+T1382,A,Not Running,1,1,16,7,"T112, T1302, T1296, T1274, T1006, T745, T1100, T1381, T462, T1047"
+T1383,A,Not Running,1,1,1,0,"T916, T314, T423, T1291"
+T1384,B,Not Running,5,10,16,7,"T1302, T540"
+T1385,D,Not Running,3,4,9,8,T518
+T1386,A,Running,3,3,14,0,"T1116, T363, T912, T1335, T416, T182, T864, T919"
+T1387,A,Not Running,1,3,8,5,"T904, T991, T390"
+T1388,B,Not Running,3,10,8,10,"T114, T1343"
+T1389,C,Not Running,3,9,10,10,T292
+T1390,D,Running,1,2,1,8,"T101, T1278, T1045, T1104, T956, T393"
+T1391,B,Not Running,3,10,1,0,"T725, T189, T1006, T525, T679, T1278, T839, T1233, T255, T1025"
+T1392,B,Not Running,3,5,12,6,
+T1393,D,Running,3,7,1,4,"T1046, T1342"
+T1394,D,Running,3,2,3,4,"T341, T538, T1185, T145, T1077, T810, T1002, T344, T292, T413"
+T1395,D,Not Running,3,8,6,3,"T814, T178, T1248, T53, T129, T380, T994"
+T1396,C,Running,5,10,9,5,"T1356, T439"
+T1397,B,Not Running,2,9,1,5,"T1048, T934, T117, T516, T807"
+T1398,B,Running,4,5,11,9,"T208, T267, T451, T46, T907, T1015, T1202, T153, T504, T645"
+T1399,D,Running,3,5,2,4,"T618, T1344, T658, T1120, T1349, T1032, T399, T1368, T1305, T1273"
+T1400,B,Running,3,6,14,0,"T13, T443, T641, T11"
+T1401,A,Running,4,8,13,6,"T85, T643, T381, T578, T627, T149, T758, T699, T720"
+T1402,D,Not Running,5,10,2,8,T421
+T1403,B,Running,1,3,15,6,"T934, T1328, T869, T680, T451, T1264, T1373"
+T1404,D,Not Running,5,2,5,5,"T1267, T641, T1381, T1326, T1308, T1354"
+T1405,B,Running,5,10,13,10,"T944, T1373, T848, T1113, T731, T464, T1180, T248, T444, T929"
+T1406,C,Running,1,6,12,7,"T1079, T904"
+T1407,C,Not Running,1,3,15,5,"T1031, T88, T1369, T606, T117, T328, T45, T1209"
+T1408,C,Not Running,4,8,16,7,"T6, T446, T79, T1219, T971, T1374, T292"
+T1409,A,Running,2,7,18,7,T1232
+T1410,C,Running,2,4,3,5,"T1070, T384, T1131, T696, T1207, T977, T565"
+T1411,D,Not Running,5,4,1,0,"T864, T106"
+T1412,A,Running,3,2,8,7,"T1295, T83, T847, T1103"
+T1413,B,Not Running,1,10,7,5,"T1009, T929, T1305, T670, T212, T456, T1309, T448, T741, T1386"
+T1414,B,Running,4,6,5,9,"T822, T1103, T12, T395, T1053, T163, T1191, T892, T431, T411"
+T1415,D,Not Running,2,3,9,0,"T241, T399, T1242, T13"
+T1416,D,Not Running,5,1,5,9,"T517, T709, T612, T719"
+T1417,B,Not Running,4,6,8,0,"T1003, T270, T1065, T215, T265, T49, T257, T597, T1353, T1163"
+T1418,B,Not Running,5,3,14,8,"T834, T1376, T855, T79, T1231, T505, T1398"
+T1419,A,Not Running,2,1,17,3,"T788, T1317, T540, T945, T655, T58, T966, T224, T479"
+T1420,D,Not Running,2,8,9,5,"T1300, T937, T626, T228, T91, T728"
+T1421,C,Not Running,1,1,1,3,"T654, T1286, T268, T1278, T1038, T474, T725"
+T1422,D,Running,2,9,10,6,"T659, T631, T1114, T509, T611, T702, T130"
+T1423,A,Not Running,5,6,13,5,
+T1424,A,Running,2,1,21,7,"T704, T570, T120, T416, T1146, T418"
+T1425,B,Running,2,8,9,5,"T395, T986, T886, T149, T301, T518, T84, T530, T1213, T580"
+T1426,D,Not Running,4,10,6,5,"T732, T391, T1066, T735"
+T1427,A,Not Running,5,7,9,7,"T1421, T710"
+T1428,A,Not Running,3,3,22,4,"T1219, T509, T362, T864"
+T1429,A,Not Running,4,7,11,3,"T1272, T798, T805, T1258, T1341, T1036, T507, T953, T1201"
+T1430,C,Not Running,4,2,14,8,"T1067, T500, T75, T864, T661"
+T1431,D,Running,4,9,10,4,"T956, T655, T1361, T151, T1111, T832, T976"
+T1432,C,Running,1,4,10,5,"T667, T977, T1043, T758"
+T1433,C,Running,5,4,17,6,"T660, T589, T948, T621, T501, T1101, T518, T1391, T394, T511"
+T1434,C,Running,3,1,13,0,"T138, T942, T421, T632, T769, T960, T295, T1227"
+T1435,C,Running,3,8,10,0,
+T1436,A,Not Running,1,2,10,3,"T120, T912, T1174, T114, T1307, T661, T932, T148"
+T1437,B,Running,5,4,5,0,
+T1438,C,Not Running,3,7,10,2,"T429, T393, T297, T415, T68, T1349, T665, T154"
+T1439,A,Running,3,10,14,4,"T288, T319, T362, T33, T882, T779, T1320, T759, T1303, T750"
+T1440,C,Running,1,9,12,10,"T1247, T559, T1137"
+T1441,A,Running,5,5,3,8,"T1275, T560, T1310"
+T1442,D,Running,2,8,9,7,"T490, T364, T590, T127"
+T1443,C,Not Running,4,9,1,4,"T69, T1022, T570, T1130, T1157, T312, T367, T1079, T188, T993"
+T1444,A,Running,2,4,20,6,"T989, T1211, T538, T1127, T132, T1334, T233, T546"
+T1445,B,Running,5,9,8,5,T473
+T1446,B,Not Running,1,6,8,1,"T231, T776, T802, T455, T819"
+T1447,A,Running,4,10,2,6,"T216, T1325, T1066, T780, T750, T887, T154, T391, T287, T808"
+T1448,A,Running,4,8,10,0,"T341, T614, T668, T830, T965, T1218, T15, T406, T475, T491"
+T1449,D,Not Running,1,9,1,8,"T1004, T653, T597, T211, T1446, T1181, T983, T499"
+T1450,D,Not Running,5,4,5,8,"T1005, T9"
+T1451,D,Not Running,4,10,6,2,"T800, T449, T1407, T634, T203, T330, T1121, T771, T1160, T723"
+T1452,A,Running,2,10,10,0,"T1389, T703"
+T1453,B,Running,5,5,10,3,"T115, T724, T1346, T1025"
+T1454,A,Running,3,8,20,2,"T729, T284, T950, T1097, T236, T281, T1091"
+T1455,A,Not Running,5,2,6,5,
+T1456,A,Running,5,3,12,5,"T99, T209"
+T1457,D,Running,5,10,3,7,"T1099, T1128, T460, T708"
+T1458,C,Not Running,4,5,3,4,"T977, T296, T320, T1133, T269, T340, T458, T1243, T753"
+T1459,D,Not Running,1,4,5,3,"T249, T950, T740, T1034, T1225, T671, T477, T587, T964, T238"
+T1460,C,Running,1,8,6,2,"T1201, T191, T411, T650, T595, T775, T1204, T347, T1370, T1254"
+T1461,D,Running,1,6,2,8,"T341, T1159, T95"
+T1462,D,Not Running,1,7,1,5,"T1336, T1252"
+T1463,D,Not Running,2,5,2,0,"T980, T1331, T520, T1452, T1277"
+T1464,C,Not Running,3,9,10,4,"T485, T408, T1158, T664, T422"
+T1465,D,Not Running,1,6,10,0,"T979, T1308, T265, T323, T601, T215, T505, T692"
+T1466,A,Running,5,4,21,0,
+T1467,B,Not Running,4,9,10,9,"T330, T455, T1296, T589, T741, T540, T1407, T691, T1055"
+T1468,C,Running,1,7,18,6,"T1148, T730, T281, T1342"
+T1469,C,Not Running,4,8,2,7,"T19, T746, T933, T416, T368, T947, T453, T502, T348"
+T1470,B,Not Running,2,3,14,6,"T131, T17, T812, T349, T312, T622, T125, T929, T161"
+T1471,A,Running,1,10,20,6,"T890, T555, T304, T993"
+T1472,D,Running,5,9,7,6,"T770, T152, T470, T274, T1204, T368, T966, T504, T1343"
+T1473,B,Running,5,3,3,5,"T614, T399, T137, T504, T480, T1122, T7, T347, T135, T2"
+T1474,C,Running,2,1,11,7,"T1205, T1214, T123, T1379, T627, T1461, T106, T840"
+T1475,C,Running,4,6,2,0,T1078
+T1476,C,Running,5,10,11,8,"T656, T322, T158, T62, T752, T823, T226, T740, T797"
+T1477,C,Not Running,1,3,16,6,"T1096, T604, T131, T107, T1196, T200, T1437"
+T1478,A,Running,3,10,13,8,"T898, T711, T793, T1401, T844, T479, T755, T1236, T282, T320"
+T1479,B,Running,2,1,3,8,"T376, T807"
+T1480,C,Not Running,5,4,10,6,"T787, T1088, T1410, T1165, T338, T36, T31"
+T1481,D,Running,1,6,2,5,"T1466, T1035, T12, T564, T112, T769, T224"
+T1482,A,Running,5,8,20,3,"T877, T621, T805"
+T1483,A,Running,2,6,6,8,"T1147, T1277, T1302, T479, T519, T997, T572, T1251, T173, T1414"
+T1484,C,Not Running,1,6,3,3,"T327, T1256, T415"
+T1485,D,Running,4,6,7,0,"T648, T545, T618, T1347, T1409"
+T1486,C,Not Running,1,1,17,5,"T547, T1096, T1364, T1047, T434"
+T1487,A,Running,1,4,7,7,"T628, T998, T567, T335, T163, T99, T1038, T1380"
+T1488,B,Not Running,1,6,2,9,"T1413, T616, T748, T364, T164, T428, T1113, T936, T213, T957"
+T1489,A,Not Running,4,8,7,8,"T1179, T258, T314, T449"
+T1490,B,Running,5,4,8,1,T1071
+T1491,D,Not Running,2,1,10,3,"T379, T439, T1290, T256, T934, T752"
+T1492,B,Running,3,10,12,6,"T1448, T832, T1278, T250, T461, T102, T1228"
+T1493,C,Not Running,4,3,17,4,"T1063, T1297, T1318, T1223, T1097, T559, T228, T536"
+T1494,B,Not Running,3,9,13,4,"T605, T298, T1359"
+T1495,D,Not Running,1,2,7,10,"T439, T521, T1143, T714, T1251, T412, T708, T1115, T873, T608"
+T1496,B,Not Running,2,2,7,5,"T1434, T253, T442, T361"
+T1497,C,Running,1,2,6,2,"T472, T697, T616, T750"
+T1498,B,Running,2,10,9,8,"T1376, T1196, T398, T15, T72, T559, T638, T630, T244, T1308"
+T1499,C,Not Running,5,5,12,2,"T480, T622, T1453"
+T1500,B,Not Running,3,4,10,7,
+T1501,C,Running,5,2,6,2,"T1470, T668, T812, T728, T1102, T1050, T606, T409, T620"
+T1502,D,Running,3,2,10,0,"T814, T1078, T793, T456, T1212, T591, T647, T1006"
+T1503,B,Not Running,1,4,2,6,"T411, T1368, T738"
+T1504,D,Not Running,2,6,4,7,
+T1505,B,Running,4,3,9,8,"T621, T1354, T1448"
+T1506,C,Not Running,5,7,8,5,"T645, T875, T1190, T1214, T896, T261, T1296, T880, T1284, T1120"
+T1507,B,Not Running,2,9,15,6,"T314, T1490, T1023, T865, T809, T651, T111"
+T1508,A,Running,3,2,4,0,"T1008, T1079, T1373"
+T1509,A,Running,5,8,21,8,"T1123, T409, T1092, T136, T656, T1339, T1140, T262"
+T1510,C,Not Running,5,1,10,8,"T589, T881, T596"
+T1511,A,Not Running,1,9,7,1,"T1033, T1425, T1054, T952, T55, T270, T1427"
+T1512,C,Running,5,3,5,8,"T960, T847, T673, T854, T1115, T404, T70, T264, T784, T265"
+T1513,C,Not Running,5,1,3,0,"T849, T1038, T352, T11, T1302, T620, T800, T927, T877, T456"
+T1514,D,Not Running,5,7,6,0,"T386, T596, T911"
+T1515,A,Not Running,4,2,12,4,"T147, T1379, T548, T842, T151, T1508, T1149, T680, T613, T663"
+T1516,D,Running,2,6,6,9,"T879, T115, T1347, T1321, T1205, T636, T754"
+T1517,A,Not Running,5,9,12,2,"T667, T1509, T960, T83"
+T1518,C,Not Running,5,8,18,5,"T44, T1404, T163, T270, T185"
+T1519,A,Not Running,2,7,4,8,
+T1520,D,Not Running,4,9,6,0,"T409, T154, T6, T580"
+T1521,B,Running,4,8,7,2,"T1344, T1198, T1517"
+T1522,B,Running,2,10,8,9,"T641, T983, T292, T1445, T1038, T342"
+T1523,D,Not Running,1,2,2,6,"T665, T1424, T1116, T1014, T165, T875, T454, T278, T1348"
+T1524,A,Not Running,4,4,18,1,"T578, T1040"
+T1525,C,Running,1,10,17,5,"T77, T772, T1061, T30, T71, T101, T1312, T400, T975"
+T1526,A,Not Running,2,3,22,1,"T303, T1159, T1413, T829, T523, T578"
+T1527,A,Not Running,2,4,14,9,"T836, T710, T751, T362"
+T1528,D,Running,4,1,3,3,"T997, T979, T1276, T742, T1244"
+T1529,D,Running,3,10,2,1,"T1309, T531, T477, T1504, T446, T386, T905, T88"
+T1530,D,Running,5,2,2,5,"T98, T488, T235, T815"
+T1531,B,Running,2,3,11,2,"T72, T856, T1191, T201"
+T1532,C,Not Running,1,7,12,0,T443
+T1533,B,Not Running,4,2,11,2,"T220, T620, T411, T84"
+T1534,A,Running,2,3,10,5,"T1146, T1362, T370, T432, T137, T338, T152, T187, T270, T430"
+T1535,B,Running,5,10,7,5,T597
+T1536,B,Not Running,1,9,15,8,"T1526, T212, T812, T1249"
+T1537,C,Not Running,1,4,15,10,"T1019, T1385, T1376, T668"
+T1538,D,Not Running,5,2,2,0,"T1355, T497, T1124, T758, T2, T1379"
+T1539,A,Not Running,4,7,12,6,"T803, T41, T64, T767"
+T1540,B,Not Running,5,9,8,7,"T242, T1182, T1496, T441, T407, T444, T1015, T568, T153"
+T1541,D,Running,5,4,1,7,"T1222, T1391, T1118"
+T1542,A,Not Running,2,8,3,4,"T1088, T828"
+T1543,B,Running,2,1,15,7,"T1319, T402"
+T1544,B,Not Running,3,8,14,4,"T1116, T316"
+T1545,B,Not Running,4,2,4,7,"T446, T456, T8, T493"
+T1546,B,Running,4,2,3,0,"T746, T331, T1405"
+T1547,B,Running,4,9,12,0,"T35, T1305, T1027, T756, T1, T1008, T882"
+T1548,C,Not Running,3,4,17,0,T212
+T1549,D,Running,1,2,7,10,
+T1550,C,Not Running,3,4,14,5,"T217, T970, T448, T153, T809, T1402, T491, T1260, T1117, T358"
+T1551,B,Running,5,4,3,3,"T310, T979, T121, T754"
+T1552,A,Running,5,9,8,10,"T1212, T1186, T1441"
+T1553,A,Running,2,2,12,2,"T188, T871, T306, T1319, T861, T297, T645, T1431, T669"
+T1554,D,Not Running,2,8,8,5,"T105, T964, T12, T1061, T910, T1082, T403, T887"
+T1555,D,Running,1,9,8,1,"T565, T584"
+T1556,D,Not Running,1,1,10,1,"T66, T752, T1144, T820, T787, T1084, T1107"
+T1557,B,Not Running,4,1,2,6,"T1397, T177, T1471, T1234, T383"
+T1558,A,Not Running,3,1,21,4,"T1266, T323, T1006, T1168, T1137, T44, T499"
+T1559,C,Not Running,5,4,2,6,"T1247, T130, T703, T504, T830, T1475, T1466, T686"
+T1560,C,Running,2,4,1,9,"T257, T1274, T38, T193, T396"
+T1561,B,Running,5,9,8,7,"T839, T239, T444"
+T1562,C,Not Running,2,5,18,1,"T316, T676, T238, T495, T1333, T301, T1320, T314, T1314"
+T1563,C,Not Running,5,10,8,1,"T229, T389, T1416, T1559, T1289, T1493, T553, T631"
+T1564,D,Running,5,4,10,0,T1409
+T1565,D,Not Running,3,4,9,2,"T17, T1434, T540, T1410, T190, T519, T987, T111, T999"
+T1566,B,Not Running,3,5,2,6,T612
+T1567,C,Not Running,5,6,15,3,"T753, T908, T75, T568, T1215, T221, T1114, T1160"
+T1568,C,Not Running,5,1,16,10,"T387, T244"
+T1569,B,Running,1,1,10,3,"T542, T836, T13, T1095, T1328, T1158, T1053, T219, T57"
+T1570,A,Not Running,1,7,14,4,T252
+T1571,B,Not Running,4,8,4,1,"T223, T389, T1095, T872, T787, T856, T1270, T739"
+T1572,D,Not Running,2,1,1,9,"T204, T182, T397"
+T1573,D,Running,1,5,1,0,"T82, T1213"
+T1574,B,Running,3,8,12,2,"T1038, T1393, T199, T64"
+T1575,D,Running,2,8,6,3,"T335, T1408, T401, T853, T1499, T871, T1386, T1189"
+T1576,A,Running,5,9,6,7,"T388, T709, T393, T403"
+T1577,C,Not Running,1,9,16,4,"T1060, T1451, T150, T703"
+T1578,C,Running,5,4,7,3,"T517, T674"
+T1579,D,Not Running,1,8,10,8,"T736, T428, T218, T1407, T288, T100, T1070"
+T1580,B,Not Running,1,8,11,0,"T1213, T542, T1259, T88, T1143, T544"
+T1581,C,Running,5,2,4,1,"T1044, T36, T1429, T418, T366"
+T1582,A,Not Running,3,1,4,1,"T487, T1182, T1316, T604, T37, T331, T1032, T1201, T247, T1105"
+T1583,C,Running,2,7,2,4,"T697, T1461, T1169, T191, T1141, T1262, T1535, T1485, T481, T1327"
+T1584,A,Not Running,1,1,1,0,"T1200, T78, T569, T1310, T1396, T1565, T353, T1571, T809"
+T1585,B,Not Running,2,1,4,5,"T1061, T479, T1294, T91, T94, T698, T1320, T411, T416"
+T1586,B,Running,1,10,13,10,"T407, T83, T1485, T476, T415, T963, T701, T679, T116"
+T1587,D,Running,4,4,9,1,"T1317, T7, T430, T1190, T863, T1315, T872, T949, T317"
+T1588,A,Running,1,8,21,6,"T549, T1341, T1303, T1022, T731, T1098, T1582, T1003"
+T1589,C,Not Running,3,10,2,8,
+T1590,C,Not Running,2,9,3,7,"T1332, T915, T1083, T721, T1034, T1568, T177, T191, T766, T1502"
+T1591,D,Running,1,5,6,6,"T1472, T919, T678, T1313, T153, T744, T1405"
+T1592,D,Running,4,7,3,3,"T1476, T768"
+T1593,C,Running,5,10,17,7,"T1529, T685"
+T1594,C,Not Running,4,8,5,3,"T761, T445, T854, T261, T896, T16, T1390, T287, T1504"
+T1595,C,Running,2,2,8,7,"T387, T1193, T201, T212, T1560, T1096, T1156, T1516, T425, T348"
+T1596,A,Not Running,2,10,15,0,"T1368, T484, T633, T358, T1255, T1278, T1537, T244"
+T1597,D,Running,4,4,10,7,"T837, T619, T851, T1365, T1467, T1014, T220, T1140"
+T1598,A,Not Running,1,6,10,7,"T744, T388, T1070"
+T1599,D,Not Running,5,7,8,4,"T223, T1479, T1285, T395, T1311"
+T1600,B,Running,1,5,15,0,"T834, T24"
+T1601,B,Not Running,1,10,5,8,"T74, T1040, T306, T682, T1492, T1068, T332"
+T1602,C,Running,4,5,13,8,"T514, T1516, T436, T1024"
+T1603,A,Not Running,5,2,3,0,"T66, T654, T989, T201, T1241, T864, T397, T447, T432"
+T1604,A,Not Running,4,6,17,4,"T1037, T540, T626, T891, T1267, T1407"
+T1605,D,Not Running,3,5,2,4,"T333, T251, T1300, T309, T943, T1179, T559, T149, T876"
+T1606,C,Not Running,1,2,1,0,"T384, T489, T578, T862, T83, T786, T741, T1290, T1039"
+T1607,D,Running,2,2,3,9,"T1090, T1172, T858, T1325, T204, T246, T689"
+T1608,D,Running,4,8,2,3,"T774, T227"
+T1609,D,Not Running,3,9,9,3,"T403, T648, T344, T1322, T242, T260"
+T1610,A,Not Running,4,10,5,2,"T692, T1301, T755, T884, T1515, T1405"
+T1611,B,Not Running,2,10,9,2,"T230, T98, T352, T1460, T754, T1334, T1393, T1550, T219, T531"
+T1612,D,Not Running,4,10,1,5,T1016
+T1613,B,Running,3,2,11,3,"T105, T743"
+T1614,D,Running,2,9,1,4,
+T1615,C,Not Running,1,3,1,0,"T1032, T1335, T9, T549, T613, T1593, T509"
+T1616,B,Not Running,4,7,3,6,"T63, T1478, T729, T1184, T259, T13, T7, T208, T1455, T845"
+T1617,C,Running,1,8,17,1,"T589, T1332, T860, T124"
+T1618,D,Running,4,7,5,10,"T840, T982, T762, T979, T35, T1249, T1097, T452, T1566"
+T1619,B,Running,2,10,4,10,"T315, T86"
+T1620,D,Running,1,4,6,7,"T141, T891, T963, T322, T263, T443, T1281, T786, T681"
+T1621,B,Not Running,1,8,2,9,"T308, T1320"
+T1622,D,Running,2,4,3,2,"T442, T698, T981, T566, T1596, T737, T1209, T616"
+T1623,B,Not Running,3,10,16,2,"T413, T1510"
+T1624,C,Running,2,4,2,2,"T1327, T239, T1299"
+T1625,C,Not Running,1,10,2,6,"T1492, T385, T1396, T1513, T564, T841"
+T1626,B,Not Running,5,5,4,9,"T1436, T1056, T961, T233, T660, T320, T442, T980, T1579"
+T1627,D,Not Running,2,1,4,7,T438
+T1628,A,Not Running,4,6,4,0,"T1435, T170, T1164, T244, T971, T137, T346, T566, T1582, T330"
+T1629,A,Not Running,5,2,8,4,"T813, T935, T1343"
+T1630,D,Not Running,1,9,10,7,"T421, T1439, T995"
+T1631,D,Not Running,1,4,7,5,"T260, T1050"
+T1632,C,Running,5,8,4,6,"T93, T508, T635, T893, T864, T1193, T410, T875, T967, T253"
+T1633,A,Not Running,4,1,20,10,T1123
+T1634,C,Running,2,8,5,2,"T1357, T213, T55, T1348, T1517, T361"
+T1635,D,Running,4,8,4,6,"T677, T722, T806, T1545, T141, T182, T900"
+T1636,B,Not Running,5,3,11,6,"T1247, T878, T138, T1496, T1245, T387, T351, T161, T1475, T325"
+T1637,B,Running,1,10,16,0,T768
+T1638,D,Not Running,2,7,8,10,"T435, T1378, T1005, T849, T928, T820, T1458, T502, T728, T850"
+T1639,A,Running,2,3,2,4,T1289
+T1640,D,Not Running,2,9,5,5,"T1364, T1577, T148, T128, T660, T541, T178, T394, T900, T651"
+T1641,D,Not Running,3,7,1,3,"T630, T29, T1061, T931, T813, T65, T1140, T145, T644, T961"
+T1642,A,Running,1,5,2,2,"T1538, T1132"
+T1643,A,Running,5,4,18,5,"T592, T858, T699, T407, T1396"
+T1644,D,Not Running,1,8,10,7,"T1039, T416, T958, T5"
+T1645,A,Not Running,1,3,20,9,"T983, T401, T16, T1045, T404"
+T1646,D,Not Running,4,4,5,2,
+T1647,D,Running,5,7,8,3,"T1246, T475, T1056, T1547, T1419, T378, T1388, T295"
+T1648,C,Running,1,1,18,6,"T1456, T608, T868, T355"
+T1649,D,Running,1,8,9,9,"T368, T810, T1540, T597, T413, T1041"
+T1650,B,Not Running,5,6,7,6,
+T1651,A,Not Running,5,7,4,7,"T1492, T1028, T1584, T1151, T868, T1231, T1064, T697"
+T1652,D,Running,2,4,9,9,"T428, T234, T879"
+T1653,D,Running,5,1,9,3,"T516, T787, T843, T297, T1213, T20"
+T1654,C,Not Running,1,10,6,2,"T1369, T411, T753, T1562"
+T1655,B,Not Running,4,6,12,6,"T535, T386, T785, T1379"
+T1656,D,Running,4,7,5,1,"T288, T1318, T1461, T589, T491, T309, T846"
+T1657,D,Not Running,2,8,4,4,"T1092, T650, T1331, T781, T1447, T916, T477"
+T1658,A,Running,2,3,8,4,
+T1659,C,Not Running,1,9,6,8,"T781, T1542, T1138, T1445, T654, T398, T1010, T1004, T288"
+T1660,B,Not Running,3,10,6,0,"T403, T576"
+T1661,D,Not Running,4,7,5,4,"T815, T982, T41, T1106"
+T1662,D,Running,2,9,8,5,"T368, T718, T979, T425"
+T1663,B,Running,3,7,5,10,"T1598, T1008, T181, T928, T267, T438"
+T1664,C,Running,2,7,1,10,"T1067, T1293, T1161, T866, T201, T510, T1643, T52"
+T1665,C,Not Running,5,5,18,10,"T893, T1436, T846, T1422, T1421, T1248"
+T1666,C,Running,1,2,12,2,"T793, T1142, T1069, T1248"
+T1667,C,Running,3,2,8,1,"T1415, T591, T14, T1231, T71, T720"
+T1668,A,Not Running,2,2,12,5,"T1636, T61, T1049"
+T1669,C,Not Running,4,6,15,3,"T1374, T881, T1238"
+T1670,B,Running,2,1,10,6,"T439, T769, T1472, T1364, T729, T1397, T1592, T1404, T1016"
+T1671,B,Running,4,4,4,4,"T917, T95, T1524, T1360"
+T1672,B,Not Running,5,2,2,2,"T1632, T1139, T1204, T1532"
+T1673,D,Running,2,4,8,0,
+T1674,A,Not Running,2,10,21,10,"T532, T894, T721, T94, T764, T1447, T614, T1239, T150"
+T1675,A,Not Running,1,8,21,3,"T741, T716, T578, T505, T608, T1417, T1614"
+T1676,C,Not Running,4,5,16,7,"T1325, T63, T45, T1651, T252, T724, T98, T1056"
+T1677,B,Not Running,1,7,7,8,"T1393, T149, T1332, T1242, T703, T1262, T1633"
+T1678,A,Not Running,5,3,20,6,
+T1679,A,Not Running,1,2,17,0,
+T1680,D,Running,3,8,3,1,
+T1681,A,Not Running,1,6,3,0,"T1324, T1015, T634, T1568, T1525, T241, T1503"
+T1682,B,Running,2,1,5,1,"T863, T1251, T1576, T719, T1259, T966, T1481, T488"
+T1683,A,Running,2,4,16,1,T701
+T1684,A,Running,4,2,10,7,"T1294, T1363"
+T1685,A,Running,4,5,11,9,"T462, T871, T327, T131, T980, T1235, T1411"
+T1686,C,Not Running,2,10,13,6,"T436, T1264, T853, T1263, T6, T1006"
+T1687,D,Not Running,1,3,4,5,"T265, T1428"
+T1688,A,Not Running,2,1,13,1,"T997, T765, T415, T424, T203, T1102, T1108"
+T1689,B,Running,1,1,10,7,"T363, T913, T1177, T46, T1514, T689, T605, T1614, T72, T105"
+T1690,A,Not Running,4,3,8,0,"T14, T1678, T1124, T977, T1452, T1514, T451, T945, T1256, T222"
+T1691,C,Not Running,2,9,9,10,"T1147, T1195, T1133, T933, T846, T1260, T982, T1373, T620"
+T1692,B,Running,4,4,1,4,T1499
+T1693,C,Running,2,9,15,8,"T584, T637, T281, T865, T833, T1251, T1376, T975"
+T1694,C,Not Running,2,2,5,5,"T630, T624, T859, T1357, T1221, T1479, T5, T35"
+T1695,C,Not Running,5,3,16,9,
+T1696,A,Running,3,9,20,0,"T1462, T667, T498, T727, T936"
+T1697,C,Not Running,4,2,16,5,"T1409, T348, T951, T387, T168, T618, T804, T1223, T1139"
+T1698,C,Running,2,7,12,9,"T163, T14, T395, T955, T430"
+T1699,A,Running,1,1,22,0,
+T1700,B,Not Running,1,10,10,0,"T369, T319, T1319, T728, T85, T1356, T247"
+T1701,B,Not Running,4,7,2,7,T22
+T1702,C,Not Running,2,8,17,9,"T1617, T1042"
+T1703,C,Running,1,1,14,5,"T406, T1316"
+T1704,D,Not Running,2,8,4,8,"T31, T1183, T97"
+T1705,C,Not Running,5,4,17,2,"T996, T296, T1555, T601, T1011, T1422, T658, T429"
+T1706,D,Running,3,4,2,2,
+T1707,D,Not Running,2,4,6,10,"T314, T910, T905, T983, T589, T138, T1203, T131"
+T1708,D,Running,3,5,5,2,"T1318, T1525, T68, T258, T259, T1567"
+T1709,D,Running,3,1,10,8,"T1050, T702, T552, T33, T842, T1107, T912, T1692, T1594"
+T1710,A,Not Running,3,8,9,7,"T395, T1509, T1048, T1444, T1349, T418, T649, T700, T1677"
+T1711,B,Running,1,9,5,3,"T383, T680, T85, T611, T726, T925, T1427"
+T1712,C,Not Running,2,5,15,7,
+T1713,C,Running,3,10,3,10,"T128, T503, T1531"
+T1714,A,Running,2,3,6,9,
+T1715,D,Not Running,4,7,5,1,"T1173, T952, T1477, T642"
+T1716,D,Running,4,7,10,4,T1471
+T1717,D,Not Running,4,8,10,4,"T983, T377, T23, T1633, T803"
+T1718,C,Running,3,8,4,5,"T1529, T682, T765, T874, T542"
+T1719,B,Running,2,6,15,10,"T1527, T428, T295, T1686, T549, T605"
+T1720,A,Running,1,9,6,2,"T1023, T69, T1040, T1128, T1380"
+T1721,B,Not Running,2,1,12,7,"T1551, T1136, T158, T1246, T1495, T1182, T1450, T1255"
+T1722,C,Running,4,7,17,3,"T248, T608, T702, T1452, T1112, T1453, T657, T692"
+T1723,D,Running,1,5,4,5,"T1670, T1237, T1029"
+T1724,C,Not Running,5,3,8,7,"T872, T333, T994, T441, T975, T1114, T1581, T1592, T155, T737"
+T1725,A,Running,2,7,1,4,T703
+T1726,D,Running,4,9,8,8,T523
+T1727,D,Not Running,2,9,5,1,"T1554, T1703, T572, T385, T1226, T1395, T714, T173, T1203"
+T1728,A,Running,5,5,11,3,"T1168, T84, T80, T114, T1273, T1077, T286"
+T1729,D,Running,2,3,1,3,"T434, T2"
+T1730,A,Running,4,8,21,8,"T384, T1605"
+T1731,A,Running,3,3,18,1,"T497, T1334, T512"
+T1732,A,Running,3,9,17,9,"T1440, T1064, T1200, T880, T345, T33, T55, T1671, T1353, T825"
+T1733,B,Not Running,1,9,1,9,"T909, T218, T1091, T1257, T1146, T900"
+T1734,C,Not Running,3,3,5,9,"T314, T1420, T1470"
+T1735,B,Running,2,8,11,3,T333
+T1736,A,Not Running,4,8,3,8,"T236, T859, T128"
+T1737,A,Not Running,3,9,11,1,"T91, T830, T347, T1148"
+T1738,A,Not Running,3,10,3,6,"T601, T1676, T1308, T381, T149, T1062, T947"
+T1739,B,Not Running,2,6,5,5,"T952, T1687, T1474"
+T1740,A,Not Running,5,5,22,6,"T925, T784, T290, T666"
+T1741,C,Not Running,2,5,1,10,"T803, T513, T371, T1163, T587, T1466, T1148, T200"
+T1742,B,Running,2,2,13,4,"T1501, T764, T844, T497, T839, T80, T1153"
+T1743,C,Not Running,4,10,11,6,"T559, T446, T1001, T1676, T610, T1568, T434, T105, T316, T1520"
+T1744,D,Not Running,1,1,10,7,"T279, T444, T804, T273"
+T1745,C,Not Running,4,6,10,5,"T956, T8, T1367, T1305, T1352, T1450, T1252, T850"
+T1746,B,Running,4,2,5,9,T1326
+T1747,A,Not Running,5,10,16,10,"T690, T1604, T674, T435, T1447, T579, T852, T108, T442, T1249"
+T1748,A,Not Running,2,10,7,9,"T1171, T1727"
+T1749,D,Not Running,5,8,1,1,"T1087, T130"
+T1750,D,Running,3,1,9,2,"T326, T1591"
+T1751,A,Running,1,6,8,1,"T439, T1263, T534, T92, T743, T1139, T1335, T203"
+T1752,A,Running,1,7,21,5,"T873, T986, T419, T1228, T1637, T1075, T380, T1534, T497"
+T1753,C,Running,4,3,13,7,"T12, T100, T132, T1408, T52, T435, T1097, T263"
+T1754,C,Not Running,1,7,8,1,"T693, T469, T372, T1566, T120, T1206, T844, T155"
+T1755,D,Not Running,5,2,5,7,"T1383, T95"
+T1756,B,Not Running,1,4,16,0,"T302, T654"
+T1757,D,Running,1,7,2,9,T878
+T1758,C,Not Running,3,6,12,10,"T688, T1719, T1092, T1710, T1308, T1754, T1454, T427"
+T1759,D,Running,4,10,6,6,"T818, T697, T460, T696, T1117, T503, T36, T1090, T144, T142"
+T1760,A,Not Running,1,5,18,1,"T156, T6, T714, T1051"
+T1761,C,Not Running,2,2,7,10,"T941, T999, T146"
+T1762,D,Not Running,3,9,9,3,T1686
+T1763,A,Running,3,5,10,10,"T648, T1170, T626, T616, T1162, T674, T1049"
+T1764,D,Running,3,9,7,9,"T1294, T1448, T988, T1613, T1458, T993"
+T1765,A,Not Running,4,6,10,6,"T488, T1573, T956, T1002"
+T1766,C,Running,2,3,7,6,"T1194, T260, T284, T1223, T1355, T1054, T1047, T1142, T1064, T1002"
+T1767,A,Not Running,4,8,8,7,
+T1768,D,Not Running,4,8,2,1,"T728, T71, T1683, T1734, T1607, T1411, T1137, T569, T505, T337"
+T1769,B,Not Running,1,1,16,8,"T1009, T168, T670, T1763, T936, T999, T1140, T1152, T1605"
+T1770,D,Not Running,4,10,5,9,"T85, T1303, T333"
+T1771,C,Not Running,5,1,1,2,"T973, T1438, T1646"
+T1772,A,Not Running,2,5,6,2,"T1003, T714"
+T1773,B,Not Running,2,8,13,8,"T207, T1110, T461, T1551, T201, T680, T722, T1047, T1143, T1203"
+T1774,C,Running,3,5,14,4,"T1440, T905, T183, T177, T1684, T1465, T865"
+T1775,D,Running,5,7,6,7,"T518, T878, T511, T19, T1155, T1421, T148"
+T1776,A,Not Running,2,2,5,2,"T431, T296, T52, T568, T1671, T545, T1711, T1585, T92"
+T1777,D,Not Running,4,9,8,9,"T727, T1619, T404, T1303, T1478, T1362, T1326, T1573"
+T1778,D,Not Running,3,7,7,1,"T1029, T961"
+T1779,C,Running,5,9,11,3,"T1592, T540, T906, T836, T873, T1278"
+T1780,C,Not Running,5,2,16,5,"T124, T758, T537, T401, T649, T471, T26"
+T1781,A,Not Running,4,4,6,6,T1404
+T1782,A,Not Running,1,10,17,6,"T727, T440, T349, T1291, T1101, T583, T522, T1474, T1420, T8"
+T1783,C,Not Running,5,5,9,5,"T1329, T668, T853, T1363, T503, T1758, T1538"
+T1784,A,Running,1,10,14,2,"T800, T1177, T62"
+T1785,D,Running,4,4,5,9,"T482, T232, T341, T1309, T1757, T1646, T244"
+T1786,D,Not Running,4,5,5,6,"T1307, T286, T1094, T599, T880, T350"
+T1787,B,Not Running,4,2,3,6,
+T1788,D,Not Running,4,1,8,2,"T1556, T738, T937, T1330"
+T1789,C,Running,4,8,11,2,
+T1790,C,Running,1,7,12,8,"T322, T609, T1081"
+T1791,D,Running,4,4,2,0,"T1313, T551, T1260, T776"
+T1792,C,Not Running,2,5,5,1,"T1582, T1577, T1019, T1630, T1511, T767, T1381"
+T1793,D,Running,5,4,1,10,
+T1794,D,Running,3,7,5,9,"T1566, T469, T1774, T128, T201, T1111, T964"
+T1795,B,Running,2,2,14,8,"T878, T473, T498, T1221"
+T1796,B,Not Running,2,6,2,8,"T344, T116, T47, T42, T172"
+T1797,D,Not Running,1,9,8,3,"T1090, T507, T1337, T736, T1346, T943"
+T1798,D,Not Running,2,1,3,10,"T1031, T502, T1796"
+T1799,A,Not Running,5,7,1,0,"T1049, T1512, T1508"
+T1800,D,Not Running,4,8,4,8,"T416, T235, T926, T1795, T1721"
+T1801,D,Not Running,2,3,3,3,"T277, T1459, T744, T828, T45, T1030, T956, T612, T1164"
+T1802,D,Not Running,2,9,7,5,"T1169, T706, T1335, T144, T819, T592, T368, T812, T1211, T620"
+T1803,A,Not Running,3,3,4,3,"T844, T841, T1715, T1366, T79, T163"
+T1804,C,Not Running,4,1,17,9,"T873, T1311, T1178, T1499, T773"
+T1805,C,Not Running,5,6,15,3,"T1316, T587, T1228, T1146, T1359, T489, T579, T1152, T374"
+T1806,D,Not Running,2,3,7,1,"T526, T708, T866, T859, T132, T1386, T1542, T900"
+T1807,B,Not Running,5,6,12,3,
+T1808,C,Running,2,4,4,9,"T237, T1309"
+T1809,A,Not Running,2,7,2,0,"T1690, T1200, T1173, T145"
+T1810,D,Not Running,1,7,9,6,
+T1811,A,Not Running,4,2,15,1,"T750, T1466, T39, T971, T1508, T1602, T1502, T773"
+T1812,C,Not Running,2,8,4,7,"T333, T970, T1545, T629, T1222, T1583, T1726, T453, T1672, T1296"
+T1813,C,Not Running,3,5,14,4,"T1759, T1067, T1417, T269, T602, T1358, T1065, T691, T1074, T609"
+T1814,D,Running,4,7,2,8,"T498, T665, T1212, T330"
+T1815,B,Running,1,10,9,8,"T1006, T1505, T129, T14, T1171, T1185, T61, T761, T1002, T1646"
+T1816,A,Not Running,1,6,14,9,"T1745, T825, T867, T20, T1125"
+T1817,D,Running,3,8,6,8,T1104
+T1818,B,Running,2,10,11,8,"T983, T117"
+T1819,B,Running,1,10,11,7,"T1280, T974, T546"
+T1820,C,Not Running,3,9,6,8,"T1731, T1718"
+T1821,C,Running,1,5,14,4,"T440, T1649, T1384, T1005, T1179, T784"
+T1822,D,Not Running,5,4,9,3,"T1005, T302, T1396"
+T1823,A,Not Running,3,2,18,3,"T630, T1222, T1799, T775, T1597, T1036, T1530, T1164, T956, T977"
+T1824,C,Running,3,4,5,4,"T822, T886, T1335, T102, T1341"
+T1825,B,Running,1,3,12,0,"T1347, T663"
+T1826,A,Not Running,5,8,2,6,T1611
+T1827,C,Not Running,3,9,6,1,"T649, T1002, T224, T950, T493"
+T1828,B,Running,3,8,13,9,"T578, T1599"
+T1829,D,Not Running,5,4,1,9,"T1247, T940, T823"
+T1830,D,Running,3,5,2,7,"T411, T937, T385"
+T1831,B,Running,3,2,13,9,"T671, T638, T131"
+T1832,D,Not Running,2,4,2,2,"T637, T751, T1048, T1818, T776"
+T1833,D,Running,5,10,1,6,"T692, T115, T638, T803, T267, T1089, T1722, T549"
+T1834,C,Not Running,2,3,15,3,T1503
+T1835,A,Running,4,8,14,2,"T1068, T1254, T698, T549, T901, T1434, T1761, T56, T105, T480"
+T1836,B,Not Running,2,2,16,4,"T1585, T348, T669, T808, T1034, T1723, T1570, T919, T109"
+T1837,B,Running,3,4,1,0,"T1524, T195, T1468, T189, T117, T1722, T1297, T1716"
+T1838,C,Running,5,4,16,6,"T934, T1362, T588"
+T1839,C,Running,2,9,14,6,"T796, T1019, T1622, T1108, T13, T1419, T1416"
+T1840,D,Not Running,5,4,3,7,"T1323, T1812, T204, T1240, T1132, T1739, T1199, T68, T638"
+T1841,A,Not Running,1,4,7,10,"T1258, T317, T1229, T1501, T193, T1749, T182, T1363, T899, T1542"
+T1842,D,Not Running,5,4,4,4,"T867, T899, T1319"
+T1843,D,Not Running,2,9,7,7,"T548, T79, T855, T105, T448, T334, T1614"
+T1844,C,Not Running,5,10,13,5,
+T1845,C,Not Running,2,1,16,7,"T63, T1552, T995, T1647"
+T1846,C,Not Running,1,5,14,1,"T719, T1593, T1164"
+T1847,B,Running,1,9,11,3,"T735, T1525"
+T1848,D,Running,3,3,4,8,T434
+T1849,C,Not Running,5,3,10,9,T719
+T1850,A,Not Running,2,1,14,0,T620
+T1851,C,Running,3,1,16,5,"T739, T1400, T1380, T851, T124"
+T1852,D,Running,2,4,6,9,
+T1853,C,Running,5,2,2,9,"T656, T499, T75, T1794, T1465"
+T1854,C,Running,3,4,18,7,"T1155, T518, T1497, T162, T1069, T1506, T1531, T1690, T1163"
+T1855,A,Running,3,8,7,8,"T398, T619, T777, T1248, T1090, T184, T1311, T1439, T1783, T326"
+T1856,C,Not Running,5,4,4,0,"T1293, T50, T1777, T1278, T914, T665, T200, T294"
+T1857,C,Not Running,1,6,10,1,"T1548, T883, T1573, T1635, T317, T1336, T1512, T1184"
+T1858,B,Not Running,5,6,14,10,"T1156, T1714, T1543, T1095, T658, T1438, T1707, T36, T415, T443"
+T1859,C,Not Running,3,10,11,10,"T307, T1748, T1849, T1269, T1750, T1618, T1631, T638, T1308"
+T1860,B,Not Running,5,9,11,1,
+T1861,A,Running,4,1,4,4,"T509, T315"
+T1862,A,Not Running,5,1,10,9,"T755, T376, T1455, T1621, T1209, T46, T1765, T135, T1640"
+T1863,A,Running,3,9,14,3,"T1365, T360, T285, T750, T140, T189, T1620, T1529, T1143"
+T1864,B,Not Running,4,9,16,10,"T980, T515, T663, T740, T1198, T264, T705, T1274, T1194, T743"
+T1865,C,Running,1,8,10,0,"T1407, T255, T882, T721, T1227"
+T1866,A,Running,3,4,2,4,"T1360, T167, T421, T1704, T1418, T999, T323, T26, T357"
+T1867,B,Running,4,9,7,8,"T787, T595, T224, T12, T1188, T876, T244, T1660"
+T1868,B,Not Running,2,1,16,6,"T1147, T1119, T637, T1473, T1102, T31, T1044, T1071, T1863"
+T1869,D,Not Running,1,9,1,10,"T1123, T1513, T74, T1188, T1172, T1859, T740, T181, T495"
+T1870,C,Running,4,10,9,0,"T341, T369, T812, T793, T1172, T1387, T422, T932"
+T1871,B,Running,1,2,4,10,"T572, T1557, T148, T1582, T1096, T741, T1309"
+T1872,A,Not Running,2,9,10,6,"T46, T475, T801, T1048"
+T1873,A,Running,4,1,16,0,"T1519, T1637, T931, T416, T1639, T786, T38, T838, T1746, T1743"
+T1874,D,Running,4,10,2,6,
+T1875,D,Running,4,2,9,9,"T1269, T1418"
+T1876,B,Not Running,2,10,4,9,"T1381, T401, T895, T56, T975, T1828"
+T1877,D,Not Running,1,5,9,2,"T624, T1245, T928, T1236, T1217, T823, T953, T336"
+T1878,D,Not Running,3,6,3,0,"T1288, T1217, T432, T1615"
+T1879,D,Not Running,5,10,9,9,"T723, T686, T549, T232, T241, T1068"
+T1880,B,Running,3,2,10,0,"T1635, T389, T1217, T1094, T681, T1745"
+T1881,D,Running,4,3,6,3,"T781, T225, T1808, T1621, T601, T1, T167, T530, T1349, T386"
+T1882,D,Not Running,2,7,9,5,
+T1883,A,Running,3,4,10,4,T627
+T1884,B,Running,5,5,6,5,"T1013, T794, T278, T874, T1782"
+T1885,D,Running,5,9,10,6,"T279, T497, T1708, T1597, T1044, T1772, T1681"
+T1886,C,Running,3,1,15,8,"T481, T1169"
+T1887,B,Not Running,3,10,11,1,"T1112, T1139, T1755, T484, T150, T1513, T198, T1145, T209"
+T1888,D,Not Running,2,3,5,8,
+T1889,D,Not Running,1,3,5,2,"T790, T1585, T109, T1471, T1316, T13, T86, T1843, T408"
+T1890,C,Not Running,4,2,8,4,"T93, T577, T1765, T1552, T1311, T295, T1000, T1030, T342, T134"
+T1891,D,Running,3,10,7,5,"T296, T1213, T201, T555, T412, T207, T1068, T749, T874"
+T1892,C,Not Running,5,2,15,3,"T1397, T1694"
+T1893,A,Running,2,9,16,4,"T277, T1847, T676, T1114, T1092, T1439, T1263, T422"
+T1894,C,Not Running,4,4,5,10,"T760, T363, T1323, T1391"
+T1895,A,Running,1,1,11,3,"T831, T1690, T246, T1573, T222, T1846, T937"
+T1896,B,Running,5,5,12,2,"T1475, T372, T1482, T1398, T308"
+T1897,D,Not Running,1,2,3,9,"T948, T79, T1281, T1725, T162, T1156, T1242, T972, T892, T679"
+T1898,C,Running,2,6,17,4,"T540, T643"
+T1899,D,Not Running,3,2,4,0,"T1023, T199"
+T1900,B,Not Running,1,7,4,2,"T1042, T644, T606, T129, T378"
+T1901,A,Running,3,3,21,1,"T341, T1274, T957, T318, T11, T1514, T14"
+T1902,D,Not Running,4,4,10,3,"T650, T178, T1665"
+T1903,B,Not Running,1,5,7,10,"T1271, T1547, T987, T258, T1425, T1122, T1483"
+T1904,C,Not Running,4,9,15,2,"T380, T60"
+T1905,D,Running,4,10,5,5,"T1030, T1147, T989, T1572, T1518, T1497, T974, T1455"
+T1906,A,Running,4,9,8,2,"T259, T434, T1797"
+T1907,A,Running,2,4,22,3,"T1238, T831"
+T1908,D,Not Running,2,5,6,8,"T978, T1212, T679, T469, T1049, T293, T1027, T132, T1610"
+T1909,D,Running,4,1,8,9,"T332, T1128, T537, T879"
+T1910,A,Running,5,9,2,6,
+T1911,A,Not Running,3,9,11,7,T1099
+T1912,C,Running,2,10,1,3,T1320
+T1913,B,Not Running,4,6,8,3,"T1563, T567, T548, T775, T434, T1066, T822, T1030, T1353"
+T1914,D,Not Running,3,6,2,10,"T209, T1454"
+T1915,B,Running,2,1,6,2,T1886
+T1916,C,Not Running,3,9,12,3,
+T1917,B,Running,4,7,8,4,"T1312, T127"
+T1918,A,Not Running,3,2,11,10,"T1705, T1447, T488, T1176, T1362, T1339"
+T1919,B,Running,1,2,3,3,"T200, T1783, T1470, T1756"
+T1920,C,Not Running,2,8,8,7,"T1075, T1202, T124, T1488, T476, T1714"
+T1921,D,Running,3,9,6,3,
+T1922,A,Running,2,7,14,7,"T1882, T1530, T1665"
+T1923,D,Running,3,9,5,2,"T1613, T131"
+T1924,A,Not Running,3,4,8,9,T496
+T1925,B,Not Running,5,8,14,7,"T808, T350, T387, T1615"
+T1926,B,Running,4,5,12,8,"T1342, T989, T1600, T873, T138, T68"
+T1927,B,Running,3,2,13,2,"T1726, T1454, T1184, T1599, T1118, T1116, T1428, T503, T498, T229"
+T1928,D,Running,3,9,3,9,"T1572, T1854, T214, T1003, T926, T894"
+T1929,A,Not Running,3,1,9,4,"T218, T1055, T1130, T565, T1148"
+T1930,A,Not Running,5,3,14,4,"T719, T694"
+T1931,D,Not Running,1,8,2,10,
+T1932,D,Running,4,3,6,6,"T809, T1544, T392, T952, T1753"
+T1933,C,Not Running,4,6,3,4,"T1429, T1735, T1492, T1455"
+T1934,C,Not Running,5,3,1,9,T947
+T1935,C,Running,2,9,16,3,"T747, T1616, T394, T727, T1502, T1228, T366, T1022, T869, T1774"
+T1936,A,Not Running,4,2,2,8,"T1001, T32, T1912, T607, T488, T205, T538, T697, T584, T785"
+T1937,B,Running,5,10,6,7,"T181, T289, T1175"
+T1938,A,Running,4,7,18,1,"T1578, T720, T630, T942, T1909"
+T1939,B,Running,4,10,5,7,"T1481, T781"
+T1940,D,Not Running,2,5,9,1,"T570, T501"
+T1941,A,Running,5,6,9,2,"T1694, T535, T1100"
+T1942,A,Running,5,7,9,0,"T385, T1842, T1490, T603, T574, T1855"
+T1943,A,Not Running,5,4,7,0,
+T1944,D,Running,1,8,2,3,"T197, T1163, T1078, T1300, T200, T1015"
+T1945,B,Running,4,4,2,10,"T542, T208, T1476"
+T1946,D,Running,4,6,4,7,T1042
+T1947,A,Not Running,4,3,10,4,"T1300, T631, T1893"
+T1948,B,Running,3,7,9,0,
+T1949,A,Running,2,8,21,4,"T458, T1151, T1649, T1337"
+T1950,A,Running,1,10,7,3,"T1626, T1061, T1192, T660, T127, T894, T1643"
+T1951,A,Not Running,3,8,20,2,"T167, T16, T1788, T1505, T817, T1695, T54, T1530, T656"
+T1952,B,Running,4,4,16,0,"T271, T942, T355, T1249, T1859, T1380, T123, T106, T1235, T1517"
+T1953,D,Running,1,6,10,9,"T1908, T1486, T1094, T123"
+T1954,D,Not Running,5,3,1,7,"T1408, T1064, T5, T147, T1490"
+T1955,C,Not Running,4,6,6,7,"T1694, T1811, T1895, T1878, T141, T1642, T1678, T940, T1385, T1746"
+T1956,B,Not Running,3,8,4,1,"T1926, T144, T1005, T658, T54"
+T1957,C,Running,5,1,3,0,"T246, T999, T379, T435, T913, T858, T1068, T1825, T427, T408"
+T1958,B,Running,1,10,12,9,"T1730, T44, T886, T1112, T104, T890"
+T1959,B,Not Running,5,5,5,6,"T1144, T1771, T503, T1372, T447, T1903"
+T1960,D,Not Running,2,7,6,2,"T38, T1245, T549, T174, T1284"
+T1961,D,Running,1,1,4,2,
+T1962,D,Not Running,1,2,9,9,"T745, T1941, T1810"
+T1963,A,Not Running,1,2,6,6,T206
+T1964,C,Running,5,7,5,8,T545
+T1965,D,Not Running,2,5,8,0,"T1871, T509, T1045, T1886, T172"
+T1966,C,Running,1,4,18,6,"T975, T727, T95, T903, T475, T96, T388"
+T1967,B,Not Running,5,3,7,7,"T1866, T1590, T439, T639, T372, T1016, T738, T150, T1562, T481"
+T1968,D,Running,3,5,10,6,"T1520, T135, T1621, T614, T1901, T456, T968"
+T1969,D,Running,3,8,10,8,"T1084, T1692"
+T1970,A,Running,4,3,4,2,
+T1971,C,Not Running,3,6,8,9,"T1373, T1094, T508, T1441, T1269"
+T1972,C,Running,3,9,8,0,"T500, T556, T531, T596, T1693, T590, T816"
+T1973,A,Running,5,4,4,10,T131
+T1974,A,Not Running,3,2,11,10,"T983, T154, T231, T1162"
+T1975,A,Running,1,5,7,5,"T659, T1840, T27, T244, T368, T1146, T329, T274"
+T1976,C,Running,1,2,4,1,"T1492, T631, T300, T942, T1485, T80, T1536, T1813"
+T1977,A,Not Running,3,8,11,0,"T1370, T142, T1310, T1157"
+T1978,C,Not Running,2,2,17,7,"T1388, T758, T1489, T1913, T734, T1166, T54, T1480, T1684, T1072"
+T1979,A,Not Running,5,9,21,0,"T1686, T1177, T508, T811, T693, T1669"
+T1980,A,Not Running,5,10,19,2,"T1744, T1561, T240, T1850, T312, T1467"
+T1981,B,Not Running,1,1,7,10,T413
+T1982,C,Running,1,9,16,5,"T1726, T1034, T1256, T1118, T529, T502, T1339, T364, T652"
+T1983,B,Not Running,3,2,6,10,
+T1984,B,Not Running,1,2,15,0,"T1098, T1115, T1345, T1456, T1370, T129, T1312, T793"
+T1985,D,Not Running,2,9,6,9,"T1304, T99, T994, T1259, T382, T1026, T97"
+T1986,B,Not Running,5,6,2,5,"T660, T237, T1416, T350, T1817, T1276"
+T1987,C,Running,3,9,4,5,T360
+T1988,D,Running,3,5,2,2,"T1836, T1643, T1107"
+T1989,C,Not Running,1,2,4,5,"T134, T1799"
+T1990,D,Running,4,10,4,4,"T1430, T253, T1348, T1755, T1500, T1506, T1374, T1700, T1537"
+T1991,B,Running,3,4,4,2,"T222, T1795, T206, T482, T315, T1987, T415, T1967"
+T1992,C,Running,3,9,15,1,"T1416, T397, T305, T139, T49, T1189, T1348"
+T1993,D,Not Running,3,5,9,6,"T677, T1319, T34, T620, T10"
+T1994,C,Not Running,2,10,5,10,"T825, T575, T277"
+T1995,A,Running,3,6,10,9,"T1689, T1025, T1717, T830, T203"
+T1996,C,Not Running,3,8,7,2,
+T1997,B,Not Running,4,5,9,8,"T1277, T1078, T356, T541, T793, T614, T1485, T85, T825"
+T1998,C,Running,2,8,13,2,"T1164, T725, T394, T1459, T514, T1783, T1645"
+T1999,D,Not Running,3,9,3,7,"T990, T201"
