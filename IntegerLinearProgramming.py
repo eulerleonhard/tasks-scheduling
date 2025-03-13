@@ -29,11 +29,14 @@ def schedule_tasks_ilp(tasks, resource_limits):
     # Dependency constraints
     for task in tasks:
         for dep in task.dependencies:
-            for start_time in range(max_time_horizon - task.length + 1):
-                if start_time >= task.min_start_time:
-                    prob += lpSum(task_vars[(dep, dep_start)]
-                                 for dep_start in range(max(0, start_time - next(t for t in tasks if t.task_id == dep).length + 1), start_time + 1)
-                                 if (dep, dep_start) in task_vars) <= 1
+            # Check if the dependency exists in tasks
+            dependent_task = next((t for t in tasks if t.task_id == dep), None)
+            if dependent_task is not None:
+                for start_time in range(max_time_horizon - task.length + 1):
+                    if start_time >= task.min_start_time:
+                        prob += lpSum(task_vars[(dep, dep_start)]
+                                     for dep_start in range(max(0, start_time - dependent_task.length + 1), start_time + 1)
+                                     if (dep, dep_start) in task_vars) <= 1
 
     # Solve the problem with an efficient solver
     prob.solve(PULP_CBC_CMD(msg=0, timeLimit=300))  # Set a time limit if needed

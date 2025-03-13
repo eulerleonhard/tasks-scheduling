@@ -1,15 +1,72 @@
-import matplotlib.pyplot as plt
 
 import matplotlib.pyplot as plt
-import numpy as np
+import seaborn as sns
+import pandas as pd
 
-# Task visualization
-def visualize_tasks(tasks, schedule, num_tasks):
+def visualize_tasks(tasks):
+    """
+    Visualizes the distributions of task lengths, resource requirements, priorities, and number of dependencies.
+    
+    Parameters:
+    tasks (list): A list of Task objects.
+    """
+    # Create a DataFrame from the tasks
+    data = {
+        "Task ID": [task.task_id for task in tasks],
+        "Length": [task.length for task in tasks],
+        "Priority": [task.priority for task in tasks],
+        "Resource Requirement": [task.resource_req for task in tasks],
+        "Number of Dependencies": [len(task.dependencies) for task in tasks]  # Count of dependencies
+    }
+    df = pd.DataFrame(data)
+
+    # Set the style for the plots
+    sns.set(style="whitegrid")
+
+    # Set up the figure and axes
+    fig, axes = plt.subplots(4, 1, figsize=(12, 24))
+    
+    # Task Length Distribution
+    sns.histplot(df['Length'], bins=5, kde=True, color='teal', ax=axes[0], alpha=0.7)
+    axes[0].set_title('Distribution of Task Lengths', fontsize=15)
+    # axes[0].set_xlabel('Length', fontsize=14)
+    # axes[0].set_ylabel('Frequency', fontsize=14)
+    axes[0].grid(True)
+
+    # Resource Requirement Distribution
+    sns.histplot(df['Resource Requirement'], bins=10, kde=True, color='coral', ax=axes[1], alpha=0.7)
+    axes[1].set_title('Distribution of Resource Requirements', fontsize=15)
+    # axes[1].set_xlabel('Resource Requirement', fontsize=14)
+    # axes[1].set_ylabel('Frequency', fontsize=14)
+    axes[1].grid(True)
+
+    # Task Priority Distribution
+    sns.histplot(df['Priority'], bins=10, kde=True, color='royalblue', ax=axes[2], alpha=0.7)
+    axes[2].set_title('Distribution of Task Priorities', fontsize=15)
+    # axes[2].set_xlabel('Priority', fontsize=14)
+    # axes[2].set_ylabel('Frequency', fontsize=14)
+    axes[2].set_xticks(range(1, 11))  # Assuming priorities are between 1 and 10
+    axes[2].set_xlim(0.5, 10.5)  # Extend limits for better visualization
+    axes[2].grid(True)
+
+    # Number of Dependencies Distribution
+    sns.histplot(df['Number of Dependencies'], bins=10, kde=True, color='purple', ax=axes[3], alpha=0.7)
+    axes[3].set_title('Distribution of Number of Dependencies', fontsize=15)
+    # axes[3].set_xlabel('Number of Dependencies', fontsize=14)
+    # axes[3].set_ylabel('Frequency', fontsize=14)
+    axes[3].grid(True)
+
+    # Adjust layout for better spacing
+    plt.subplots_adjust(hspace=0.4)  # Increase vertical spacing
+    plt.tight_layout()
+    plt.show()
+
+def visualize_pipeline(tasks, schedule, num_tasks):
     if not schedule:
         return 0  # Return 0 for empty schedule
     
     # Create a figure with 4 subplots (one for each task type)
-    fig, axs = plt.subplots(4, 1, figsize=(12, 12), sharex=True)
+    fig, axs = plt.subplots(4, 1, figsize=(15, 15), sharex=True)
 
     # Get unique task types
     task_types = ['A', 'B', 'C', 'D']
@@ -83,8 +140,6 @@ def visualize_resource_utilization(resource_utilization):
     plt.tight_layout()  # Adjust layout to prevent overlapping
     # plt.show()
 
-
-import matplotlib.pyplot as plt
 
 def visualize_metrics(results, algorithms):
     """

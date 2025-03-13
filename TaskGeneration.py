@@ -6,7 +6,7 @@ TASK_TYPES = ['A', 'B', 'C', 'D']
 TASK_STATUS = ['Running', 'Not Running']
 
 class Task:
-  def __init__(self, task_id, task_type, status, min_start_time, length, priority, resource_req, dependencies):
+  def __init__(self, task_id, task_type, status, min_start_time, length, priority, resource_req, dependencies, num_dependencies):
     self.task_id = task_id # Unique ID of a task
     self.task_type = task_type # Type of the task
     self.status = status
@@ -15,6 +15,7 @@ class Task:
     self.priority = priority
     self.resource_req = resource_req
     self.dependencies = dependencies
+    self.num_dependencies = num_dependencies
 
   def __str__(self):
     return (f"Task ID: {self.task_id}, Type: {self.task_type}, Status: {self.status}, "
@@ -59,7 +60,8 @@ def generate_random_tasks(num_tasks, resource_limits, max_dependencies=0):
             priority=priority,
             resource_req=resource_req,
             min_start_time=min_start_time,
-            dependencies=dependencies
+            dependencies=dependencies,
+            num_dependencies=num_dependencies
         )
         
         tasks.append(task)
@@ -73,7 +75,8 @@ def generate_random_tasks(num_tasks, resource_limits, max_dependencies=0):
         "Priority": [task.priority for task in tasks],
         "Resource Requirement": [task.resource_req for task in tasks],
         "Min Start Time": [task.min_start_time for task in tasks],
-        "Dependencies": [", ".join(task.dependencies) for task in tasks]
+        "Dependencies": [", ".join(task.dependencies) for task in tasks],
+        "Number of Dependencies": [task.num_dependencies for task in tasks]
     }
 
     df = pd.DataFrame(data)

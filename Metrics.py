@@ -193,11 +193,16 @@ def measure_metrics(schedule, tasks, resource_limits):
         tuple: A tuple containing the measured metrics (weighted_throughput, makespan, task_utilization_rate, priority_satisfaction, resource_utilization).
     """
     weighted_throughput = calculate_weighted_throughput(schedule, tasks)
+    # print(f"weighted throughput: {weighted_throughput}")
     makespan = calculate_makespan(schedule)
+    # print(f"makespan: {makespan}")
     task_utilization_rate = calculate_task_utilization_rate(schedule, tasks)
+    # print(f"task utilisation rate: {task_utilization_rate}")
     priority_satisfaction = calculate_priority_satisfaction(schedule, tasks)
+    # print(f"priority satisfaction: {priority_satisfaction}")
     resource_utilization = calculate_resource_utilization(schedule, tasks, resource_limits)
     task_avg_wait_time = calculate_average_wait_time(tasks, schedule)
+    # print(f"task avg wait time: {task_avg_wait_time}")
     # print(f"DEBUG Metrics: task_avg_wait_time: {task_avg_wait_time}")
     # print(f"DEBUG Metrics: throughput: {throughput}")
     # print(f"DEBUG2: {resource_utilization}")
